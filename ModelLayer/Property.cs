@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ModelLayer
 {
-    class Property
+    public class Property
     {
         public string Address { get; set; }
         public Location Location { get; set; }
