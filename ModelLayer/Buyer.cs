@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace ModelLayer
 {
     public class Buyer : Person
     {
+        public int Id { get; set; }
         public string EstateType { get; set; }
         public double MinPrice { get; set; }
         public double MaxPrice { get; set; }

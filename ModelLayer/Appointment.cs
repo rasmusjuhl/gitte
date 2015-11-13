@@ -8,6 +8,7 @@ namespace ModelLayer
 {
     public class Appointment
     {
+        public int Id { get; set; }
         public DateTime Date { get; set; }
         public DateTime StarTime { get; set; }
         public DateTime EndTime { get; set; }

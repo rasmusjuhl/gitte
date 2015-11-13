@@ -6,10 +6,16 @@ using System.Threading.Tasks;
 
 namespace ModelLayer
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
+            Location loc = new Location("9000", "Aalborg");
+            Console.WriteLine(loc.ZipCode + " " + loc.City);
+            Console.ReadLine();
+
+
+
         }
     }
 }
