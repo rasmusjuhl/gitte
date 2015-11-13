@@ -16,5 +16,9 @@ namespace ModelLayer
             this.ZipCode = zipCode;
             this.City = city;
         }
+        public Location()
+        {
+
+        }
     }
 }

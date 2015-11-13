@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ModelLayer.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,9 +11,13 @@ namespace ModelLayer
     {
         static void Main(string[] args)
         {
-            Location loc = new Location("9000", "Aalborg");
-            Console.WriteLine(loc.ZipCode + " " + loc.City);
-            Console.ReadLine();
+            using (var ctx = new SystemContext())
+            {
+                Location loc = new Location() { ZipCode = "8800", City = "Viborg" };
+                ctx.Locations.Add(loc);
+                ctx.SaveChanges();
+                Console.WriteLine(loc.ZipCode + " " + loc.City);
+            }
 
 
 
