@@ -15,7 +15,7 @@ namespace ModelLayer
         public string Mobil { get; set; }
         public string Email { get; set; }
         public string Misc { get; set; }
-
+        
 
         public Person(string name, string address, Location location, string phone, string mobil, string email, string misc)
         {
