@@ -41,11 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="Buyer.cs" />
-=======
     <Compile Include="Appointment.cs" />
->>>>>>> origin/master
     <Compile Include="Location.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
