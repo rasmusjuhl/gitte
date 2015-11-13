@@ -10,18 +10,18 @@ namespace ModelLayer
     {
         public string Name { get; set; }
         public string Address { get; set; }
-        public string ZipCode { get; set; }
+        public Location Location { get; set; }
         public string Phone { get; set; }
         public string Mobil { get; set; }
         public string Email { get; set; }
         public string Misc { get; set; }
 
 
-        public Person(string name, string address, string zipCode, string phone, string mobil, string email, string misc)
+        public Person(string name, string address, Location location, string phone, string mobil, string email, string misc)
         {
             this.Name = name;
             this.Address = address;
-            this.ZipCode = zipCode;
+            this.Location = location;
             this.Phone = phone;
             this.Mobil = mobil;
             this.Email = email;
