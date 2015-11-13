@@ -4,32 +4,43 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
+
 using ModelLayer.DAL;
 using ModelLayer;
+
+using System.Data.SqlClient;
+using System.Data;
+using System.Data.Common;
+
 
 namespace ControlLayer
 {
     public class LocationController
     {
+        
         public LocationController()
         {
 
         }
-
-        public List<Location> DoStuff()
+        public Location GetLocation(string zipCode)
         {
-            List<Location> locs;
+            Location loc;
+            using (var ctx = new SystemContext())
+            {                
+                string sql = "Select * from Locations Where ZipCode = @zipCode";
+                loc = ctx.Locations.SqlQuery(sql, new SqlParameter("@zipCode", zipCode)).Single();               
+            }
+            return loc;
+        }
+
+        public List<Location> GetAllLocations()
+        {
             using (var ctx = new SystemContext())
             {
-                Location loc = new Location() { ZipCode = "8800", City = "Viborg" };
-                ctx.Locations.Add(loc);
-                ctx.SaveChanges();
-                //Console.WriteLine(loc.ZipCode + " " + loc.City);
-
-                
-                locs = ctx.Locations.ToList();
-            }
-            return locs;
+                return ctx.Locations.ToList();
+            } 
         }
+
+      
     }
 }

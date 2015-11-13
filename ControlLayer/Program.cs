@@ -13,9 +13,15 @@ namespace ControlLayer
         {
             LocationController lc = new LocationController();
 
-            List<Location> locs = lc.DoStuff();
-            Console.WriteLine(locs.Count);
-            foreach(Location l in locs)
+            string zipCode = "8800";
+            Location loc = lc.GetLocation(zipCode);
+
+            Console.WriteLine(zipCode + " " +loc.City);
+           
+
+            List<Location> locations = lc.GetAllLocations();
+            Console.WriteLine(locations.Count);
+            foreach (Location l in locations)
             {
                 Console.WriteLine(l.Id + " " + l.ZipCode);
             }
