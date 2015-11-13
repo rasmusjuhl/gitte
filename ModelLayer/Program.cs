@@ -13,7 +13,7 @@ namespace ModelLayer
         {
             using (var ctx = new SystemContext())
             {
-                Location loc = new Location() { ZipCode = "8800", City = "Viborg" };
+                Location loc = new Location() { ZipCode = "9000", City = "Aarhus" };
                 ctx.Locations.Add(loc);
                 ctx.SaveChanges();
                 Console.WriteLine(loc.ZipCode + " " + loc.City);
