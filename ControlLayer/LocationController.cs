@@ -33,15 +33,12 @@ namespace ControlLayer
         }
         public Location GetLocation(string zipCode)
         {
-            List<Location> loc;
+            Location loc;
             using (var ctx = new SystemContext())
             {
-                var res = from x in ctx.Locations
-                          where x.ZipCode == zipCode
-                          select x;
-                loc = res.ToList();
+                loc = ctx.Locations.Where(x => x.ZipCode == zipCode).Single();
             }
-            return loc.First();
+            return loc;
         }
 
         public List<Location> GetAllLocations()
