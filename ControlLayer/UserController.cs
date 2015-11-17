@@ -23,17 +23,14 @@ namespace ControlLayer
                 ctx.SaveChanges();
             }
         }
-        public User GetUser(string phone)
+        public User GetUserByPhone(string phone)
         {
-            List<User> user;
+            User user;
             using (var ctx = new SystemContext())
             {
-                var res = from x in ctx.Users
-                          where x.Phone == phone
-                          select x;
-                user = res.ToList();
+                user = ctx.Users.Where(x => x.Phone == phone).Single();
             }
-            return user.First();
+            return user;
         }
 
         public List<User> GetAllUsers()
