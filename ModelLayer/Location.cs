@@ -11,10 +11,5 @@ namespace ModelLayer
         public int Id { get; set; }
         public string ZipCode { get; set; }
         public string City { get; set; }
-        public Location(string zipCode, string city)
-        {
-            this.ZipCode = zipCode;
-            this.City = city;
-        }
     }
 }
