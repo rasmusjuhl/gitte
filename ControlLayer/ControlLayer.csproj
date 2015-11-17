@@ -54,6 +54,7 @@
     <Compile Include="LocationController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertyController.cs" />
     <Compile Include="UserController.cs" />
     <Compile Include="SellerController.cs" />
   </ItemGroup>
