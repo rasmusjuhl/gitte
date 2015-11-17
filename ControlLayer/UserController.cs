@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-
 using ModelLayer;
 using ModelLayer.DAL;
+
 namespace ControlLayer
 {
     public class UserController
@@ -71,11 +70,5 @@ namespace ControlLayer
                 ctx.SaveChanges();
             }
         }
-
-
-
-
-
-
     }
 }
