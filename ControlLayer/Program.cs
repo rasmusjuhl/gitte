@@ -18,15 +18,15 @@ namespace ControlLayer
             //lc.InsertLocation(loc);
             
             //test af insert metode
-            //while (true)
-            //{
-            //    Console.WriteLine("Indtast postnr");
-            //    string zipCode = Console.ReadLine();
-            //    Console.WriteLine("Indtast by");
-            //    string city = Console.ReadLine();
-            //    Location loc = new Location() { ZipCode = zipCode, City = city };
-            //    lc.InsertLocation(loc);
-            //}
+            while (true)
+            {
+                Console.WriteLine("Indtast postnr");
+                string zipCode = Console.ReadLine();
+                Console.WriteLine("Indtast by");
+                string city = Console.ReadLine();
+                Location loc = new Location() { ZipCode = zipCode, City = city };
+                lc.InsertLocation(loc);
+            }
             
             //test af get metode
             //while (true)
@@ -38,12 +38,12 @@ namespace ControlLayer
             //}
 
             //test af update
-            Location loc = lc.GetLocation("8000");
-            Console.WriteLine("Indtast postnr");
-            string zipCode = Console.ReadLine();
-            Console.WriteLine("Indtast by");
-            string city = Console.ReadLine();
-            lc.UpdateLocation(loc, zipCode, city);
+            //Location loc = lc.GetLocation("8000");
+            //Console.WriteLine("Indtast postnr");
+            //string zipCode = Console.ReadLine();
+            //Console.WriteLine("Indtast by");
+            //string city = Console.ReadLine();
+            //lc.UpdateLocation(loc, zipCode, city);
             
 
 

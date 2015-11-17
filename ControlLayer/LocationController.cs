@@ -23,6 +23,9 @@ namespace ControlLayer
 
         }
 
+
+        
+
         public void InsertLocation(Location location)
         {
             using (var ctx = new SystemContext())

@@ -32,7 +32,8 @@ namespace ModelLayer
         public List<Property> Properties { get; set; }
 
         public Buyer(string name, string adress, Location location, string phone, string mobil, string email, string misc,
-            string estateType, double minPrice, double maxPrice, double lotSizeMin, double lotSizeMax, double probertySizeMin, double probertySizeMax, double desiredRoomsMin, double desiredRoomsMax, List<Location> desiredLocations, string otherPref, Boolean contactAllowedByBoligOne, Boolean contactAllowedByReal, Boolean allowedEmailSpam, Boolean inRKI, Boolean buyerApproved, string bank, Boolean ownesHouse, Boolean livesForRent, List<Property> properties)
+            string estateType, double minPrice, double maxPrice, double lotSizeMin, double lotSizeMax, double probertySizeMin,
+            double probertySizeMax, double desiredRoomsMin, double desiredRoomsMax, List<Location> desiredLocations, string otherPref, Boolean contactAllowedByBoligOne, Boolean contactAllowedByReal, Boolean allowedEmailSpam, Boolean inRKI, Boolean buyerApproved, string bank, Boolean ownesHouse, Boolean livesForRent, List<Property> properties)
             : base(name, adress, location, phone, mobil, email, misc)
         {
             this.EstateType = estateType;
