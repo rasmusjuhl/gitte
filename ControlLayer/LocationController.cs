@@ -23,15 +23,10 @@ namespace ControlLayer
 
         }
 
-
-
-
         public void InsertLocation(Location location)
         {
             using (var ctx = new SystemContext())
             {
-                //string sql = "Insert into Locations(zipCode, city) Values(@zipCode, @city)";
-                //ctx.Locations.SqlQuery(sql, new SqlParameter("@zipCode", location.ZipCode), new SqlParameter("@city", location.City));
                 ctx.Locations.Add(location);
                 ctx.SaveChanges();
             }
@@ -45,8 +40,6 @@ namespace ControlLayer
                           where x.ZipCode == zipCode
                           select x;
                 loc = res.ToList();
-                //string sql = "Select * from Locations Where ZipCode = @zipCode";
-                //loc = ctx.Locations.SqlQuery(sql, new SqlParameter("@zipCode", zipCode)).Single();
             }
             return loc.First();
         }
