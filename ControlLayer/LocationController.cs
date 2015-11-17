@@ -24,7 +24,7 @@ namespace ControlLayer
         }
 
 
-        
+
 
         public void InsertLocation(Location location)
         {
@@ -38,13 +38,17 @@ namespace ControlLayer
         }
         public Location GetLocation(string zipCode)
         {
-            Location loc;
+            List<Location> loc;
             using (var ctx = new SystemContext())
             {
-                string sql = "Select * from Locations Where ZipCode = @zipCode";
-                loc = ctx.Locations.SqlQuery(sql, new SqlParameter("@zipCode", zipCode)).Single();
+                var res = from x in ctx.Locations
+                          where x.ZipCode == zipCode
+                          select x;
+                loc = res.ToList();
+                //string sql = "Select * from Locations Where ZipCode = @zipCode";
+                //loc = ctx.Locations.SqlQuery(sql, new SqlParameter("@zipCode", zipCode)).Single();
             }
-            return loc;
+            return loc.First();
         }
 
         public List<Location> GetAllLocations()

@@ -15,7 +15,7 @@ namespace ModelLayer
             {
                 Location loc = new Location() { ZipCode = "9000", City = "Aarhus" };
                 ctx.Locations.Add(loc);
-                
+
                 Console.WriteLine(loc.ZipCode + " " + loc.City);
                 Seller seller = new Seller() { Name = "Hans" };
                 ctx.Sellers.Add(seller);
@@ -24,6 +24,8 @@ namespace ModelLayer
                 Buyer buyer = new Buyer() { Name = "Fucking Jens" };
                 ctx.Buyers.Add(buyer);
                 ctx.SaveChanges();
+
+                
             }
 
 
