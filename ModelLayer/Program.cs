@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ModelLayer.DAL;
 
 namespace ModelLayer
 {
@@ -10,12 +11,9 @@ namespace ModelLayer
     {
         static void Main(string[] args)
         {
-            Location loc = new Location("9000", "Aalborg");
-            Console.WriteLine(loc.ZipCode + " " + loc.City);
+            var db = new SystemContext();
+            Console.WriteLine(db.Database.Connection.ConnectionString);
             Console.ReadLine();
-
-
-
         }
     }
 }
