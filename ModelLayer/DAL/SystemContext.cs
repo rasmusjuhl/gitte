@@ -16,6 +16,9 @@ namespace ModelLayer.DAL
         public DbSet<Seller> Sellers { get; set; }
         public DbSet<User> Users { get; set; }
 
-       
+        public SystemContext() : base("kraka")
+    {
+            
+    }
     }
 }
