@@ -47,6 +47,15 @@ namespace ControlLayer
             return loc;
         }
 
+        public List<Location> GetLocationsByCity(string city)
+        {
+            using (var ctx = new SystemContext())
+            {
+                var loc = ctx.Locations.Where(l => l.City.Contains(city));
+                return loc.ToList();
+            }
+        }
+
         public List<Location> GetAllLocations()
         {
             using (var ctx = new SystemContext())
