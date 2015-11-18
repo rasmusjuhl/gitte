@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ModelLayer;
 
 namespace ASPServer.Controllers
 {
@@ -10,6 +11,8 @@ namespace ASPServer.Controllers
     {
         public ActionResult Index()
         {
+            Location loc = new Location() { ZipCode = "9000", City = "Aalborg" };
+            ViewBag.Location = loc.City;
             return View();
         }
 
