@@ -17,6 +17,7 @@ namespace ControlLayer
             var db = new SystemContext();
             Console.WriteLine(db.Database.Connection.ConnectionString);
             Console.ReadLine();
+
         }
     }
 }
