@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelLayer", "ModelLayer\Mo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlLayer", "ControlLayer\ControlLayer.csproj", "{B56B62BE-3E17-471B-8F15-1BFA4CEEA84F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfServiceApp", "WcfServiceApp\WcfServiceApp.csproj", "{14E5DEFD-C630-4445-822F-F960D80521A3}"
+EndProject
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "WcfServiceApp.Azure", "WcfServiceApp.Azure\WcfServiceApp.Azure.ccproj", "{DD9E9AB1-28F3-467E-804C-0D83E9248AAB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{B56B62BE-3E17-471B-8F15-1BFA4CEEA84F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B56B62BE-3E17-471B-8F15-1BFA4CEEA84F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B56B62BE-3E17-471B-8F15-1BFA4CEEA84F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14E5DEFD-C630-4445-822F-F960D80521A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14E5DEFD-C630-4445-822F-F960D80521A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14E5DEFD-C630-4445-822F-F960D80521A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14E5DEFD-C630-4445-822F-F960D80521A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD9E9AB1-28F3-467E-804C-0D83E9248AAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD9E9AB1-28F3-467E-804C-0D83E9248AAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD9E9AB1-28F3-467E-804C-0D83E9248AAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD9E9AB1-28F3-467E-804C-0D83E9248AAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
