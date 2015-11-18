@@ -23,7 +23,7 @@ namespace ControlLayer
                 ctx.SaveChanges();
             }
         }
-        public Seller GetUserByPhone(string phone)
+        public Seller GetSellerByPhone(string phone)
         {
             Seller seller;
             using (var ctx = new SystemContext())
