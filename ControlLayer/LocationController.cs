@@ -36,12 +36,22 @@ namespace ControlLayer
             Location loc;
             using (var ctx = new SystemContext())
             {
-                loc = ctx.Locations.Where(x => x.ZipCode == zipCode).Single();
+                string sql = "Select * from Locations Where ZipCode = @zipCode";
+                loc = ctx.Locations.SqlQuery(sql, new SqlParameter("@zipCode", zipCode)).Single();
             }
             return loc;
         }
 
-        public List<Location> GetAllLocations()
+        public List<Location> GetLocationsByCity(string city)
+        {
+            using (var ctx = new SystemContext())
+            {
+                var loc = ctx.Locations.Where(l => l.City.Contains(city));
+                return loc.ToList();
+            }
+        }
+
+        public List<Location> GetAllaLocations()
         {
             using (var ctx = new SystemContext())
             {
