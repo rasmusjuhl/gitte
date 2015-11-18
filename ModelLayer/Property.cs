@@ -19,17 +19,6 @@ namespace ModelLayer
         public double HouseSize { get; set; }
         public int ConstructionYear { get; set; }
 
-        public Property(string address, Location location, string type, int rooms, int floors, double price, double propertySize, double houseSize, int constructionYear)
-        {
-            this.Address = address;
-            this.Location = location;
-            this.Type = type;
-            this.Rooms = rooms;
-            this.Floors = floors;
-            this.Price = price;
-            this.PropertySize = propertySize;
-            this.HouseSize = houseSize;
-            this.ConstructionYear = constructionYear;
-        }
+        
     }
 }

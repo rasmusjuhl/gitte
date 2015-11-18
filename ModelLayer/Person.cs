@@ -17,15 +17,6 @@ namespace ModelLayer
         public string Misc { get; set; }
         
 
-        public Person(string name, string address, Location location, string phone, string mobil, string email, string misc)
-        {
-            this.Name = name;
-            this.Address = address;
-            this.Location = location;
-            this.Phone = phone;
-            this.Mobil = mobil;
-            this.Email = email;
-            this.Misc = misc;
-        }
+        
     }
 }
