@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppointmentController.cs" />
     <Compile Include="BuyerController.cs" />
     <Compile Include="LocationController.cs" />
     <Compile Include="Program.cs" />
