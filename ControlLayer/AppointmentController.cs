@@ -9,7 +9,7 @@ using ModelLayer.DAL;
 
 namespace ControlLayer
 {
-    class AppointmentController
+    public class AppointmentController
     {
         public AppointmentController()
         {
