@@ -54,6 +54,8 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuyerService.cs" />
+    <Compile Include="IBuyerService.cs" />
     <Compile Include="IPropertyService.cs" />
     <Compile Include="ISellerService.cs" />
     <Compile Include="IUserService.cs" />
