@@ -51,7 +51,7 @@ namespace ControlLayer
             }
         }
 
-        public List<Location> GetAllaLocations()
+        public List<Location> GetAllLocations()
         {
             using (var ctx = new SystemContext())
             {
