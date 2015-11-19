@@ -27,12 +27,23 @@
                 </TabItem>
             </TabControl>
             <Menu HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="363">
-                <MenuItem Header="Filer"/>
+                <MenuItem Header="Filer">
+                    <MenuItem Header="Åben" HorizontalAlignment="Left" Width="140"/>
+                </MenuItem>
                 <MenuItem Header="Rediger"/>
                 <MenuItem Header="Funktioner"/>
             </Menu>
             <TextBox Name="txtUser" HorizontalAlignment="Left" Height="23" Margin="0,46,0,0" TextWrapping="Wrap" Text="User navn her" VerticalAlignment="Top" Width="363" TextChanged="TextBox_TextChanged" Cursor="None"/>
-            <ToolBar HorizontalAlignment="Left" Margin="0,23,0,0" VerticalAlignment="Top" Width="243" Height="23"/>
+            <ToolBarTray Height="23" Margin="0,23,0,0" VerticalAlignment="Top">
+                <ToolBar>
+                    <Button Command="Print" ToolTip="Print">
+                        <Image Source="C:\Users\Søren\Google Drev\C# projects\3Semester\GUIApplication\Images\print.png" />
+                    </Button>
+                    <Button Command="Refresh" ToolTip="Refresh">
+                        <Image Source="C:\Users\Søren\Google Drev\C# projects\3Semester\GUIApplication\Images\view_refresh.png" />
+                    </Button>
+                </ToolBar>
+            </ToolBarTray>
         </Grid>
         <Grid HorizontalAlignment="Left" Height="569" Margin="363,0,0,0" VerticalAlignment="Top" Width="539"/>
     </Grid>
