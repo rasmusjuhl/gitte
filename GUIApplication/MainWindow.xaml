@@ -12,7 +12,7 @@
                     </Grid>
                 </TabItem>
                 <TabItem Header="Opgaver">
-                    <Grid Background="#FFE5E5E5"/>
+                    <Grid Background="Red"/>
                 </TabItem>
                 <TabItem Header="Kunder" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="54">
                     <Grid Background="#FFE5E5E5">
