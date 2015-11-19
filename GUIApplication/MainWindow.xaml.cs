@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using GUIApplication.UserServiceReference;
 
 namespace GUIApplication
 {
@@ -20,9 +21,17 @@ namespace GUIApplication
     /// </summary>
     public partial class MainWindow : Window
     {
+        static IUserService iUser = new UserServiceClient();
         public MainWindow()
         {
+            User user = iUser.GetAllUsers().First();
             InitializeComponent();
+            txtUser.Text = user.Name+ ",        " + DateTime.Today.Day + "/"  + DateTime.Today.Month + "-" + DateTime.Today.Year;
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
