@@ -11,18 +11,17 @@
                         <Grid Background="#FFE5E5E5"/>
                     </Grid>
                 </TabItem>
-                <TabItem Header="Opgaver">
-                    <Grid Background="Red"/>
+                <TabItem Header="Opgaver" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="54">
+                    <Grid Background="#FFE5E5E5"/>
                 </TabItem>
                 <TabItem Header="Kunder" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="54">
                     <Grid Background="#FFE5E5E5">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="13*"/>
-                            <ColumnDefinition Width="106*"/>
-                        </Grid.ColumnDefinitions>
+                        <DataGrid Name="SellerData" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Loaded="DataGrid_Loaded">
+                            
+                        </DataGrid>
                     </Grid>
                 </TabItem>
-                <TabItem Header="Ruteplanlægning" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="104" Margin="-2,-2,-48,0">
+                <TabItem Header="Ruteplanlægning" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="110">
                     <Grid Background="#FFE5E5E5"/>
                 </TabItem>
             </TabControl>
@@ -33,15 +32,18 @@
                 <MenuItem Header="Rediger"/>
                 <MenuItem Header="Funktioner"/>
             </Menu>
-            <TextBox Name="txtUser" HorizontalAlignment="Left" Height="23" Margin="0,46,0,0" TextWrapping="Wrap" Text="User navn her" VerticalAlignment="Top" Width="363" TextChanged="TextBox_TextChanged" Cursor="None"/>
-            <ToolBarTray Height="23" Margin="0,23,0,0" VerticalAlignment="Top">
-                <ToolBar>
-                    <Button Command="Print" ToolTip="Print">
-                        <Image Source="C:\Users\Søren\Google Drev\C# projects\3Semester\GUIApplication\Images\print.png" />
+            <TextBox Name="txtUser" HorizontalAlignment="Left" Height="23" Margin="0,46,0,0" TextWrapping="Wrap" Text="User navn her" VerticalAlignment="Top" Width="363" TextChanged="TextBox_TextChanged"/>
+            <ToolBarTray HorizontalAlignment="Left" Height="23" Margin="0,23,0,0" VerticalAlignment="Top" Width="363">
+                <ToolBar Name="Bar1" HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="185" Band="0" BandIndex="0" Margin="0,0,-24,0">
+                    <Separator Background="Green" />
+                    <Button Name="Print" ToolTip="Print"  Click="Button_Click">
+                        <Image Source="C:\Users\Søren\Google Drev\C# projects\3Semester\GUIApplication\Images\print.png"/>
                     </Button>
-                    <Button Command="Refresh" ToolTip="Refresh">
-                        <Image Source="C:\Users\Søren\Google Drev\C# projects\3Semester\GUIApplication\Images\view_refresh.png" />
+                    <Separator Background="Red" />
+                    <Button Name="Refresh" ToolTip="Refresh" Click="Refresh_Click" >
+                        <Image Source="C:\Users\Søren\Google Drev\C# projects\3Semester\GUIApplication\Images\view_refresh.png"/>
                     </Button>
+                    <Separator Background="Blue" />
                 </ToolBar>
             </ToolBarTray>
         </Grid>
