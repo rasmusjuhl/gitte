@@ -29,6 +29,7 @@ namespace GUIApplication
         CreateSeller window;
         public MainWindow()
         {
+            this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             User user = iUser.GetAllUsers().First();
             InitializeComponent();
             txtUser.Text = user.Name + ", " + DateTime.Today.Day + "/" + DateTime.Today.Month + "-" + DateTime.Today.Year;
