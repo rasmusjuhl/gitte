@@ -13,8 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using GUIApplication.UserServiceReference;
-using GUIApplication.SellerServiceReference;
 using User = GUIApplication.UserServiceReference.User;
+using GUIApplication.SellerServiceReference;
 using Seller = GUIApplication.SellerServiceReference.Seller;
 
 namespace GUIApplication
@@ -33,19 +33,21 @@ namespace GUIApplication
             txtUser.Text = user.Name + ", " + DateTime.Today.Day + "/" + DateTime.Today.Month + "-" + DateTime.Today.Year;
         }
 
-        private void DataGrid_Loaded(object sender, RoutedEventArgs e)
+        private void sellerData_Loaded(object sender, RoutedEventArgs e)
         {
-            List<Seller> sellers = iSeller.GetAllSellers();
+            List<Seller> sellers = iSeller.GetAllSellers();                      
             var grid = sender as DataGrid;
-            
             grid.ItemsSource = sellers;
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void BtnVisInfo(object sender, RoutedEventArgs e)
         {
-
+            Seller seller = (Seller) sellerData.SelectedItem;
+            MessageBox.Show("SælgerID: " + seller.Id + "\nNavn: " + seller.Name + "\nAddresse: " + seller.Address + "\nTelefon: " + seller.Phone
+                + "\nMobil: " + seller.Mobil + "\nEmail: " + seller.Email + "\nMisc: " + seller.Misc);
         }
 
+        
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Print!");
@@ -55,5 +57,14 @@ namespace GUIApplication
         {
             MessageBox.Show("Refresh!");
         }
+
+        private void BtnCreateSeller(object sender, RoutedEventArgs e)
+        {
+            
+            
+        }
+
+       
     }
+
 }
