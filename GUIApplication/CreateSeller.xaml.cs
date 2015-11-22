@@ -46,7 +46,7 @@ namespace GUIApplication
                     Mobil = txtMobil.Text,
                     Email = txtEmail.Text,
                     Misc = txtMisc.Text,
-                    //Location = (GUIApplication.SellerServiceReference.Location) loc
+                    //Location = loc  
                 };
                 iSeller.InsertSeller(seller);
                 this.Close();
@@ -76,12 +76,88 @@ namespace GUIApplication
 
         private void txtName_GotFocus(object sender, RoutedEventArgs e)
         {
-            txtName.Text = "";
+            if(txtName.Text == "Navn")
+            {
+                txtName.Text = "";
+            }
         }
 
         private void txtName_LostFocus(object sender, RoutedEventArgs e)
         {
+            if(txtName.Text == "")
             txtName.Text = "Navn";
+        }
+
+        private void txtAddress_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (txtAddress.Text == "Adresse")
+            txtAddress.Text = "";
+        }
+
+        private void txtAddress_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (txtAddress.Text == "")
+            txtAddress.Text = "Adresse";
+        }
+
+        private void txtZipCode_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (txtZipCode.Text == "Postnummer")
+            txtZipCode.Text = "";
+        }
+
+        private void txtZipCode_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (txtZipCode.Text == "")
+            txtZipCode.Text = "Postnummer";
+        }
+
+        private void txtPhone_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (txtPhone.Text == "Telefon")
+            txtPhone.Text = "";
+        }
+
+        private void txtPhone_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (txtPhone.Text == "")
+            txtPhone.Text = "Telefon";
+        }
+
+        private void txtMobil_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (txtMobil.Text == "Mobil")
+            txtMobil.Text = "";
+        }
+
+        private void txtMobil_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (txtMobil.Text == "")
+            txtMobil.Text = "Mobil";
+        }
+
+        private void txtEmail_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (txtEmail.Text == "Email")
+            txtEmail.Text = "";
+        }
+
+        private void txtEmail_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (txtEmail.Text == "")
+            txtEmail.Text = "Email";
+        }
+
+        private void txtMisc_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (txtMisc.Text == "Diverse")
+            txtMisc.Text = "";
+        }
+
+        private void txtMisc_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (txtMisc.Text == "")
+            txtMisc.Text = "Diverse";
         }
     }
 }
