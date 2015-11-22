@@ -15,7 +15,8 @@ using GUIApplication.SellerServiceReference;
 using Seller = GUIApplication.SellerServiceReference.Seller;
 using GUIApplication.LocationServiceReference;
 using Location = GUIApplication.LocationServiceReference.Location;
-
+using GUIApplication.BuyerServiceReference;
+using Buyer = GUIApplication.BuyerServiceReference.Buyer;
 
 namespace GUIApplication
 {
@@ -24,6 +25,8 @@ namespace GUIApplication
     /// </summary>
     public partial class CreateSeller : Window
     {
+        static ISellerService iSeller = new SellerServiceClient();
+        static IBuyerService iBuyer = new BuyerServiceClient();
         static ILocationService iLoc = new LocationServiceClient();
         public CreateSeller()
         {
@@ -33,7 +36,7 @@ namespace GUIApplication
         private void BtnCreateCustomer(object sender, RoutedEventArgs e)
         {
             Location loc = iLoc.GetLocation(txtZipCode.Text);
-            if(customerType.SelectedIndex == 1)
+            if(customerType.SelectedIndex == 0)
             {
                 Seller seller = new Seller()
                 {
@@ -43,10 +46,42 @@ namespace GUIApplication
                     Mobil = txtMobil.Text,
                     Email = txtEmail.Text,
                     Misc = txtMisc.Text,
-                    Location = (GUIApplication.SellerServiceReference.Location) loc
+                    //Location = (GUIApplication.SellerServiceReference.Location) loc
                 };
+                iSeller.InsertSeller(seller);
+                this.Close();
             }
-            
+            else if(customerType.SelectedIndex == 1)
+            {
+
+                Buyer buyer = new Buyer()
+                {
+                    Name = txtName.Text,
+                    Address = txtAddress.Text,
+                    Phone = txtPhone.Text,
+                    Mobil = txtMobil.Text,
+                    Email = txtEmail.Text,
+                    Misc = txtMisc.Text,
+                    //Location = (GUIApplication.SellerServiceReference.Location) loc
+                };
+                iBuyer.InsertBuyer(buyer);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Du skal vælge en kunde type");
+            }
+        }
+
+
+        private void txtName_GotFocus(object sender, RoutedEventArgs e)
+        {
+            txtName.Text = "";
+        }
+
+        private void txtName_LostFocus(object sender, RoutedEventArgs e)
+        {
+            txtName.Text = "Navn";
         }
     }
 }

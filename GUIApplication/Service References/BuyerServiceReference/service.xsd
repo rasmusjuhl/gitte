@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/ModelLayer" />
+  <xs:element name="InsertBuyer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ModelLayer" minOccurs="0" name="buyer" nillable="true" type="q1:Buyer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertBuyerResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBuyerByPhone">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="phone" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBuyerByPhoneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ModelLayer" minOccurs="0" name="GetBuyerByPhoneResult" nillable="true" type="q2:Buyer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllBuyers">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllBuyersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ModelLayer" minOccurs="0" name="GetAllBuyersResult" nillable="true" type="q3:ArrayOfBuyer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBuyer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ModelLayer" minOccurs="0" name="buyer" nillable="true" type="q4:Buyer" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ModelLayer" minOccurs="0" name="properties" nillable="true" type="q5:ArrayOfProperty" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/ModelLayer" minOccurs="0" name="location" nillable="true" type="q6:Location" />
+        <xs:element minOccurs="0" name="phone" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mobil" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="misc" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="estateType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="minPrice" type="xs:double" />
+        <xs:element minOccurs="0" name="maxPrice" type="xs:double" />
+        <xs:element minOccurs="0" name="lotSizeMin" type="xs:double" />
+        <xs:element minOccurs="0" name="lotSizeMax" type="xs:double" />
+        <xs:element minOccurs="0" name="probertySizeMin" type="xs:double" />
+        <xs:element minOccurs="0" name="probertySizeMax" type="xs:double" />
+        <xs:element minOccurs="0" name="desiredRoomsMin" type="xs:double" />
+        <xs:element minOccurs="0" name="desiredRoomsMax" type="xs:double" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/ModelLayer" minOccurs="0" name="desiredLocations" nillable="true" type="q7:ArrayOfLocation" />
+        <xs:element minOccurs="0" name="otherPref" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="contactAllowedByBoligOne" type="xs:boolean" />
+        <xs:element minOccurs="0" name="contactAllowedByReal" type="xs:boolean" />
+        <xs:element minOccurs="0" name="allowedEmailSpam" type="xs:boolean" />
+        <xs:element minOccurs="0" name="inRKI" type="xs:boolean" />
+        <xs:element minOccurs="0" name="buyerApproved" type="xs:boolean" />
+        <xs:element minOccurs="0" name="bank" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ownesHouse" type="xs:boolean" />
+        <xs:element minOccurs="0" name="livesForRent" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBuyerResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBuyer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/ModelLayer" minOccurs="0" name="buyer" nillable="true" type="q8:Buyer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBuyerResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

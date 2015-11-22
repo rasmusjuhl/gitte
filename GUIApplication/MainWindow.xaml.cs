@@ -60,7 +60,8 @@ namespace GUIApplication
 
         private void BtnCreateSeller(object sender, RoutedEventArgs e)
         {
-            
+            CreateSeller window = new CreateSeller();
+            window.Show();
             
         }
 
