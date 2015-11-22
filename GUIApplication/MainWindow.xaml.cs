@@ -26,6 +26,7 @@ namespace GUIApplication
     {
         static IUserService iUser = new UserServiceClient();
         static ISellerService iSeller = new SellerServiceClient();
+        CreateSeller window;
         public MainWindow()
         {
             User user = iUser.GetAllUsers().First();
@@ -59,12 +60,20 @@ namespace GUIApplication
         }
 
         private void BtnCreateSeller(object sender, RoutedEventArgs e)
-        {
-            CreateSeller window = new CreateSeller();
+        {            
+            window = new CreateSeller();
+            window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            window.Topmost = true;
+            this.LocationChanged += OnLocationchanged;
             window.Show();
             
+            
         }
-
+         private void OnLocationchanged(object sender, EventArgs e)
+        {
+            if (window != null)
+                window.Close();
+        }
        
     }
 

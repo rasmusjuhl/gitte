@@ -31,6 +31,7 @@ namespace GUIApplication
         public CreateSeller()
         {
             InitializeComponent();
+            
         }
 
         private void BtnCreateCustomer(object sender, RoutedEventArgs e)
@@ -158,6 +159,12 @@ namespace GUIApplication
         {
             if (txtMisc.Text == "")
             txtMisc.Text = "Diverse";
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+
         }
     }
 }
