@@ -19,7 +19,7 @@ namespace WcfServiceLibrary
         [OperationContract]
         List<Seller> GetAllSellers();
         [OperationContract]
-        void UpdateSeller(Seller seller, List<Property> properties, string name, string address, Location location, string phone, string mobil, string email, string misc);
+        void UpdateSeller(Seller seller, List<Property> properties, string name, string address, string zipCode, Location location, string phone, string mobil, string email, string misc);
         [OperationContract]
         void DeleteSeller(Seller seller);
     }
