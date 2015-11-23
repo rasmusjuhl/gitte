@@ -10,6 +10,7 @@ namespace ControlLayer
 {
     public class SellerController
     {
+        private LocationController lCtr = new LocationController();
         public SellerController()
         {
 
@@ -30,22 +31,30 @@ namespace ControlLayer
             {
                 seller = ctx.Sellers.Where(x => x.Phone == phone).Single();
             }
+            seller.Location = lCtr.GetLocation(seller.ZipCode);
             return seller;
         }
 
         public List<Seller> GetAllSellers()
         {
+            List<Seller> sellers;
             using (var ctx = new SystemContext())
             {
-                return ctx.Sellers.ToList();
+                sellers = ctx.Sellers.ToList();
             }
+            foreach (Seller seller in sellers)
+            {
+                seller.Location = lCtr.GetLocation(seller.ZipCode);
+            }
+            return sellers;
         }
 
-        public void UpdateSeller(Seller seller, List<Property> properties, string name, string address, Location location, string phone, string mobil, string email, string misc)
+        public void UpdateSeller(Seller seller, List<Property> properties, string name, string address, string zipCode, Location location, string phone, string mobil, string email, string misc)
         {
             seller.Name = name;
             seller.Properties = properties;
             seller.Address = address;
+            seller.ZipCode = zipCode;
             seller.Location = location;
             seller.Phone = phone;
             seller.Mobil = mobil;
