@@ -28,12 +28,7 @@ namespace GUIApplication
         static ISellerService iSeller = new SellerServiceClient();
         CreateSeller window;
         public MainWindow()
-        {
-            //TEST            
-            //ShowSellerTest test = new ShowSellerTest();
-            //test.Topmost = true;
-            //test.Show();
-
+        {            
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             User user = iUser.GetAllUsers().First();
             InitializeComponent();
