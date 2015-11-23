@@ -10,6 +10,7 @@ namespace ControlLayer
 {
     public class BuyerController
     {
+        private LocationController lCtr = new LocationController();
         public BuyerController()
         {
 
@@ -30,24 +31,32 @@ namespace ControlLayer
             {
                 buyer = ctx.Buyers.Where(x => x.Phone == phone).Single();
             }
+            buyer.Location = lCtr.GetLocation(buyer.ZipCode);
             return buyer;
         }
 
         public List<Buyer> GetAllBuyers()
         {
+            List<Buyer> buyers;
             using (var ctx = new SystemContext())
             {
-                return ctx.Buyers.ToList();
+                buyers = ctx.Buyers.ToList();
             }
+            foreach (Buyer buyer in buyers)
+            {
+                buyer.Location = lCtr.GetLocation(buyer.ZipCode);
+            }
+            return buyers;
         }
 
-        public void UpdateBuyer(Buyer buyer, List<Property> properties, string name, string address, Location location, string phone, string mobil, string email, string misc, string estateType, double minPrice, double maxPrice,
+        public void UpdateBuyer(Buyer buyer, List<Property> properties, string name, string address, string zipCode, Location location, string phone, string mobil, string email, string misc, string estateType, double minPrice, double maxPrice,
             double lotSizeMin, double lotSizeMax, double probertySizeMin, double probertySizeMax, double desiredRoomsMin, double desiredRoomsMax, List<Location> desiredLocations, string otherPref, Boolean contactAllowedByBoligOne,
             Boolean contactAllowedByReal, Boolean allowedEmailSpam, Boolean inRKI, Boolean buyerApproved, string bank, Boolean ownesHouse, Boolean livesForRent)
         {
             buyer.Name = name;
             buyer.Properties = properties;
             buyer.Address = address;
+            buyer.ZipCode = zipCode;
             buyer.Location = location;
             buyer.Phone = phone;
             buyer.Mobil = mobil;
