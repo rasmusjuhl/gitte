@@ -40,10 +40,16 @@ namespace ControlLayer
 
         public List<Seller> GetAllSellers()
         {
+            List<Seller> sellers;
             using (var ctx = new SystemContext())
             {
-                return ctx.Sellers.ToList();
+                sellers = ctx.Sellers.ToList();
             }
+            foreach (Seller seller in sellers)
+            {
+                seller.Location = locCtr.GetLocation(seller.ZipCode);
+            }
+            return sellers;
         }
 
         public void UpdateSeller(Seller seller, List<Property> properties, string name, string address, Location location, string phone, string mobil, string email, string misc)
