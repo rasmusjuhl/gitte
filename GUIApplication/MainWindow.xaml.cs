@@ -29,6 +29,12 @@ namespace GUIApplication
         CreateSeller window;
         public MainWindow()
         {
+            //TEST            
+            ShowSellerTest test = new ShowSellerTest();
+            test.Topmost = true;
+            test.Show();
+
+
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             User user = iUser.GetAllUsers().First();
             InitializeComponent();
@@ -45,8 +51,7 @@ namespace GUIApplication
         private void BtnVisInfo(object sender, RoutedEventArgs e)
         {
             Seller seller = (Seller) sellerData.SelectedItem;
-            MessageBox.Show("SælgerID: " + seller.Id + "\nNavn: " + seller.Name + "\nAddresse: " + seller.Address + "\nTelefon: " + seller.Phone
-                + "\nMobil: " + seller.Mobil + "\nEmail: " + seller.Email + "\nMisc: " + seller.Misc);
+            MessageBox.Show("SælgerID: " + seller.Id + "\nNavn: " + seller.Name + "\nAdresse: " + seller.Address + "\nTelefon: " + seller.Phone + "\nMobil: " + seller.Mobil + "\nEmail: " + seller.Email + "\nMisc: " + seller.Misc);
         }
 
         

@@ -161,7 +161,7 @@ namespace GUIApplication
             txtMisc.Text = "Diverse";
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void BtnAnnuller(object sender, RoutedEventArgs e)
         {
             this.Close();
 

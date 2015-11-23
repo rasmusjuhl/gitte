@@ -20,7 +20,7 @@
             <ComboBoxItem Content="Køber" HorizontalAlignment="Left" Width="118"/>
         </ComboBox>
         <Button Content="Opret" HorizontalAlignment="Left" Margin="10,231,0,0" VerticalAlignment="Top" Width="75" Click="BtnCreateCustomer"/>
-        <Button Content="Annuller" HorizontalAlignment="Left" Margin="90,231,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="Annuller" HorizontalAlignment="Left" Margin="90,231,0,0" VerticalAlignment="Top" Width="75" Click="BtnAnnuller"/>
 
     </Grid>
 </Window>
