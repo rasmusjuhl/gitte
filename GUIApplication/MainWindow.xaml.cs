@@ -30,10 +30,9 @@ namespace GUIApplication
         public MainWindow()
         {
             //TEST            
-            ShowSellerTest test = new ShowSellerTest();
-            test.Topmost = true;
-            test.Show();
-
+            //ShowSellerTest test = new ShowSellerTest();
+            //test.Topmost = true;
+            //test.Show();
 
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             User user = iUser.GetAllUsers().First();
