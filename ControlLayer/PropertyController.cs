@@ -10,6 +10,7 @@ namespace ControlLayer
 {
     public class PropertyController
     {
+        private LocationController lCtr = new LocationController();
         public PropertyController()
         {
 
@@ -31,21 +32,29 @@ namespace ControlLayer
             {
                 property = ctx.Properties.Where(x => x.Address == address).Single();
             }
+            property.Location = lCtr.GetLocation(property.ZipCode);
             return property;
         }
 
         public List<Property> GetAllProperties()
         {
+            List<Property> properties;
             using (var ctx = new SystemContext())
             {
-                return ctx.Properties.ToList();
+                properties = ctx.Properties.ToList();
             }
+            foreach (Property property in properties)
+            {
+                property.Location = lCtr.GetLocation(property.ZipCode);
+            }
+            return properties;
         }
 
-        public void UpdateProperty(Property property, string address, Location location,string type, int rooms, int floors, double price,
+        public void UpdateProperty(Property property, string address, string zipCode, Location location, string type, int rooms, int floors, double price,
             double propertySize, double houseSize, int constructionYear)
         {
             property.Address = address;
+            property.ZipCode = zipCode;
             property.Location = location;
             property.Type = type;
             property.Rooms = rooms;

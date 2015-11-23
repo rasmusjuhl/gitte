@@ -27,9 +27,9 @@ namespace WcfServiceLibrary
             return pCtr.GetAllProperties();
         }
 
-        public void UpdateProperty(Property property, string address, Location location, string type, int rooms, int floors, double price, double propertySize, double houseSize, int constructionYear)
+        public void UpdateProperty(Property property, string address, string zipCode, Location location, string type, int rooms, int floors, double price, double propertySize, double houseSize, int constructionYear)
         {
-            pCtr.UpdateProperty(property, address, location, type, rooms, floors, price, propertySize, houseSize, constructionYear);
+            pCtr.UpdateProperty(property, address, zipCode, location, type, rooms, floors, price, propertySize, houseSize, constructionYear);
         }
 
         public void DeleteProperty(Property property)
