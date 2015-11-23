@@ -10,6 +10,8 @@ namespace ControlLayer
 {
     public class SellerController
     {
+            private LocationController locCtr = new LocationController();
+
         public SellerController()
         {
 
@@ -30,6 +32,9 @@ namespace ControlLayer
             {
                 seller = ctx.Sellers.Where(x => x.Phone == phone).Single();
             }
+            Location loc;
+            loc = locCtr.GetLocation(seller.ZipCode);
+            seller.Location = loc;
             return seller;
         }
 
