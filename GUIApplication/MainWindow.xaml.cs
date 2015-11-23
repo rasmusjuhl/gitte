@@ -45,7 +45,7 @@ namespace GUIApplication
         private void BtnVisInfo(object sender, RoutedEventArgs e)
         {
             Seller seller = (Seller) sellerData.SelectedItem;
-            MessageBox.Show("SælgerID: " + seller.Id + "\nNavn: " + seller.Name + "\nAdresse: " + seller.Address + "\nTelefon: " + seller.Phone + "\nMobil: " + seller.Mobil + "\nEmail: " + seller.Email + "\nMisc: " + seller.Misc);
+            MessageBox.Show("SælgerID: " + seller.Id + "\nNavn: " + seller.Name + "\nAdresse: " + seller.Address + "\nPostnummer: " + seller.Location.ZipCode + " By: " + seller.Location.City + "\nTelefon: " + seller.Phone + "\nMobil: " + seller.Mobil + "\nEmail: " + seller.Email + "\nMisc: " + seller.Misc);
         }
 
         
