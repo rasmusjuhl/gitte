@@ -110,7 +110,20 @@ namespace GUIApplication
         private void txtZipCode_LostFocus(object sender, RoutedEventArgs e)
         {
             if (txtZipCode.Text == "")
+            {
                 txtZipCode.Text = "Postnummer";
+            }
+            else
+            {
+                try
+                {
+                    lblCity.Content = iLoc.GetLocation(txtZipCode.Text).City;
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Ugyldigt postnummer!");
+                }                
+            }
         }
 
         private void txtPhone_GotFocus(object sender, RoutedEventArgs e)

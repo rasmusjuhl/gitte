@@ -21,6 +21,7 @@
         </ComboBox>
         <Button Content="Opret" HorizontalAlignment="Left" Margin="10,231,0,0" VerticalAlignment="Top" Width="75" Click="BtnCreateCustomer"/>
         <Button Content="Annuller" HorizontalAlignment="Left" Margin="90,231,0,0" VerticalAlignment="Top" Width="75" Click="BtnAnnuller"/>
+        <Label Name="lblCity" Content="By" HorizontalAlignment="Left" Margin="94,88,0,0" VerticalAlignment="Top" Width="116"/>
 
     </Grid>
 </Window>
