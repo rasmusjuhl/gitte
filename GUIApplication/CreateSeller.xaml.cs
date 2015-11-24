@@ -82,11 +82,17 @@ namespace GUIApplication
         {
             if(customerType.SelectedIndex == 0)
             {
-                //Opret window med detaljer om bolig tilsalg
+                //SellerDetailsWindow window = new SellerDetailsWindow();
+                //window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                //window.Topmost = true;
+                //window.Show();
             }
             else if(customerType.SelectedIndex == 1)
             {
-                //Opret window med detaljer om ønsket bolig
+                BuyerPrefsWindow window = new BuyerPrefsWindow();
+                window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                window.Topmost = true;
+                window.Show();
             }
         }
 
