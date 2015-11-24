@@ -5,12 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using ModelLayer;
 using ModelLayer.DAL;
+using DBLayer;
 
 namespace ControlLayer
 {
     public class PropertyController
     {
         private LocationController lCtr = new LocationController();
+        private DBProperty dbProp = new DBProperty();
         public PropertyController()
         {
 
@@ -18,66 +20,28 @@ namespace ControlLayer
 
         public void InsertProperty(Property property)
         {
-            using (var ctx = new SystemContext())
-            {
-                ctx.Properties.Add(property);
-                ctx.SaveChanges();
-            }
+            dbProp.InsertProperty(property);
         }
 
         public Property GetPropertyByAddress(string address)
         {
-            Property property;
-            using (var ctx = new SystemContext())
-            {
-                property = ctx.Properties.Where(x => x.Address == address).Single();
-            }
-            property.Location = lCtr.GetLocation(property.ZipCode);
-            return property;
+            return dbProp.GetPropertyByAddress(address);
         }
 
         public List<Property> GetAllProperties()
         {
-            List<Property> properties;
-            using (var ctx = new SystemContext())
-            {
-                properties = ctx.Properties.ToList();
-            }
-            foreach (Property property in properties)
-            {
-                property.Location = lCtr.GetLocation(property.ZipCode);
-            }
-            return properties;
+            return dbProp.GetAllProperties();
         }
 
         public void UpdateProperty(Property property, string address, string zipCode, Location location, string type, int rooms, int floors, double price,
             double propertySize, double houseSize, int constructionYear)
         {
-            property.Address = address;
-            property.ZipCode = zipCode;
-            property.Location = location;
-            property.Type = type;
-            property.Rooms = rooms;
-            property.Floors = floors;
-            property.Price = price;
-            property.PropertySize = propertySize;
-            property.HouseSize = houseSize;
-            property.ConstructionYear = constructionYear;
-            using (var ctx = new SystemContext())
-            {
-                ctx.Entry(property).State = System.Data.Entity.EntityState.Modified;
-                ctx.SaveChanges();
-            }
+            dbProp.UpdateProperty(property, address, zipCode, location, type, rooms, floors, price, propertySize, houseSize, constructionYear);
         }
 
         public void DeleteProperty(Property property)
         {
-            using (var ctx = new SystemContext())
-            {
-                ctx.Properties.Attach(property);
-                ctx.Properties.Remove(property);
-                ctx.SaveChanges();
-            }
+            dbProp.DeleteProperty(property);
         }
     }
 }
