@@ -29,7 +29,7 @@ namespace GUIApplication
         static IUserService iUser = new UserServiceClient();
         static ISellerService iSeller = new SellerServiceClient();
         static IBuyerService iBuyer = new BuyerServiceClient();
-        CreateSeller window;
+        
         public MainWindow()
         {
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
@@ -45,6 +45,7 @@ namespace GUIApplication
             grid.ItemsSource = sellers;
         }
 
+        //Viser info om en kunde, både fra buyer og seller tab
         private void BtnVisInfo(object sender, RoutedEventArgs e)
         {
             if (buyerTab.IsSelected)
@@ -70,28 +71,30 @@ namespace GUIApplication
             MessageBox.Show("Refresh!");
         }
 
-        private void BtnCreateSeller(object sender, RoutedEventArgs e)
+        //Opret kunde; buyer eller seller
+        private void BtnCreateCustomer(object sender, RoutedEventArgs e)
         {
-            window = new CreateSeller();
+            CreateSeller window = new CreateSeller();
             window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             window.Topmost = true;
-            this.LocationChanged += OnLocationchanged;
             window.Show();
 
 
         }
-        private void OnLocationchanged(object sender, EventArgs e)
-        {
-            if (window != null)
-                window.Close();
-        }
-
 
         private void buyerData_Loaded(object sender, RoutedEventArgs e)
         {
             List<Buyer> buyers = iBuyer.GetAllBuyers().ToList();
             var grid = sender as DataGrid;
             grid.ItemsSource = buyers;
+        }
+
+        private void BtnUpdateCustomer(object sender, RoutedEventArgs e)
+        {
+            UpdateCustomer window = new UpdateCustomer();
+            window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            window.Topmost = true;
+            window.Show();
         }
 
     }

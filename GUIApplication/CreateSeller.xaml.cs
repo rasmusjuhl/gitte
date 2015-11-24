@@ -73,6 +73,22 @@ namespace GUIApplication
                 MessageBox.Show("Du skal vælge en kunde type");
             }
         }
+        private void BtnAnnuller(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void BtnCreateNext(object sender, RoutedEventArgs e)
+        {
+            if(customerType.SelectedIndex == 0)
+            {
+                //Opret window med detaljer om bolig tilsalg
+            }
+            else if(customerType.SelectedIndex == 1)
+            {
+                //Opret window med detaljer om ønsket bolig
+            }
+        }
 
 
         private void txtName_GotFocus(object sender, RoutedEventArgs e)
@@ -174,10 +190,6 @@ namespace GUIApplication
                 txtMisc.Text = "Diverse";
         }
 
-        private void BtnAnnuller(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-
-        }
+        
     }
 }
