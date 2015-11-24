@@ -90,6 +90,7 @@ namespace GUIApplication
             else if(customerType.SelectedIndex == 1)
             {
                 BuyerPrefsWindow window = new BuyerPrefsWindow();
+                this.Topmost = false;
                 window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                 window.Topmost = true;
                 window.Show();

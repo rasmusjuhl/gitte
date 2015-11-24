@@ -23,5 +23,14 @@ namespace GUIApplication
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            BuyerFinishWindow window = new BuyerFinishWindow();
+            this.Topmost = false;
+            window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            window.Topmost = true;
+            window.Show();
+        }
     }
 }

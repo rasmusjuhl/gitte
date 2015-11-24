@@ -36,7 +36,7 @@
         <TextBox Name="txtSpecialReq" HorizontalAlignment="Left" Height="97" Margin="10,345,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="285"/>
         <Button Content="Annuller" HorizontalAlignment="Left" Margin="381,451,0,0" VerticalAlignment="Top" Width="75"/>
         <Button Content="Gem" HorizontalAlignment="Left" Margin="301,451,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Næste" HorizontalAlignment="Left" Margin="221,451,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Næste" HorizontalAlignment="Left" Margin="221,451,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
         <Button Content="Tilbage" HorizontalAlignment="Left" Margin="141,451,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
