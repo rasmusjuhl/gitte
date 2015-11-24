@@ -46,6 +46,7 @@
         <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ModelLayer" minOccurs="0" name="properties" nillable="true" type="q5:ArrayOfProperty" />
         <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="zipCode" nillable="true" type="xs:string" />
         <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/ModelLayer" minOccurs="0" name="location" nillable="true" type="q6:Location" />
         <xs:element minOccurs="0" name="phone" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="mobil" nillable="true" type="xs:string" />

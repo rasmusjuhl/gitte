@@ -44,6 +44,9 @@ namespace GUIApplication.SellerServiceReference {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PhoneField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ZipCodeField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -141,6 +144,19 @@ namespace GUIApplication.SellerServiceReference {
                 if ((object.ReferenceEquals(this.PhoneField, value) != true)) {
                     this.PhoneField = value;
                     this.RaisePropertyChanged("Phone");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ZipCode {
+            get {
+                return this.ZipCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ZipCodeField, value) != true)) {
+                    this.ZipCodeField = value;
+                    this.RaisePropertyChanged("ZipCode");
                 }
             }
         }
@@ -310,6 +326,9 @@ namespace GUIApplication.SellerServiceReference {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TypeField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ZipCodeField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -450,6 +469,19 @@ namespace GUIApplication.SellerServiceReference {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ZipCode {
+            get {
+                return this.ZipCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ZipCodeField, value) != true)) {
+                    this.ZipCodeField = value;
+                    this.RaisePropertyChanged("ZipCode");
+                }
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -483,10 +515,10 @@ namespace GUIApplication.SellerServiceReference {
         System.Threading.Tasks.Task<System.Collections.Generic.List<GUIApplication.SellerServiceReference.Seller>> GetAllSellersAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISellerService/UpdateSeller", ReplyAction="http://tempuri.org/ISellerService/UpdateSellerResponse")]
-        void UpdateSeller(GUIApplication.SellerServiceReference.Seller seller, System.Collections.Generic.List<GUIApplication.SellerServiceReference.Property> properties, string name, string address, GUIApplication.SellerServiceReference.Location location, string phone, string mobil, string email, string misc);
+        void UpdateSeller(GUIApplication.SellerServiceReference.Seller seller, System.Collections.Generic.List<GUIApplication.SellerServiceReference.Property> properties, string name, string address, string zipCode, GUIApplication.SellerServiceReference.Location location, string phone, string mobil, string email, string misc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISellerService/UpdateSeller", ReplyAction="http://tempuri.org/ISellerService/UpdateSellerResponse")]
-        System.Threading.Tasks.Task UpdateSellerAsync(GUIApplication.SellerServiceReference.Seller seller, System.Collections.Generic.List<GUIApplication.SellerServiceReference.Property> properties, string name, string address, GUIApplication.SellerServiceReference.Location location, string phone, string mobil, string email, string misc);
+        System.Threading.Tasks.Task UpdateSellerAsync(GUIApplication.SellerServiceReference.Seller seller, System.Collections.Generic.List<GUIApplication.SellerServiceReference.Property> properties, string name, string address, string zipCode, GUIApplication.SellerServiceReference.Location location, string phone, string mobil, string email, string misc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISellerService/DeleteSeller", ReplyAction="http://tempuri.org/ISellerService/DeleteSellerResponse")]
         void DeleteSeller(GUIApplication.SellerServiceReference.Seller seller);
@@ -546,12 +578,12 @@ namespace GUIApplication.SellerServiceReference {
             return base.Channel.GetAllSellersAsync();
         }
         
-        public void UpdateSeller(GUIApplication.SellerServiceReference.Seller seller, System.Collections.Generic.List<GUIApplication.SellerServiceReference.Property> properties, string name, string address, GUIApplication.SellerServiceReference.Location location, string phone, string mobil, string email, string misc) {
-            base.Channel.UpdateSeller(seller, properties, name, address, location, phone, mobil, email, misc);
+        public void UpdateSeller(GUIApplication.SellerServiceReference.Seller seller, System.Collections.Generic.List<GUIApplication.SellerServiceReference.Property> properties, string name, string address, string zipCode, GUIApplication.SellerServiceReference.Location location, string phone, string mobil, string email, string misc) {
+            base.Channel.UpdateSeller(seller, properties, name, address, zipCode, location, phone, mobil, email, misc);
         }
         
-        public System.Threading.Tasks.Task UpdateSellerAsync(GUIApplication.SellerServiceReference.Seller seller, System.Collections.Generic.List<GUIApplication.SellerServiceReference.Property> properties, string name, string address, GUIApplication.SellerServiceReference.Location location, string phone, string mobil, string email, string misc) {
-            return base.Channel.UpdateSellerAsync(seller, properties, name, address, location, phone, mobil, email, misc);
+        public System.Threading.Tasks.Task UpdateSellerAsync(GUIApplication.SellerServiceReference.Seller seller, System.Collections.Generic.List<GUIApplication.SellerServiceReference.Property> properties, string name, string address, string zipCode, GUIApplication.SellerServiceReference.Location location, string phone, string mobil, string email, string misc) {
+            return base.Channel.UpdateSellerAsync(seller, properties, name, address, zipCode, location, phone, mobil, email, misc);
         }
         
         public void DeleteSeller(GUIApplication.SellerServiceReference.Seller seller) {

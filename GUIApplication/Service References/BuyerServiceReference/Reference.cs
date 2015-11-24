@@ -44,6 +44,9 @@ namespace GUIApplication.BuyerServiceReference {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PhoneField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ZipCodeField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -141,6 +144,19 @@ namespace GUIApplication.BuyerServiceReference {
                 if ((object.ReferenceEquals(this.PhoneField, value) != true)) {
                     this.PhoneField = value;
                     this.RaisePropertyChanged("Phone");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ZipCode {
+            get {
+                return this.ZipCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ZipCodeField, value) != true)) {
+                    this.ZipCodeField = value;
+                    this.RaisePropertyChanged("ZipCode");
                 }
             }
         }
@@ -614,6 +630,9 @@ namespace GUIApplication.BuyerServiceReference {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TypeField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ZipCodeField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -754,6 +773,19 @@ namespace GUIApplication.BuyerServiceReference {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ZipCode {
+            get {
+                return this.ZipCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ZipCodeField, value) != true)) {
+                    this.ZipCodeField = value;
+                    this.RaisePropertyChanged("ZipCode");
+                }
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -792,6 +824,7 @@ namespace GUIApplication.BuyerServiceReference {
                     GUIApplication.BuyerServiceReference.Property[] properties, 
                     string name, 
                     string address, 
+                    string zipCode, 
                     GUIApplication.BuyerServiceReference.Location location, 
                     string phone, 
                     string mobil, 
@@ -823,6 +856,7 @@ namespace GUIApplication.BuyerServiceReference {
                     GUIApplication.BuyerServiceReference.Property[] properties, 
                     string name, 
                     string address, 
+                    string zipCode, 
                     GUIApplication.BuyerServiceReference.Location location, 
                     string phone, 
                     string mobil, 
@@ -911,6 +945,7 @@ namespace GUIApplication.BuyerServiceReference {
                     GUIApplication.BuyerServiceReference.Property[] properties, 
                     string name, 
                     string address, 
+                    string zipCode, 
                     GUIApplication.BuyerServiceReference.Location location, 
                     string phone, 
                     string mobil, 
@@ -935,7 +970,7 @@ namespace GUIApplication.BuyerServiceReference {
                     string bank, 
                     bool ownesHouse, 
                     bool livesForRent) {
-            base.Channel.UpdateBuyer(buyer, properties, name, address, location, phone, mobil, email, misc, estateType, minPrice, maxPrice, lotSizeMin, lotSizeMax, probertySizeMin, probertySizeMax, desiredRoomsMin, desiredRoomsMax, desiredLocations, otherPref, contactAllowedByBoligOne, contactAllowedByReal, allowedEmailSpam, inRKI, buyerApproved, bank, ownesHouse, livesForRent);
+            base.Channel.UpdateBuyer(buyer, properties, name, address, zipCode, location, phone, mobil, email, misc, estateType, minPrice, maxPrice, lotSizeMin, lotSizeMax, probertySizeMin, probertySizeMax, desiredRoomsMin, desiredRoomsMax, desiredLocations, otherPref, contactAllowedByBoligOne, contactAllowedByReal, allowedEmailSpam, inRKI, buyerApproved, bank, ownesHouse, livesForRent);
         }
         
         public System.Threading.Tasks.Task UpdateBuyerAsync(
@@ -943,6 +978,7 @@ namespace GUIApplication.BuyerServiceReference {
                     GUIApplication.BuyerServiceReference.Property[] properties, 
                     string name, 
                     string address, 
+                    string zipCode, 
                     GUIApplication.BuyerServiceReference.Location location, 
                     string phone, 
                     string mobil, 
@@ -967,7 +1003,7 @@ namespace GUIApplication.BuyerServiceReference {
                     string bank, 
                     bool ownesHouse, 
                     bool livesForRent) {
-            return base.Channel.UpdateBuyerAsync(buyer, properties, name, address, location, phone, mobil, email, misc, estateType, minPrice, maxPrice, lotSizeMin, lotSizeMax, probertySizeMin, probertySizeMax, desiredRoomsMin, desiredRoomsMax, desiredLocations, otherPref, contactAllowedByBoligOne, contactAllowedByReal, allowedEmailSpam, inRKI, buyerApproved, bank, ownesHouse, livesForRent);
+            return base.Channel.UpdateBuyerAsync(buyer, properties, name, address, zipCode, location, phone, mobil, email, misc, estateType, minPrice, maxPrice, lotSizeMin, lotSizeMax, probertySizeMin, probertySizeMax, desiredRoomsMin, desiredRoomsMax, desiredLocations, otherPref, contactAllowedByBoligOne, contactAllowedByReal, allowedEmailSpam, inRKI, buyerApproved, bank, ownesHouse, livesForRent);
         }
         
         public void DeleteBuyer(GUIApplication.BuyerServiceReference.Buyer buyer) {

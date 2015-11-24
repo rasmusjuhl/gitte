@@ -39,6 +39,7 @@
       <xs:element minOccurs="0" name="Mobil" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Person" nillable="true" type="tns:Person" />
@@ -74,6 +75,7 @@
       <xs:element minOccurs="0" name="PropertySize" type="xs:double" />
       <xs:element minOccurs="0" name="Rooms" type="xs:int" />
       <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Property" nillable="true" type="tns:Property" />

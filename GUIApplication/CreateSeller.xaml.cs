@@ -31,39 +31,39 @@ namespace GUIApplication
         public CreateSeller()
         {
             InitializeComponent();
-            
+
         }
 
         private void BtnCreateCustomer(object sender, RoutedEventArgs e)
         {
             Location loc = iLoc.GetLocation(txtZipCode.Text);
-            if(customerType.SelectedIndex == 0)
+            if (customerType.SelectedIndex == 0)
             {
                 Seller seller = new Seller()
                 {
                     Name = txtName.Text,
                     Address = txtAddress.Text,
+                    ZipCode = txtZipCode.Text,
                     Phone = txtPhone.Text,
                     Mobil = txtMobil.Text,
                     Email = txtEmail.Text,
                     Misc = txtMisc.Text,
-                    //Location = loc  
                 };
                 iSeller.InsertSeller(seller);
                 this.Close();
             }
-            else if(customerType.SelectedIndex == 1)
+            else if (customerType.SelectedIndex == 1)
             {
 
                 Buyer buyer = new Buyer()
                 {
                     Name = txtName.Text,
                     Address = txtAddress.Text,
+                    ZipCode = txtZipCode.Text,
                     Phone = txtPhone.Text,
                     Mobil = txtMobil.Text,
                     Email = txtEmail.Text,
                     Misc = txtMisc.Text,
-                    //Location = (GUIApplication.SellerServiceReference.Location) loc
                 };
                 iBuyer.InsertBuyer(buyer);
                 this.Close();
@@ -77,7 +77,7 @@ namespace GUIApplication
 
         private void txtName_GotFocus(object sender, RoutedEventArgs e)
         {
-            if(txtName.Text == "Navn")
+            if (txtName.Text == "Navn")
             {
                 txtName.Text = "";
             }
@@ -85,80 +85,80 @@ namespace GUIApplication
 
         private void txtName_LostFocus(object sender, RoutedEventArgs e)
         {
-            if(txtName.Text == "")
-            txtName.Text = "Navn";
+            if (txtName.Text == "")
+                txtName.Text = "Navn";
         }
 
         private void txtAddress_GotFocus(object sender, RoutedEventArgs e)
         {
             if (txtAddress.Text == "Adresse")
-            txtAddress.Text = "";
+                txtAddress.Text = "";
         }
 
         private void txtAddress_LostFocus(object sender, RoutedEventArgs e)
         {
             if (txtAddress.Text == "")
-            txtAddress.Text = "Adresse";
+                txtAddress.Text = "Adresse";
         }
 
         private void txtZipCode_GotFocus(object sender, RoutedEventArgs e)
         {
             if (txtZipCode.Text == "Postnummer")
-            txtZipCode.Text = "";
+                txtZipCode.Text = "";
         }
 
         private void txtZipCode_LostFocus(object sender, RoutedEventArgs e)
         {
             if (txtZipCode.Text == "")
-            txtZipCode.Text = "Postnummer";
+                txtZipCode.Text = "Postnummer";
         }
 
         private void txtPhone_GotFocus(object sender, RoutedEventArgs e)
         {
             if (txtPhone.Text == "Telefon")
-            txtPhone.Text = "";
+                txtPhone.Text = "";
         }
 
         private void txtPhone_LostFocus(object sender, RoutedEventArgs e)
         {
             if (txtPhone.Text == "")
-            txtPhone.Text = "Telefon";
+                txtPhone.Text = "Telefon";
         }
 
         private void txtMobil_GotFocus(object sender, RoutedEventArgs e)
         {
             if (txtMobil.Text == "Mobil")
-            txtMobil.Text = "";
+                txtMobil.Text = "";
         }
 
         private void txtMobil_LostFocus(object sender, RoutedEventArgs e)
         {
             if (txtMobil.Text == "")
-            txtMobil.Text = "Mobil";
+                txtMobil.Text = "Mobil";
         }
 
         private void txtEmail_GotFocus(object sender, RoutedEventArgs e)
         {
             if (txtEmail.Text == "Email")
-            txtEmail.Text = "";
+                txtEmail.Text = "";
         }
 
         private void txtEmail_LostFocus(object sender, RoutedEventArgs e)
         {
             if (txtEmail.Text == "")
-            txtEmail.Text = "Email";
+                txtEmail.Text = "Email";
         }
 
         private void txtMisc_GotFocus(object sender, RoutedEventArgs e)
         {
             if (txtMisc.Text == "Diverse")
-            txtMisc.Text = "";
+                txtMisc.Text = "";
         }
 
         private void txtMisc_LostFocus(object sender, RoutedEventArgs e)
         {
             if (txtMisc.Text == "")
-            txtMisc.Text = "Diverse";
+                txtMisc.Text = "Diverse";
         }
 
         private void BtnAnnuller(object sender, RoutedEventArgs e)

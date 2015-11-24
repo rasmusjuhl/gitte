@@ -30,8 +30,9 @@ namespace DBLayer
             using (var ctx = new SystemContext())
             {
                 loc = ctx.Locations.Where(x => x.ZipCode == zipCode).Single();
+                return loc;
             }
-            return loc;
+            
         }
         public List<Location> GetLocationsByCity(string city)
         {

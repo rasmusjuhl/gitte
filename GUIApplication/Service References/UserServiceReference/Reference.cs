@@ -46,6 +46,9 @@ namespace GUIApplication.UserServiceReference {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PhoneField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ZipCodeField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -143,6 +146,19 @@ namespace GUIApplication.UserServiceReference {
                 if ((object.ReferenceEquals(this.PhoneField, value) != true)) {
                     this.PhoneField = value;
                     this.RaisePropertyChanged("Phone");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ZipCode {
+            get {
+                return this.ZipCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ZipCodeField, value) != true)) {
+                    this.ZipCodeField = value;
+                    this.RaisePropertyChanged("ZipCode");
                 }
             }
         }
@@ -867,6 +883,9 @@ namespace GUIApplication.UserServiceReference {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TypeField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ZipCodeField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -1007,6 +1026,19 @@ namespace GUIApplication.UserServiceReference {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ZipCode {
+            get {
+                return this.ZipCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ZipCodeField, value) != true)) {
+                    this.ZipCodeField = value;
+                    this.RaisePropertyChanged("ZipCode");
+                }
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -1040,10 +1072,10 @@ namespace GUIApplication.UserServiceReference {
         System.Threading.Tasks.Task<GUIApplication.UserServiceReference.User[]> GetAllUsersAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/UpdateUser", ReplyAction="http://tempuri.org/IUserService/UpdateUserResponse")]
-        void UpdateUser(GUIApplication.UserServiceReference.User user, GUIApplication.UserServiceReference.Appointment[] appointments, string name, string address, GUIApplication.UserServiceReference.Location location, string phone, string mobil, string email, string misc);
+        void UpdateUser(GUIApplication.UserServiceReference.User user, GUIApplication.UserServiceReference.Appointment[] appointments, string name, string address, string zipCode, GUIApplication.UserServiceReference.Location location, string phone, string mobil, string email, string misc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/UpdateUser", ReplyAction="http://tempuri.org/IUserService/UpdateUserResponse")]
-        System.Threading.Tasks.Task UpdateUserAsync(GUIApplication.UserServiceReference.User user, GUIApplication.UserServiceReference.Appointment[] appointments, string name, string address, GUIApplication.UserServiceReference.Location location, string phone, string mobil, string email, string misc);
+        System.Threading.Tasks.Task UpdateUserAsync(GUIApplication.UserServiceReference.User user, GUIApplication.UserServiceReference.Appointment[] appointments, string name, string address, string zipCode, GUIApplication.UserServiceReference.Location location, string phone, string mobil, string email, string misc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/DeleteUser", ReplyAction="http://tempuri.org/IUserService/DeleteUserResponse")]
         void DeleteUser(GUIApplication.UserServiceReference.User user);
@@ -1103,12 +1135,12 @@ namespace GUIApplication.UserServiceReference {
             return base.Channel.GetAllUsersAsync();
         }
         
-        public void UpdateUser(GUIApplication.UserServiceReference.User user, GUIApplication.UserServiceReference.Appointment[] appointments, string name, string address, GUIApplication.UserServiceReference.Location location, string phone, string mobil, string email, string misc) {
-            base.Channel.UpdateUser(user, appointments, name, address, location, phone, mobil, email, misc);
+        public void UpdateUser(GUIApplication.UserServiceReference.User user, GUIApplication.UserServiceReference.Appointment[] appointments, string name, string address, string zipCode, GUIApplication.UserServiceReference.Location location, string phone, string mobil, string email, string misc) {
+            base.Channel.UpdateUser(user, appointments, name, address, zipCode, location, phone, mobil, email, misc);
         }
         
-        public System.Threading.Tasks.Task UpdateUserAsync(GUIApplication.UserServiceReference.User user, GUIApplication.UserServiceReference.Appointment[] appointments, string name, string address, GUIApplication.UserServiceReference.Location location, string phone, string mobil, string email, string misc) {
-            return base.Channel.UpdateUserAsync(user, appointments, name, address, location, phone, mobil, email, misc);
+        public System.Threading.Tasks.Task UpdateUserAsync(GUIApplication.UserServiceReference.User user, GUIApplication.UserServiceReference.Appointment[] appointments, string name, string address, string zipCode, GUIApplication.UserServiceReference.Location location, string phone, string mobil, string email, string misc) {
+            return base.Channel.UpdateUserAsync(user, appointments, name, address, zipCode, location, phone, mobil, email, misc);
         }
         
         public void DeleteUser(GUIApplication.UserServiceReference.User user) {
