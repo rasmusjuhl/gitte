@@ -16,6 +16,8 @@ using GUIApplication.UserServiceReference;
 using User = GUIApplication.UserServiceReference.User;
 using GUIApplication.SellerServiceReference;
 using Seller = GUIApplication.SellerServiceReference.Seller;
+using GUIApplication.BuyerServiceReference;
+using Buyer = GUIApplication.BuyerServiceReference.Buyer;
 
 namespace GUIApplication
 {
@@ -26,9 +28,10 @@ namespace GUIApplication
     {
         static IUserService iUser = new UserServiceClient();
         static ISellerService iSeller = new SellerServiceClient();
+        static IBuyerService iBuyer = new BuyerServiceClient();
         CreateSeller window;
         public MainWindow()
-        {            
+        {
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             User user = iUser.GetAllUsers().First();
             InitializeComponent();
@@ -37,18 +40,26 @@ namespace GUIApplication
 
         private void sellerData_Loaded(object sender, RoutedEventArgs e)
         {
-            List<Seller> sellers = iSeller.GetAllSellers();                      
+            List<Seller> sellers = iSeller.GetAllSellers();
             var grid = sender as DataGrid;
             grid.ItemsSource = sellers;
         }
 
         private void BtnVisInfo(object sender, RoutedEventArgs e)
         {
-            Seller seller = (Seller) sellerData.SelectedItem;
-            MessageBox.Show("SælgerID: " + seller.Id + "\nNavn: " + seller.Name + "\nAdresse: " + seller.Address + "\nPostnummer: " + seller.Location.ZipCode + " By: " + seller.Location.City + "\nTelefon: " + seller.Phone + "\nMobil: " + seller.Mobil + "\nEmail: " + seller.Email + "\nMisc: " + seller.Misc);
+            if (buyerTab.IsSelected)
+            {
+                Buyer buyer = (Buyer)buyerData.SelectedItem;
+                MessageBox.Show("KøberID: " + buyer.Id + "\nNavn: " + buyer.Name + "\nAdresse: " + buyer.Address + "\nPostnummer: " + buyer.Location.ZipCode + " By: " + buyer.Location.City + "\nTelefon: " + buyer.Phone + "\nMobil: " + buyer.Mobil + "\nEmail: " + buyer.Email + "\nMisc: " + buyer.Misc);
+            }
+            else
+            {
+                Seller seller = (Seller)sellerData.SelectedItem;
+                MessageBox.Show("SælgerID: " + seller.Id + "\nNavn: " + seller.Name + "\nAdresse: " + seller.Address + "\nPostnummer: " + seller.Location.ZipCode + " By: " + seller.Location.City + "\nTelefon: " + seller.Phone + "\nMobil: " + seller.Mobil + "\nEmail: " + seller.Email + "\nMisc: " + seller.Misc);
+            }
         }
 
-        
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Print!");
@@ -60,21 +71,29 @@ namespace GUIApplication
         }
 
         private void BtnCreateSeller(object sender, RoutedEventArgs e)
-        {            
+        {
             window = new CreateSeller();
             window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             window.Topmost = true;
             this.LocationChanged += OnLocationchanged;
             window.Show();
-            
-            
+
+
         }
-         private void OnLocationchanged(object sender, EventArgs e)
+        private void OnLocationchanged(object sender, EventArgs e)
         {
             if (window != null)
                 window.Close();
         }
-       
+
+
+        private void buyerData_Loaded(object sender, RoutedEventArgs e)
+        {
+            List<Buyer> buyers = iBuyer.GetAllBuyers().ToList();
+            var grid = sender as DataGrid;
+            grid.ItemsSource = buyers;
+        }
+
     }
 
 }
