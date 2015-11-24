@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBBuyer.cs" />
     <Compile Include="DBLocation.cs" />
     <Compile Include="DBSeller.cs" />
     <Compile Include="DBUser.cs" />
