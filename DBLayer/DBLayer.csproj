@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="DBBuyer.cs" />
     <Compile Include="DBLocation.cs" />
+    <Compile Include="DBProperty.cs" />
     <Compile Include="DBSeller.cs" />
     <Compile Include="DBUser.cs" />
     <Compile Include="Program.cs" />
