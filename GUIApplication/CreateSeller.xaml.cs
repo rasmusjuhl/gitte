@@ -82,6 +82,8 @@ namespace GUIApplication
         {
             if(customerType.SelectedIndex == 0)
             {
+                //Window skal laves
+
                 //SellerDetailsWindow window = new SellerDetailsWindow();
                 //window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                 //window.Topmost = true;
