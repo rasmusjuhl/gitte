@@ -82,6 +82,7 @@ namespace GUIApplication
             //http://www.codeproject.com/Articles/38699/A-Professional-Calendar-Agenda-View-That-You-Will
             DemoForm demo = new DemoForm();
             demo.Show();
+
         }
     }
 
