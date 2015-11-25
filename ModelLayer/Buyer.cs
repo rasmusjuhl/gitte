@@ -9,6 +9,12 @@ namespace ModelLayer
 {
     public class Buyer : Person
     {
+        public Buyer()
+        {
+            this.Locations = new List<Location>();
+            this.Properties = new List<Property>();
+        }
+
         public int Id { get; set; }
         public string EstateType { get; set; }
         public double MinPrice { get; set; }
@@ -19,7 +25,6 @@ namespace ModelLayer
         public double ProbertySizeMax { get; set; }
         public double DesiredRoomsMin { get; set; }
         public double DesiredRoomsMax { get; set; }
-        public List<Location> DesiredLocations { get; set; }
         public string OtherPref { get; set; }
         public Boolean ContactAllowedByBoligOne { get; set; }
         public Boolean ContactAllowedByReal { get; set; }
@@ -29,7 +34,8 @@ namespace ModelLayer
         public string Bank { get; set; }
         public Boolean OwnesHouse { get; set; }
         public Boolean LivesForRent { get; set; }
-        public List<Property> Properties { get; set; }
+        public virtual ICollection<Property> Properties { get; set; }
+        public virtual ICollection<Location> Locations { get; set; }
 
         
     }

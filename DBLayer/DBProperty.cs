@@ -25,37 +25,36 @@ namespace DBLayer
             }
         }
 
-        public Property GetPropertyByAddress(string address)
-        {
-            Property property;
-            using (var ctx = new SystemContext())
-            {
-                property = ctx.Properties.Where(x => x.Address == address).Single();
-            }
-            property.Location = dbLoc.GetLocation(property.ZipCode);
-            return property;
-        }
+        //public Property GetPropertyByAddress(string address)
+        //{
+        //    Property property;
+        //    using (var ctx = new SystemContext())
+        //    {
+        //        property = ctx.Properties.Where(x => x.Address == address).Single();
+        //    }
+        //    property.Location = dbLoc.GetLocation(property.ZipCode);
+        //    return property;
+        //}
 
-        public List<Property> GetAllProperties()
-        {
-            List<Property> properties;
-            using (var ctx = new SystemContext())
-            {
-                properties = ctx.Properties.ToList();
-            }
-            foreach (Property property in properties)
-            {
-                property.Location = dbLoc.GetLocation(property.ZipCode);
-            }
-            return properties;
-        }
+        //public List<Property> GetAllProperties()
+        //{
+        //    List<Property> properties;
+        //    using (var ctx = new SystemContext())
+        //    {
+        //        properties = ctx.Properties.ToList();
+        //    }
+        //    foreach (Property property in properties)
+        //    {
+        //        property.Location = dbLoc.GetLocation(property.ZipCode);
+        //    }
+        //    return properties;
+        //}
 
-        public void UpdateProperty(Property property, string address, string zipCode, Location location, string type, int rooms, int floors, double price,
+        public void UpdateProperty(Property property, string address, string zipCode, string type, int rooms, int floors, double price,
             double propertySize, double houseSize, int constructionYear)
         {
             property.Address = address;
             property.ZipCode = zipCode;
-            property.Location = location;
             property.Type = type;
             property.Rooms = rooms;
             property.Floors = floors;

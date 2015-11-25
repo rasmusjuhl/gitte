@@ -55,15 +55,13 @@ namespace ModelLayer.Migrations
                         LivesForRent = c.Boolean(nullable: false),
                         Name = c.String(),
                         Address = c.String(),
+                        ZipCode = c.String(),
                         Phone = c.String(),
                         Mobil = c.String(),
                         Email = c.String(),
                         Misc = c.String(),
-                        Location_Id = c.Int(),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Locations", t => t.Location_Id)
-                .Index(t => t.Location_Id);
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.Locations",
@@ -72,11 +70,8 @@ namespace ModelLayer.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         ZipCode = c.String(),
                         City = c.String(),
-                        Buyer_Id = c.Int(),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Buyers", t => t.Buyer_Id)
-                .Index(t => t.Buyer_Id);
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.Properties",
@@ -84,6 +79,7 @@ namespace ModelLayer.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Address = c.String(),
+                        ZipCode = c.String(),
                         Type = c.String(),
                         Rooms = c.Int(nullable: false),
                         Floors = c.Int(nullable: false),
@@ -91,16 +87,10 @@ namespace ModelLayer.Migrations
                         PropertySize = c.Double(nullable: false),
                         HouseSize = c.Double(nullable: false),
                         ConstructionYear = c.Int(nullable: false),
-                        Location_Id = c.Int(),
-                        Buyer_Id = c.Int(),
                         Seller_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Locations", t => t.Location_Id)
-                .ForeignKey("dbo.Buyers", t => t.Buyer_Id)
                 .ForeignKey("dbo.Sellers", t => t.Seller_Id)
-                .Index(t => t.Location_Id)
-                .Index(t => t.Buyer_Id)
                 .Index(t => t.Seller_Id);
             
             CreateTable(
@@ -110,15 +100,13 @@ namespace ModelLayer.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
                         Address = c.String(),
+                        ZipCode = c.String(),
                         Phone = c.String(),
                         Mobil = c.String(),
                         Email = c.String(),
                         Misc = c.String(),
-                        Location_Id = c.Int(),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Locations", t => t.Location_Id)
-                .Index(t => t.Location_Id);
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.Users",
@@ -127,40 +115,62 @@ namespace ModelLayer.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
                         Address = c.String(),
+                        ZipCode = c.String(),
                         Phone = c.String(),
                         Mobil = c.String(),
                         Email = c.String(),
                         Misc = c.String(),
-                        Location_Id = c.Int(),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Locations", t => t.Location_Id)
-                .Index(t => t.Location_Id);
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.LocationBuyers",
+                c => new
+                    {
+                        Location_Id = c.Int(nullable: false),
+                        Buyer_Id = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.Location_Id, t.Buyer_Id })
+                .ForeignKey("dbo.Locations", t => t.Location_Id, cascadeDelete: true)
+                .ForeignKey("dbo.Buyers", t => t.Buyer_Id, cascadeDelete: true)
+                .Index(t => t.Location_Id)
+                .Index(t => t.Buyer_Id);
+            
+            CreateTable(
+                "dbo.PropertyBuyers",
+                c => new
+                    {
+                        Property_Id = c.Int(nullable: false),
+                        Buyer_Id = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.Property_Id, t.Buyer_Id })
+                .ForeignKey("dbo.Properties", t => t.Property_Id, cascadeDelete: true)
+                .ForeignKey("dbo.Buyers", t => t.Buyer_Id, cascadeDelete: true)
+                .Index(t => t.Property_Id)
+                .Index(t => t.Buyer_Id);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.Users", "Location_Id", "dbo.Locations");
             DropForeignKey("dbo.Appointments", "User_Id", "dbo.Users");
             DropForeignKey("dbo.Appointments", "Seller_Id", "dbo.Sellers");
             DropForeignKey("dbo.Properties", "Seller_Id", "dbo.Sellers");
-            DropForeignKey("dbo.Sellers", "Location_Id", "dbo.Locations");
             DropForeignKey("dbo.Appointments", "Buyer_Id", "dbo.Buyers");
-            DropForeignKey("dbo.Properties", "Buyer_Id", "dbo.Buyers");
-            DropForeignKey("dbo.Properties", "Location_Id", "dbo.Locations");
-            DropForeignKey("dbo.Buyers", "Location_Id", "dbo.Locations");
-            DropForeignKey("dbo.Locations", "Buyer_Id", "dbo.Buyers");
-            DropIndex("dbo.Users", new[] { "Location_Id" });
-            DropIndex("dbo.Sellers", new[] { "Location_Id" });
+            DropForeignKey("dbo.PropertyBuyers", "Buyer_Id", "dbo.Buyers");
+            DropForeignKey("dbo.PropertyBuyers", "Property_Id", "dbo.Properties");
+            DropForeignKey("dbo.LocationBuyers", "Buyer_Id", "dbo.Buyers");
+            DropForeignKey("dbo.LocationBuyers", "Location_Id", "dbo.Locations");
+            DropIndex("dbo.PropertyBuyers", new[] { "Buyer_Id" });
+            DropIndex("dbo.PropertyBuyers", new[] { "Property_Id" });
+            DropIndex("dbo.LocationBuyers", new[] { "Buyer_Id" });
+            DropIndex("dbo.LocationBuyers", new[] { "Location_Id" });
             DropIndex("dbo.Properties", new[] { "Seller_Id" });
-            DropIndex("dbo.Properties", new[] { "Buyer_Id" });
-            DropIndex("dbo.Properties", new[] { "Location_Id" });
-            DropIndex("dbo.Locations", new[] { "Buyer_Id" });
-            DropIndex("dbo.Buyers", new[] { "Location_Id" });
             DropIndex("dbo.Appointments", new[] { "User_Id" });
             DropIndex("dbo.Appointments", new[] { "Seller_Id" });
             DropIndex("dbo.Appointments", new[] { "Buyer_Id" });
+            DropTable("dbo.PropertyBuyers");
+            DropTable("dbo.LocationBuyers");
             DropTable("dbo.Users");
             DropTable("dbo.Sellers");
             DropTable("dbo.Properties");

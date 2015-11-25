@@ -22,20 +22,20 @@ namespace ControlLayer
         {
             dbSel.InsertSeller(seller);
         }
-        public Seller GetSellerByPhone(string phone)
-        {
-            return dbSel.GetSellerByPhone(phone);
-        }
+        //public Seller GetSellerByPhone(string phone)
+        //{
+        //    return dbSel.GetSellerByPhone(phone);
+        //}
 
-        public List<Seller> GetAllSellers()
-        {
-            return dbSel.GetAllSellers();
-        }
+        //public List<Seller> GetAllSellers()
+        //{
+        //    return dbSel.GetAllSellers();
+        //}
 
-        public void UpdateSeller(Seller seller, List<Property> properties, string name, string address, string zipCode, Location location, string phone, string mobil, string email, string misc)
-        {
-            dbSel.UpdateSeller(seller, properties, name, address, zipCode, location, phone, mobil, email, misc);
-        }
+        //public void UpdateSeller(Seller seller, List<Property> properties, string name, string address, string zipCode, Location location, string phone, string mobil, string email, string misc)
+        //{
+        //    dbSel.UpdateSeller(seller, properties, name, address, zipCode, location, phone, mobil, email, misc);
+        //}
 
         public void DeleteSeller(Seller seller)
         {

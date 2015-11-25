@@ -26,38 +26,37 @@ namespace DBLayer
             }
         }
 
-        public User GetUserByPhone(string phone)
-        {
-            User user;
-            using (var ctx = new SystemContext())
-            {
-                user = ctx.Users.Where(x => x.Phone == phone).Single();
-            }
-            user.Location = dbLoc.GetLocation(user.ZipCode);
-            return user;
-        }
+        //public User GetUserByPhone(string phone)
+        //{
+        //    User user;
+        //    using (var ctx = new SystemContext())
+        //    {
+        //        user = ctx.Users.Where(x => x.Phone == phone).Single();
+        //    }
+        //    user.Location = dbLoc.GetLocation(user.ZipCode);
+        //    return user;
+        //}
 
-        public List<User> GetAllUsers()
-        {
-            List<User> users;
-            using (var ctx = new SystemContext())
-            {
-                users = ctx.Users.ToList();
-            }
-            foreach (User user in users)
-            {
-                user.Location = dbLoc.GetLocation(user.ZipCode);
-            }
-            return users;
-        }
+        //public List<User> GetAllUsers()
+        //{
+        //    List<User> users;
+        //    using (var ctx = new SystemContext())
+        //    {
+        //        users = ctx.Users.ToList();
+        //    }
+        //    foreach (User user in users)
+        //    {
+        //        user.Location = dbLoc.GetLocation(user.ZipCode);
+        //    }
+        //    return users;
+        //}
 
-        public void UpdateUser(User user, List<Appointment> appointments, string name, string address, string zipCode, Location location, string phone, string mobil, string email, string misc)
+        public void UpdateUser(User user, List<Appointment> appointments, string name, string address, string zipCode, string phone, string mobil, string email, string misc)
         {
             user.Name = name;
             user.Appointments = appointments;
             user.Address = address;
             user.ZipCode = zipCode;
-            user.Location = location;
             user.Phone = phone;
             user.Mobil = mobil;
             user.Email = email;

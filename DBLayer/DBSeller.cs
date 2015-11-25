@@ -24,36 +24,35 @@ namespace DBLayer
                 ctx.SaveChanges();
             }
         }
-        public Seller GetSellerByPhone(string phone)
-        {
-            Seller seller;
-            using (var ctx = new SystemContext())
-            {
-                seller = ctx.Sellers.Where(x => x.Phone == phone).Single();
-            }
-            seller.Location = dbLoc.GetLocation(seller.ZipCode);
-            return seller;
-        }
-        public List<Seller> GetAllSellers()
-        {
-            List<Seller> sellers;
-            using (var ctx = new SystemContext())
-            {
-                sellers = ctx.Sellers.ToList();
-            }
-            foreach (Seller seller in sellers)
-            {
-                seller.Location = dbLoc.GetLocation(seller.ZipCode);
-            }
-            return sellers;
-        }
-        public void UpdateSeller(Seller seller, List<Property> properties, string name, string address, string zipCode, Location location, string phone, string mobil, string email, string misc)
+        //public Seller GetSellerByPhone(string phone)
+        //{
+        //    Seller seller;
+        //    using (var ctx = new SystemContext())
+        //    {
+        //        seller = ctx.Sellers.Where(x => x.Phone == phone).Single();
+        //    }
+        //    seller.Location = dbLoc.GetLocation(seller.ZipCode);
+        //    return seller;
+        //}
+        //public List<Seller> GetAllSellers()
+        //{
+        //    List<Seller> sellers;
+        //    using (var ctx = new SystemContext())
+        //    {
+        //        sellers = ctx.Sellers.ToList();
+        //    }
+        //    foreach (Seller seller in sellers)
+        //    {
+        //        seller.Location = dbLoc.GetLocation(seller.ZipCode);
+        //    }
+        //    return sellers;
+        //}
+        public void UpdateSeller(Seller seller, List<Property> properties, string name, string address, string zipCode, string phone, string mobil, string email, string misc)
         {
             seller.Name = name;
             seller.Properties = properties;
             seller.Address = address;
             seller.ZipCode = zipCode;
-            seller.Location = location;
             seller.Phone = phone;
             seller.Mobil = mobil;
             seller.Email = email;

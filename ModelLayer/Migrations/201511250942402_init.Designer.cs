@@ -7,13 +7,13 @@ namespace ModelLayer.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class addedzipcode : IMigrationMetadata
+    public sealed partial class init : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addedzipcode));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(init));
         
         string IMigrationMetadata.Id
         {
-            get { return "201511231213022_addedzipcode"; }
+            get { return "201511250942402_init"; }
         }
         
         string IMigrationMetadata.Source
