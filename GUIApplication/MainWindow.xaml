@@ -63,6 +63,8 @@
                 </ToolBar>
             </ToolBarTray>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="569" Margin="363,0,0,0" VerticalAlignment="Top" Width="539"/>
+        <Grid HorizontalAlignment="Left" Height="569" Margin="363,0,0,0" VerticalAlignment="Top" Width="539">
+            <Button Content="Åben kalender" HorizontalAlignment="Left" Margin="68,103,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click_1"/>
+        </Grid>
     </Grid>
 </Window>

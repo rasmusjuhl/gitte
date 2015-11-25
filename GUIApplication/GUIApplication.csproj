@@ -39,6 +39,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -231,6 +232,16 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Google Drev\ucn\3. semester\Projekt\System.Windows.Forms.Calendar\CalendarDemo\CalendarDemo.csproj">
+      <Project>{ccab97d3-8290-4140-906d-8ff8cb8d6fed}</Project>
+      <Name>CalendarDemo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Google Drev\ucn\3. semester\Projekt\System.Windows.Forms.Calendar\System.Windows.Forms.Calendar\System.Windows.Forms.Calendar.csproj">
+      <Project>{25649f08-3046-4891-adb8-7ea787b57063}</Project>
+      <Name>System.Windows.Forms.Calendar</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -16,6 +16,8 @@ using GUIApplication.UserServiceReference;
 using User = GUIApplication.UserServiceReference.User;
 using GUIApplication.SellerServiceReference;
 using Seller = GUIApplication.SellerServiceReference.Seller;
+using CalendarDemo;
+using System.Windows.Interop;
 
 namespace GUIApplication
 {
@@ -28,7 +30,7 @@ namespace GUIApplication
         static ISellerService iSeller = new SellerServiceClient();
         CreateSeller window;
         public MainWindow()
-        {            
+        {
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             User user = iUser.GetAllUsers().First();
             InitializeComponent();
@@ -37,18 +39,18 @@ namespace GUIApplication
 
         private void sellerData_Loaded(object sender, RoutedEventArgs e)
         {
-            List<Seller> sellers = iSeller.GetAllSellers();                      
+            List<Seller> sellers = iSeller.GetAllSellers();
             var grid = sender as DataGrid;
             grid.ItemsSource = sellers;
         }
 
         private void BtnVisInfo(object sender, RoutedEventArgs e)
         {
-            Seller seller = (Seller) sellerData.SelectedItem;
+            Seller seller = (Seller)sellerData.SelectedItem;
             MessageBox.Show("SælgerID: " + seller.Id + "\nNavn: " + seller.Name + "\nAdresse: " + seller.Address + "\nPostnummer: " + seller.Location.ZipCode + " By: " + seller.Location.City + "\nTelefon: " + seller.Phone + "\nMobil: " + seller.Mobil + "\nEmail: " + seller.Email + "\nMisc: " + seller.Misc);
         }
 
-        
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Print!");
@@ -60,21 +62,28 @@ namespace GUIApplication
         }
 
         private void BtnCreateSeller(object sender, RoutedEventArgs e)
-        {            
+        {
             window = new CreateSeller();
             window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             window.Topmost = true;
             this.LocationChanged += OnLocationchanged;
             window.Show();
-            
-            
+
+
         }
-         private void OnLocationchanged(object sender, EventArgs e)
+        private void OnLocationchanged(object sender, EventArgs e)
         {
             if (window != null)
                 window.Close();
         }
-       
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            //http://www.codeproject.com/Articles/38699/A-Professional-Calendar-Agenda-View-That-You-Will
+            DemoForm demo = new DemoForm();
+            demo.Show();
+        }
     }
+
 
 }
