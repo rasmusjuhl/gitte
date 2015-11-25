@@ -91,7 +91,7 @@ namespace ControlLayerTest
                 
                 //Try to retrieve the deleted user again, and assert it is null.
                 User dbUser = context.Users.Where(x => x.Name == "John Doe").SingleOrDefault();
-                Assert.AreEqual(null, dbUser)
+                Assert.AreEqual(null, dbUser);
             }
         }
     }
