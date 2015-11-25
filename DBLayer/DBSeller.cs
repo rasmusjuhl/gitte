@@ -47,6 +47,25 @@ namespace DBLayer
         //    }
         //    return sellers;
         //}
+
+        public Seller GetSellerByPhone(string phone)
+        {
+            Seller seller;
+            using (var ctx = new SystemContext())
+            {
+                seller = ctx.Sellers.Where(x => x.Phone == phone).Single();
+            }
+            return seller;
+        }
+        public List<Seller> GetAllSellers()
+        {
+            List<Seller> sellers;
+            using (var ctx = new SystemContext())
+            {
+                sellers = ctx.Sellers.ToList();
+            }
+            return sellers;
+        }
         public void UpdateSeller(Seller seller, List<Property> properties, string name, string address, string zipCode, string phone, string mobil, string email, string misc)
         {
             seller.Name = name;

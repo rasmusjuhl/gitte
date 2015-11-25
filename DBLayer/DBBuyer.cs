@@ -24,6 +24,16 @@ namespace DBLayer
                 ctx.SaveChanges();
             }
         }
+
+        public Buyer GetBuyerByPhone(string phone)
+        {
+            Buyer buyer;
+            using (var ctx = new SystemContext())
+            {
+                buyer = ctx.Buyers.Where(x => x.Phone == phone).Single();
+            }
+            return buyer;
+        }
         //public Buyer GetBuyerByPhone(string phone)
         //{
         //    Buyer buyer;
@@ -34,6 +44,15 @@ namespace DBLayer
         //    buyer.Location = dbLoc.GetLocation(buyer.ZipCode);
         //    return buyer;
         //}
+        public List<Buyer> GetAllBuyers()
+        {
+            List<Buyer> buyers;
+            using (var ctx = new SystemContext())
+            {
+                buyers = ctx.Buyers.ToList();
+            }
+            return buyers;
+        }
         //public List<Buyer> GetAllBuyers()
         //{
         //    List<Buyer> buyers;

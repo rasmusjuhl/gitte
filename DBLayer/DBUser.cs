@@ -51,6 +51,26 @@ namespace DBLayer
         //    return users;
         //}
 
+        public User GetUserByPhone(string phone)
+        {
+            User user;
+            using (var ctx = new SystemContext())
+            {
+                user = ctx.Users.Where(x => x.Phone == phone).Single();
+            }
+            return user;
+        }
+
+        public List<User> GetAllUsers()
+        {
+            List<User> users;
+            using (var ctx = new SystemContext())
+            {
+                users = ctx.Users.ToList();
+            }
+            return users;
+        }
+
         public void UpdateUser(User user, List<Appointment> appointments, string name, string address, string zipCode, string phone, string mobil, string email, string misc)
         {
             user.Name = name;

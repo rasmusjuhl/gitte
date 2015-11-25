@@ -23,21 +23,21 @@ namespace ControlLayer
             dbProp.InsertProperty(property);
         }
 
-        //public Property GetPropertyByAddress(string address)
-        //{
-        //    return dbProp.GetPropertyByAddress(address);
-        //}
+        public Property GetPropertyByAddress(string address)
+        {
+            return dbProp.GetPropertyByAddress(address);
+        }
 
-        //public List<Property> GetAllProperties()
-        //{
-        //    return dbProp.GetAllProperties();
-        //}
+        public List<Property> GetAllProperties()
+        {
+            return dbProp.GetAllProperties();
+        }
 
-        //public void UpdateProperty(Property property, string address, string zipCode, Location location, string type, int rooms, int floors, double price,
-        //    double propertySize, double houseSize, int constructionYear)
-        //{
-        //    dbProp.UpdateProperty(property, address, zipCode, location, type, rooms, floors, price, propertySize, houseSize, constructionYear);
-        //}
+        public void UpdateProperty(Property property, string address, string zipCode, string type, int rooms, int floors, double price,
+            double propertySize, double houseSize, int constructionYear)
+        {
+            dbProp.UpdateProperty(property, address, zipCode, type, rooms, floors, price, propertySize, houseSize, constructionYear);
+        }
 
         public void DeleteProperty(Property property)
         {

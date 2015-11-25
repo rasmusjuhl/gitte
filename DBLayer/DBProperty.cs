@@ -36,6 +36,16 @@ namespace DBLayer
         //    return property;
         //}
 
+        public Property GetPropertyByAddress(string address)
+        {
+            Property property;
+            using (var ctx = new SystemContext())
+            {
+                property = ctx.Properties.Where(x => x.Address == address).Single();
+            }
+            return property;
+        }
+
         //public List<Property> GetAllProperties()
         //{
         //    List<Property> properties;
@@ -49,6 +59,16 @@ namespace DBLayer
         //    }
         //    return properties;
         //}
+
+        public List<Property> GetAllProperties()
+        {
+            List<Property> properties;
+            using (var ctx = new SystemContext())
+            {
+                properties = ctx.Properties.ToList();
+            }
+            return properties;
+        }
 
         public void UpdateProperty(Property property, string address, string zipCode, string type, int rooms, int floors, double price,
             double propertySize, double houseSize, int constructionYear)
