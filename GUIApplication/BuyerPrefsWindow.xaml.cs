@@ -27,8 +27,8 @@ namespace GUIApplication
             buyer = b;
             InitializeComponent();
         }
-        
-        private void Button_Click(object sender, RoutedEventArgs e)
+
+        private void BtnNext(object sender, RoutedEventArgs e)
         {
             buyer.MinPrice = Convert.ToDouble(txtPriceMin.Text);
             buyer.MaxPrice = Convert.ToDouble(txtPriceMax.Text);
@@ -46,7 +46,12 @@ namespace GUIApplication
             window.Show();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void BtnCancel(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void BtnBack(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
