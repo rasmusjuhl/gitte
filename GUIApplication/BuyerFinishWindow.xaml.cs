@@ -54,7 +54,12 @@ namespace GUIApplication
             this.Close();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void BtnCancel(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void BtnBack(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
