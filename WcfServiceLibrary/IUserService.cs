@@ -21,7 +21,7 @@ namespace WcfServiceLibrary
         List<User> GetAllUsers();
 
         [OperationContract]
-        void UpdateUser(User user, List<Appointment> appointments, string name, string address, Location location, string phone, string mobil, string email, string misc);
+        void UpdateUser(User user, List<Appointment> appointments, string name, string address, string zipCode, Location location, string phone, string mobil, string email, string misc);
 
         [OperationContract]
         void DeleteUser(User user);
