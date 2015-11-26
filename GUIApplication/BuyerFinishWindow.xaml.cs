@@ -21,6 +21,7 @@ namespace GUIApplication
     /// </summary>
     public partial class BuyerFinishWindow : Window
     {
+        static IBuyerService iBuyer = new BuyerServiceClient();
         private Buyer buyer;
         public BuyerFinishWindow(Buyer b)
         {
@@ -28,7 +29,7 @@ namespace GUIApplication
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void BtnSaveAndClose(object sender, RoutedEventArgs e)
         {
             if (checkInRKI.IsChecked == true)
             {
@@ -37,6 +38,9 @@ namespace GUIApplication
             if (checkBuyerApproved.IsChecked == true)
             {
                 buyer.BuyerApproved = true;
+                buyer.Bank = txtBank.Text;
+
+                // INDSÆT BELØB HER  SKAL OPRETTES I MODELLEN   Convert.ToDouble(txtApprovedAmount.Text);
             }
             if (checkOwner.IsChecked == true)
             {
@@ -46,7 +50,13 @@ namespace GUIApplication
             {
                 buyer.LivesForRent = true;
             }
+            iBuyer.InsertBuyer(buyer);
+            this.Close();
+        }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
 
     }
