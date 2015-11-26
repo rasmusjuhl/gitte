@@ -11,13 +11,14 @@ using ModelLayer;
 using System.Data.SqlClient;
 using System.Data;
 using System.Data.Common;
+using DBLayer;
 
 
 namespace ControlLayer
 {
     public class LocationController
     {
-
+        private DBLocation dbLoc = new DBLocation();
         public LocationController()
         {
 
@@ -25,59 +26,31 @@ namespace ControlLayer
 
         public void InsertLocation(Location location)
         {
-            using (var ctx = new SystemContext())
-            {
-                ctx.Locations.Add(location);
-                ctx.SaveChanges();
-            }
+            dbLoc.InsertLocation(location);
         }
         public Location GetLocation(string zipCode)
         {
-            Location loc;
-            using (var ctx = new SystemContext())
-            {
-                string sql = "Select * from Locations Where ZipCode = @zipCode";
-                loc = ctx.Locations.SqlQuery(sql, new SqlParameter("@zipCode", zipCode)).Single();
-            }
-            return loc;
+            return dbLoc.GetLocation(zipCode);
         }
 
         public List<Location> GetLocationsByCity(string city)
         {
-            using (var ctx = new SystemContext())
-            {
-                var loc = ctx.Locations.Where(l => l.City.Contains(city));
-                return loc.ToList();
-            }
+            return dbLoc.GetLocationsByCity(city);
         }
 
-        public List<Location> GetAllaLocations()
+        public List<Location> GetAllLocations()
         {
-            using (var ctx = new SystemContext())
-            {
-                return ctx.Locations.ToList();
-            }
+            return dbLoc.GetAllLocations();
         }
 
         public void UpdateLocation(Location loc, string zipCode, string city)
         {
-            loc.ZipCode = zipCode;
-            loc.City = city;
-            using (var ctx = new SystemContext())
-            {
-                ctx.Entry(loc).State = System.Data.Entity.EntityState.Modified;
-                ctx.SaveChanges();
-            }
+            dbLoc.UpdateLocation(loc, zipCode, city);
         }
 
         public void DeleteLocation(Location loc)
         {
-            using (var ctx = new SystemContext())
-            {
-                ctx.Locations.Attach(loc);
-                ctx.Locations.Remove(loc);
-                ctx.SaveChanges();
-            }
+            dbLoc.DeleteLocation(loc);
         }
     }
 }

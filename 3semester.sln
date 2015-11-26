@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUIApplication", "GUIApplication\GUIApplication.csproj", "{1333BF80-1CA7-464C-8D57-C730857AABAB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FCD60780-AA7C-4195-B995-2987A1D8BCB8} = {FCD60780-AA7C-4195-B995-2987A1D8BCB8}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPServer", "ASPServer\ASPServer.csproj", "{BF13DDC1-EC4F-4840-AF13-D13D62A35480}"
 EndProject
@@ -14,6 +17,7 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfServiceLibrary", "WcfServiceLibrary\WcfServiceLibrary.csproj", "{FCD60780-AA7C-4195-B995-2987A1D8BCB8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlLayerTest", "ControlLayerTest\ControlLayerTest.csproj", "{5C11826C-A100-4178-996C-E10F17D8482D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBLayer", "DBLayer\DBLayer.csproj", "{A0E03353-839D-45F6-9C83-8ED042384818}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,10 @@ Global
 		{5C11826C-A100-4178-996C-E10F17D8482D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C11826C-A100-4178-996C-E10F17D8482D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C11826C-A100-4178-996C-E10F17D8482D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0E03353-839D-45F6-9C83-8ED042384818}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0E03353-839D-45F6-9C83-8ED042384818}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0E03353-839D-45F6-9C83-8ED042384818}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0E03353-839D-45F6-9C83-8ED042384818}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

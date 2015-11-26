@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 using ModelLayer;
-using ModelLayer.DAL;
+using DBLayer;
 
 namespace ControlLayer
 {
-    class AppointmentController
+    public class AppointmentController
     {
+        private DBAppointment dbApp = new DBAppointment();
         public AppointmentController()
         {
         
@@ -18,58 +19,28 @@ namespace ControlLayer
 
         public void InsertAppointment(Appointment appointment)
         {
-            using (var ctx = new SystemContext())
-            {
-                ctx.Appointments.Add(appointment);
-                ctx.SaveChanges();
-            }
+            dbApp.InsertAppointment(appointment);
         }
 
         public Appointment GetAppointment(DateTime date)
         {
-            Appointment appointment;
-            using (var ctx = new SystemContext())
-            {
-                appointment = ctx.Appointments.Where(a => a.Date == date).Single();
-            }
-            return appointment;
+            return dbApp.GetAppointment(date);
         }
 
         public List<Appointment> GetAllAppointments()
         {
-            using (var ctx = new SystemContext())
-            {
-                return ctx.Appointments.ToList();
-            }
+            return dbApp.GetAllAppointments();
         }
 
         public void UpdateAppointment(Appointment appointment, DateTime date, DateTime StartTime, DateTime EndTime, 
             string category, string descricption, string status, Seller seller, Buyer buyer)
         {
-            appointment.Date = date;
-            appointment.StarTime = StartTime;
-            appointment.EndTime = EndTime;
-            appointment.Category = category;
-            appointment.Description = descricption;
-            appointment.Status = status;
-            appointment.Seller = seller;
-            appointment.Buyer = buyer;
-
-            using (var ctx = new SystemContext())
-            {
-                ctx.Entry(appointment).State = System.Data.Entity.EntityState.Modified;
-                ctx.SaveChanges();
-            }
+            dbApp.UpdateAppointment(appointment, date, StartTime, EndTime, category, descricption, status, seller, buyer);
         }
 
         public void DeleteAppointment(Appointment appointment)
         {
-            using (var ctx = new SystemContext())
-            {
-                ctx.Appointments.Attach(appointment);
-                ctx.Appointments.Remove(appointment);
-                ctx.SaveChanges();
-            }
+            dbApp.DeleteAppointment(appointment);
         }
     }
 }

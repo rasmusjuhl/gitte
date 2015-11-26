@@ -10,6 +10,7 @@ namespace ModelLayer
     {
         public int Id { get; set; }
         public string Address { get; set; }
+        public string ZipCode { get; set; }
         public Location Location { get; set; }
         public string Type { get; set; }
         public int Rooms { get; set; }
