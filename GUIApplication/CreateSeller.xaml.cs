@@ -73,6 +73,31 @@ namespace GUIApplication
                 MessageBox.Show("Du skal vælge en kunde type");
             }
         }
+        private void BtnAnnuller(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void BtnCreateNext(object sender, RoutedEventArgs e)
+        {
+            if(customerType.SelectedIndex == 0)
+            {
+                //Window skal laves
+
+                //SellerDetailsWindow window = new SellerDetailsWindow();
+                //window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                //window.Topmost = true;
+                //window.Show();
+            }
+            else if(customerType.SelectedIndex == 1)
+            {
+                BuyerPrefsWindow window = new BuyerPrefsWindow();
+                this.Topmost = false;
+                window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                window.Topmost = true;
+                window.Show();
+            }
+        }
 
 
         private void txtName_GotFocus(object sender, RoutedEventArgs e)
@@ -110,7 +135,20 @@ namespace GUIApplication
         private void txtZipCode_LostFocus(object sender, RoutedEventArgs e)
         {
             if (txtZipCode.Text == "")
+            {
                 txtZipCode.Text = "Postnummer";
+            }
+            else
+            {
+                try
+                {
+                    lblCity.Content = iLoc.GetLocation(txtZipCode.Text).City;
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Ugyldigt postnummer!");
+                }                
+            }
         }
 
         private void txtPhone_GotFocus(object sender, RoutedEventArgs e)
@@ -161,10 +199,6 @@ namespace GUIApplication
                 txtMisc.Text = "Diverse";
         }
 
-        private void BtnAnnuller(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-
-        }
+        
     }
 }
