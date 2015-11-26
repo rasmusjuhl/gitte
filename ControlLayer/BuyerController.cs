@@ -11,7 +11,6 @@ namespace ControlLayer
 {
     public class BuyerController
     {
-        private LocationController lCtr = new LocationController();
         private DBBuyer dbBuy = new DBBuyer();
         public BuyerController()
         {
@@ -30,6 +29,16 @@ namespace ControlLayer
         public List<Buyer> GetAllBuyers()
         {
             return dbBuy.GetAllBuyers();
+        }
+
+        public List<Location> GetAllLocations(string phone)
+        {
+            return dbBuy.GetAllLocations(phone);
+        }
+
+        public List<Property> GetAllProperties(string phone)
+        {
+            return dbBuy.GetAllProperties(phone);
         }
 
         public void UpdateBuyer(Buyer buyer, List<Property> properties, string name, string address, string zipCode, string phone, string mobil, string email, string misc, string estateType, double minPrice, double maxPrice,

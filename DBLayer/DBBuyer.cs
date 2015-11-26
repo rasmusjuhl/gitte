@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using ModelLayer;
 using ModelLayer.DAL;
+using System.Data.Entity;
+using System.Windows;
 
 namespace DBLayer
 {
@@ -34,16 +36,7 @@ namespace DBLayer
             }
             return buyer;
         }
-        //public Buyer GetBuyerByPhone(string phone)
-        //{
-        //    Buyer buyer;
-        //    using (var ctx = new SystemContext())
-        //    {
-        //        buyer = ctx.Buyers.Where(x => x.Phone == phone).Single();
-        //    }
-        //    buyer.Location = dbLoc.GetLocation(buyer.ZipCode);
-        //    return buyer;
-        //}
+
         public List<Buyer> GetAllBuyers()
         {
             List<Buyer> buyers;
@@ -53,19 +46,29 @@ namespace DBLayer
             }
             return buyers;
         }
-        //public List<Buyer> GetAllBuyers()
-        //{
-        //    List<Buyer> buyers;
-        //    using (var ctx = new SystemContext())
-        //    {
-        //        buyers = ctx.Buyers.ToList();
-        //    }
-        //    foreach (Buyer buyer in buyers)
-        //    {
-        //        buyer.Location = dbLoc.GetLocation(buyer.ZipCode);
-        //    }
-        //    return buyers;
-        //}
+
+        public List<Location> GetAllLocations(string phone)
+        {
+            List<Location> locations;
+            using (var ctx = new SystemContext())
+            {
+                Buyer b = ctx.Buyers.Where(x => x.Phone == phone).Single();
+                locations = b.Locations.ToList();
+            }
+            return locations;
+        }
+
+        public List<Property> GetAllProperties(string phone)
+        {
+            List<Property> properties;
+            using (var ctx = new SystemContext())
+            {
+                Buyer b = ctx.Buyers.Where(x => x.Phone == phone).Single();
+                properties = b.Properties.ToList();
+            }
+            return properties;
+        }
+
         public void UpdateBuyer(Buyer buyer, List<Property> properties, string name, string address, string zipCode, string phone, string mobil, string email, string misc, string estateType, double minPrice, double maxPrice,
             double lotSizeMin, double lotSizeMax, double probertySizeMin, double probertySizeMax, double desiredRoomsMin, double desiredRoomsMax, List<Location> locations, string otherPref, Boolean contactAllowedByBoligOne,
             Boolean contactAllowedByReal, Boolean allowedEmailSpam, Boolean inRKI, Boolean buyerApproved, string bank, Boolean ownesHouse, Boolean livesForRent)

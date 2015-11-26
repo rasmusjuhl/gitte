@@ -25,17 +25,6 @@ namespace DBLayer
             }
         }
 
-        //public Property GetPropertyByAddress(string address)
-        //{
-        //    Property property;
-        //    using (var ctx = new SystemContext())
-        //    {
-        //        property = ctx.Properties.Where(x => x.Address == address).Single();
-        //    }
-        //    property.Location = dbLoc.GetLocation(property.ZipCode);
-        //    return property;
-        //}
-
         public Property GetPropertyByAddress(string address)
         {
             Property property;
@@ -45,20 +34,6 @@ namespace DBLayer
             }
             return property;
         }
-
-        //public List<Property> GetAllProperties()
-        //{
-        //    List<Property> properties;
-        //    using (var ctx = new SystemContext())
-        //    {
-        //        properties = ctx.Properties.ToList();
-        //    }
-        //    foreach (Property property in properties)
-        //    {
-        //        property.Location = dbLoc.GetLocation(property.ZipCode);
-        //    }
-        //    return properties;
-        //}
 
         public List<Property> GetAllProperties()
         {
