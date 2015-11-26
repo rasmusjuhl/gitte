@@ -26,6 +26,29 @@ namespace ModelLayer.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+            context.Locations.AddOrUpdate(
+                new Location { ZipCode = "9000", City = "Aalborg" },
+                new Location { ZipCode = "8000", City = "Aarhus" },
+                new Location { ZipCode = "8900", City = "Randers" }
+                );
+            for (int i = 1; i < 5; i++)
+            {
+                context.Users.AddOrUpdate(
+                    new User { Name = "UserTest" + i, ZipCode = "9000" }
+                    );
+            }
+            for (int i = 1; i < 5; i++)
+            {                               
+                context.Sellers.AddOrUpdate(
+                    new Seller { Name = "SellerTest" + i, Address = "Address" + i, ZipCode = "9000", Email = "Email" + i + "@testmail.dk", Phone = Convert.ToString(i+1000), Mobil= Convert.ToString(i+2000)  }
+                    );
+            }
+            for (int i = 1; i < 5; i++)
+            {
+                context.Buyers.AddOrUpdate(
+                    new Buyer { Name = "BuyerTest" + i, Address = "Address" + (i+5), ZipCode = "9000", Email = "Email" + (i+5) + "@testmail.dk", Phone = Convert.ToString(i + 3000), Mobil = Convert.ToString(i + 4000) }
+                    );
+            }
         }
     }
 }
