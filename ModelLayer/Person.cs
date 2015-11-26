@@ -12,7 +12,7 @@ namespace ModelLayer
         public string Address { get; set; }
         public string ZipCode { get; set; }
         public string Phone { get; set; }
-        public string Mobil { get; set; }
+        public string Mobile { get; set; }
         public string Email { get; set; }
         public string Misc { get; set; }
         

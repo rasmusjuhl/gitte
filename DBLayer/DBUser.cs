@@ -26,37 +26,22 @@ namespace DBLayer
             }
         }
 
-        //public User GetUserByPhone(string phone)
-        //{
-        //    User user;
-        //    using (var ctx = new SystemContext())
-        //    {
-        //        user = ctx.Users.Where(x => x.Phone == phone).Single();
-        //    }
-        //    user.Location = dbLoc.GetLocation(user.ZipCode);
-        //    return user;
-        //}
-
-        //public List<User> GetAllUsers()
-        //{
-        //    List<User> users;
-        //    using (var ctx = new SystemContext())
-        //    {
-        //        users = ctx.Users.ToList();
-        //    }
-        //    foreach (User user in users)
-        //    {
-        //        user.Location = dbLoc.GetLocation(user.ZipCode);
-        //    }
-        //    return users;
-        //}
-
         public User GetUserByPhone(string phone)
         {
             User user;
             using (var ctx = new SystemContext())
             {
                 user = ctx.Users.Where(x => x.Phone == phone).Single();
+            }
+            return user;
+        }
+
+        public User GetUserByPhone(string mobile)
+        {
+            User user;
+            using (var ctx = new SystemContext())
+            {
+                user = ctx.Users.Where(x => x.Mobile == mobile).Single();
             }
             return user;
         }
@@ -78,7 +63,7 @@ namespace DBLayer
             user.Address = address;
             user.ZipCode = zipCode;
             user.Phone = phone;
-            user.Mobil = mobil;
+            user.Mobile = mobil;
             user.Email = email;
             user.Misc = misc;
             using (var ctx = new SystemContext())

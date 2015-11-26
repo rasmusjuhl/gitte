@@ -33,7 +33,7 @@ namespace ControlLayer
 
         public List<Location> GetAllLocations(string phone)
         {
-            return dbBuy.GetAllLocations(phone);
+            return dbBuy.GetAllLocationsByPhone(phone);
         }
 
         public List<Property> GetAllProperties(string phone)

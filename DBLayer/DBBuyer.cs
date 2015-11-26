@@ -37,6 +37,16 @@ namespace DBLayer
             return buyer;
         }
 
+        public Buyer GetBuyerByMobile(string mobile)
+        {
+            Buyer buyer;
+            using (var ctx = new SystemContext())
+            {
+                buyer = ctx.Buyers.Where(x => x.Mobile == mobile).Single();
+            }
+            return buyer;
+        }
+
         public List<Buyer> GetAllBuyers()
         {
             List<Buyer> buyers;
@@ -47,12 +57,23 @@ namespace DBLayer
             return buyers;
         }
 
-        public List<Location> GetAllLocations(string phone)
+        public List<Location> GetAllLocationsByPhone(string phone)
         {
             List<Location> locations;
             using (var ctx = new SystemContext())
             {
                 Buyer b = ctx.Buyers.Where(x => x.Phone == phone).Single();
+                locations = b.Locations.ToList();
+            }
+            return locations;
+        }
+
+        public List<Location> GetAllLocationsByMobile(string mobile)
+        {
+            List<Location> locations;
+            using (var ctx = new SystemContext())
+            {
+                Buyer b = ctx.Buyers.Where(x => x.Mobile == mobile).Single();
                 locations = b.Locations.ToList();
             }
             return locations;
@@ -69,7 +90,18 @@ namespace DBLayer
             return properties;
         }
 
-        public void UpdateBuyer(Buyer buyer, List<Property> properties, string name, string address, string zipCode, string phone, string mobil, string email, string misc, string estateType, double minPrice, double maxPrice,
+        public List<Property> GetAllProperties(string mobile)
+        {
+            List<Property> properties;
+            using (var ctx = new SystemContext())
+            {
+                Buyer b = ctx.Buyers.Where(x => x.Mobile == mobile).Single();
+                properties = b.Properties.ToList();
+            }
+            return properties;
+        }
+
+        public void UpdateBuyer(Buyer buyer, List<Property> properties, string name, string address, string zipCode, string phone, string mobile, string email, string misc, string estateType, double minPrice, double maxPrice,
             double lotSizeMin, double lotSizeMax, double probertySizeMin, double probertySizeMax, double desiredRoomsMin, double desiredRoomsMax, List<Location> locations, string otherPref, Boolean contactAllowedByBoligOne,
             Boolean contactAllowedByReal, Boolean allowedEmailSpam, Boolean inRKI, Boolean buyerApproved, string bank, Boolean ownesHouse, Boolean livesForRent)
         {
@@ -78,7 +110,7 @@ namespace DBLayer
             buyer.Address = address;
             buyer.ZipCode = zipCode;
             buyer.Phone = phone;
-            buyer.Mobil = mobil;
+            buyer.Mobile = mobile;
             buyer.Email = email;
             buyer.Misc = misc;
             buyer.EstateType = estateType;

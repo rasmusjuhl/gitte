@@ -24,29 +24,6 @@ namespace DBLayer
                 ctx.SaveChanges();
             }
         }
-        //public Seller GetSellerByPhone(string phone)
-        //{
-        //    Seller seller;
-        //    using (var ctx = new SystemContext())
-        //    {
-        //        seller = ctx.Sellers.Where(x => x.Phone == phone).Single();
-        //    }
-        //    seller.Location = dbLoc.GetLocation(seller.ZipCode);
-        //    return seller;
-        //}
-        //public List<Seller> GetAllSellers()
-        //{
-        //    List<Seller> sellers;
-        //    using (var ctx = new SystemContext())
-        //    {
-        //        sellers = ctx.Sellers.ToList();
-        //    }
-        //    foreach (Seller seller in sellers)
-        //    {
-        //        seller.Location = dbLoc.GetLocation(seller.ZipCode);
-        //    }
-        //    return sellers;
-        //}
 
         public Seller GetSellerByPhone(string phone)
         {
@@ -57,6 +34,17 @@ namespace DBLayer
             }
             return seller;
         }
+
+        public Seller GetSellerByPhone(string mobile)
+        {
+            Seller seller;
+            using (var ctx = new SystemContext())
+            {
+                seller = ctx.Sellers.Where(x => x.Mobile == mobile).Single();
+            }
+            return seller;
+        }
+
         public List<Seller> GetAllSellers()
         {
             List<Seller> sellers;
@@ -73,7 +61,7 @@ namespace DBLayer
             seller.Address = address;
             seller.ZipCode = zipCode;
             seller.Phone = phone;
-            seller.Mobil = mobil;
+            seller.Mobile = mobil;
             seller.Email = email;
             seller.Misc = misc;
             using (var ctx = new SystemContext())
