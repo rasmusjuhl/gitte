@@ -11,7 +11,6 @@ namespace ControlLayer
 {
     public class UserController
     {
-        private LocationController lCtr = new LocationController();
         private DBUser dbUser = new DBUser();
 
 

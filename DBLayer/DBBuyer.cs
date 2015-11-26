@@ -12,7 +12,6 @@ namespace DBLayer
 {
     public class DBBuyer
     {
-        private DBLocation dbLoc = new DBLocation();
         public DBBuyer()
         {
 
@@ -79,7 +78,7 @@ namespace DBLayer
             return locations;
         }
 
-        public List<Property> GetAllProperties(string phone)
+        public List<Property> GetAllPropertiesByPhone(string phone)
         {
             List<Property> properties;
             using (var ctx = new SystemContext())
@@ -90,7 +89,7 @@ namespace DBLayer
             return properties;
         }
 
-        public List<Property> GetAllProperties(string mobile)
+        public List<Property> GetAllPropertiesByMobile(string mobile)
         {
             List<Property> properties;
             using (var ctx = new SystemContext())

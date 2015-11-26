@@ -26,19 +26,34 @@ namespace ControlLayer
             return dbBuy.GetBuyerByPhone(phone);
         }
 
+        public Buyer GetBuyerByMobile(string mobile)
+        {
+            return dbBuy.GetBuyerByMobile(mobile);
+        }
+
         public List<Buyer> GetAllBuyers()
         {
             return dbBuy.GetAllBuyers();
         }
 
-        public List<Location> GetAllLocations(string phone)
+        public List<Location> GetAllLocationsByPhone(string phone)
         {
             return dbBuy.GetAllLocationsByPhone(phone);
         }
 
-        public List<Property> GetAllProperties(string phone)
+        public List<Location> GetAllLocationdByMobile(string mobile)
         {
-            return dbBuy.GetAllProperties(phone);
+            return dbBuy.GetAllLocationsByMobile(mobile);
+        }
+
+        public List<Property> GetAllPropertiesByPhone(string phone)
+        {
+            return dbBuy.GetAllPropertiesByPhone(phone);
+        }
+
+        public List<Property> GetAllPropertiesByMobile(string mobile)
+        {
+            return dbBuy.GetAllPropertiesByMobile(mobile);
         }
 
         public void UpdateBuyer(Buyer buyer, List<Property> properties, string name, string address, string zipCode, string phone, string mobil, string email, string misc, string estateType, double minPrice, double maxPrice,

@@ -35,7 +35,7 @@ namespace DBLayer
             return seller;
         }
 
-        public Seller GetSellerByPhone(string mobile)
+        public Seller GetSellerByMobile(string mobile)
         {
             Seller seller;
             using (var ctx = new SystemContext())

@@ -11,7 +11,6 @@ namespace ControlLayer
 {
     public class SellerController
     {
-        private LocationController lCtr = new LocationController();
         private DBSeller dbSel = new DBSeller();
         public SellerController()
         {
@@ -25,6 +24,11 @@ namespace ControlLayer
         public Seller GetSellerByPhone(string phone)
         {
             return dbSel.GetSellerByPhone(phone);
+        }
+
+        public Seller GetSellerByMobile(string mobile)
+        {
+            return dbSel.GetSellerByMobile(mobile);
         }
 
         public List<Seller> GetAllSellers()

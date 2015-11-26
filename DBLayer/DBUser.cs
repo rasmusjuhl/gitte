@@ -36,16 +36,6 @@ namespace DBLayer
             return user;
         }
 
-        public User GetUserByPhone(string mobile)
-        {
-            User user;
-            using (var ctx = new SystemContext())
-            {
-                user = ctx.Users.Where(x => x.Mobile == mobile).Single();
-            }
-            return user;
-        }
-
         public List<User> GetAllUsers()
         {
             List<User> users;

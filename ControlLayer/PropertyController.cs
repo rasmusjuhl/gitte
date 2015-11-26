@@ -11,7 +11,6 @@ namespace ControlLayer
 {
     public class PropertyController
     {
-        private LocationController lCtr = new LocationController();
         private DBProperty dbProp = new DBProperty();
         public PropertyController()
         {
