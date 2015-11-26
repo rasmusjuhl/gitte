@@ -22,9 +22,9 @@ namespace ControlLayer
             dbProp.InsertProperty(property);
         }
 
-        public Property GetPropertyByAddress(string address)
+        public List<Property> GetPropertyByAddress(string address)
         {
-            return dbProp.GetPropertyByAddress(address);
+            return dbProp.GetPropertiesByAdress(address);
         }
 
         public List<Property> GetAllProperties()

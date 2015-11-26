@@ -12,6 +12,7 @@ namespace ControlLayer
     {
         private static LocationController lc = new LocationController();
         private static AppointmentController ac = new AppointmentController();
+        private static PropertyController pc = new PropertyController();
         static void Main(string[] args)
         {
             var db = new SystemContext();

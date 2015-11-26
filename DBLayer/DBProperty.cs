@@ -25,14 +25,21 @@ namespace DBLayer
             }
         }
 
-        public Property GetPropertyByAddress(string address)
+        public List<Property> GetPropertiesByAdress(string adress)
         {
-            Property property;
+            List<Property> properties = new List<Property>();
             using (var ctx = new SystemContext())
             {
-                property = ctx.Properties.Where(x => x.Address == address).Single();
+                List<Property> allProps = ctx.Properties.ToList();
+                foreach (Property p in allProps)
+                { 
+                    if(p.Address.Contains(adress))
+                    {
+                        properties.Add(p);
+                    }
+                }   
             }
-            return property;
+            return properties;
         }
 
         public List<Property> GetAllProperties()

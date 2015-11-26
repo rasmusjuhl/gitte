@@ -17,9 +17,9 @@ namespace WcfServiceLibrary
             pCtr.InsertProperty(property);
         }
 
-        public Property GetPropertyByAddress(string address)
+        public List<Property> GetPropertiesByAddress(string address)
         {
-            return pCtr.GetPropertyByAddress(address);
+            throw new NotImplementedException();
         }
 
         public List<Property> GetAllProperties()

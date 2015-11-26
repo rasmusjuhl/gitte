@@ -55,9 +55,9 @@
     <Compile Include="Appointment.cs" />
     <Compile Include="DAL\SystemContext.cs" />
     <Compile Include="Location.cs" />
-    <Compile Include="Migrations\201511250942402_init.cs" />
-    <Compile Include="Migrations\201511250942402_init.Designer.cs">
-      <DependentUpon>201511250942402_init.cs</DependentUpon>
+    <Compile Include="Migrations\201511261405158_init.cs" />
+    <Compile Include="Migrations\201511261405158_init.Designer.cs">
+      <DependentUpon>201511261405158_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Person.cs" />
@@ -75,8 +75,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201511250942402_init.resx">
-      <DependentUpon>201511250942402_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201511261405158_init.resx">
+      <DependentUpon>201511261405158_init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
