@@ -27,14 +27,20 @@ namespace WcfServiceLibrary
             return sCtr.GetAllSellers();
         }
 
-        public void UpdateSeller(Seller seller, List<Property> properties, string name, string address, string zipCode, Location location, string phone, string mobil, string email, string misc)
+        public Seller GetSellerByMobile(string mobile)
         {
-            sCtr.UpdateSeller(seller, properties, name, address, zipCode, location, phone, mobil, email, misc);
+            throw new NotImplementedException();
+        }
+
+        public void UpdateSeller(Seller seller, List<Property> properties, string name, string address, string zipCode, string phone, string mobil, string email, string misc)
+        {
+            sCtr.UpdateSeller(seller, properties, name, address, zipCode, phone, mobil, email, misc); 
         }
 
         public void DeleteSeller(Seller seller)
         {
             sCtr.DeleteSeller(seller);
         }
+
     }
 }
