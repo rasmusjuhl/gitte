@@ -20,7 +20,7 @@
         <CheckBox Content="Landbrug" HorizontalAlignment="Left" Margin="266,132,0,0" VerticalAlignment="Top"/>
         <Label Content="Kontantpris" HorizontalAlignment="Left" Margin="8,172,0,0" VerticalAlignment="Top"/>
         <TextBox Name="txtPriceMin" HorizontalAlignment="Left" Height="23" Margin="103,175,0,0" TextWrapping="Wrap" Text="Pris fra" VerticalAlignment="Top" Width="85"/>
-        <TextBox Name="txtProceMax" HorizontalAlignment="Left" Height="23" Margin="210,175,0,0" TextWrapping="Wrap" Text="Pris til" VerticalAlignment="Top" Width="85"/>
+        <TextBox Name="txtPriceMax" HorizontalAlignment="Left" Height="23" Margin="210,175,0,0" TextWrapping="Wrap" Text="Pris til" VerticalAlignment="Top" Width="85"/>
         <TextBox Name="txtPropertyMin" HorizontalAlignment="Left" Height="23" Margin="103,203,0,0" TextWrapping="Wrap" Text="Boligareal fra" VerticalAlignment="Top" Width="85"/>
         <TextBox Name="txtRoomsMin" HorizontalAlignment="Left" Height="23" Margin="103,231,0,0" TextWrapping="Wrap" Text="Værelser fra" VerticalAlignment="Top" Width="85"/>
         <TextBox Name="txtLotMin" HorizontalAlignment="Left" Height="23" Margin="103,259,0,0" TextWrapping="Wrap" Text="Grundareal fra" VerticalAlignment="Top" Width="85"/>
@@ -33,7 +33,7 @@
         <Label Content="Postnr, by eller kommune" HorizontalAlignment="Left" Margin="8,283,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.026,0.308"/>
         <TextBox Name="txtLocation" HorizontalAlignment="Left" Height="23" Margin="210,287,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85"/>
         <Label Content="Særlige ønsker til boligen (vises på hjemmesiden)" HorizontalAlignment="Left" Margin="8,314,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="txtSpecialReq" HorizontalAlignment="Left" Height="97" Margin="10,345,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="285"/>
+        <TextBox Name="txtMisc" HorizontalAlignment="Left" Height="97" Margin="10,345,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="285"/>
         <Button Content="Annuller" HorizontalAlignment="Left" Margin="381,451,0,0" VerticalAlignment="Top" Width="75"/>
         <Button Content="Næste" HorizontalAlignment="Left" Margin="301,451,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
         <Button Content="Tilbage" HorizontalAlignment="Left" Margin="221,451,0,0" VerticalAlignment="Top" Width="75"/>
