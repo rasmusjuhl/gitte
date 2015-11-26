@@ -13,7 +13,7 @@ namespace ModelLayer.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201511250942402_init"; }
+            get { return "201511261405158_init"; }
         }
         
         string IMigrationMetadata.Source

@@ -57,7 +57,7 @@ namespace ModelLayer.Migrations
                         Address = c.String(),
                         ZipCode = c.String(),
                         Phone = c.String(),
-                        Mobil = c.String(),
+                        Mobile = c.String(),
                         Email = c.String(),
                         Misc = c.String(),
                     })
@@ -102,7 +102,7 @@ namespace ModelLayer.Migrations
                         Address = c.String(),
                         ZipCode = c.String(),
                         Phone = c.String(),
-                        Mobil = c.String(),
+                        Mobile = c.String(),
                         Email = c.String(),
                         Misc = c.String(),
                     })
@@ -117,7 +117,7 @@ namespace ModelLayer.Migrations
                         Address = c.String(),
                         ZipCode = c.String(),
                         Phone = c.String(),
-                        Mobil = c.String(),
+                        Mobile = c.String(),
                         Email = c.String(),
                         Misc = c.String(),
                     })
