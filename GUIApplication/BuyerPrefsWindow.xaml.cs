@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GUIApplication.BuyerServiceReference;
+using Buyer = GUIApplication.BuyerServiceReference.Buyer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,14 +21,25 @@ namespace GUIApplication
     /// </summary>
     public partial class BuyerPrefsWindow : Window
     {
-        public BuyerPrefsWindow()
+        private Buyer buyer;
+        public BuyerPrefsWindow(Buyer b)
         {
+            buyer = b;
             InitializeComponent();
         }
-
+        
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            BuyerFinishWindow window = new BuyerFinishWindow();
+            buyer.MinPrice = Convert.ToDouble(txtPriceMin.Text);
+            buyer.MaxPrice = Convert.ToDouble(txtPriceMax.Text);
+            buyer.ProbertySizeMin = Convert.ToDouble(txtPropertyMin.Text);
+            buyer.ProbertySizeMax = Convert.ToDouble(txtPropertyMax.Text);
+            buyer.DesiredRoomsMin = Convert.ToDouble(txtRoomsMin.Text);
+            buyer.DesiredRoomsMax = Convert.ToDouble(txtRoomsMax.Text);
+            buyer.LotSizeMin = Convert.ToDouble(txtLotMin.Text);
+            buyer.LotSizeMax = Convert.ToDouble(txtLotMax.Text);
+            buyer.Misc = txtMisc.Text;
+            BuyerFinishWindow window = new BuyerFinishWindow(buyer);
             this.Topmost = false;
             window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             window.Topmost = true;

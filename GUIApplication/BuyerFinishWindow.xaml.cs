@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GUIApplication.BuyerServiceReference;
+using Buyer = GUIApplication.BuyerServiceReference.Buyer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,10 +21,33 @@ namespace GUIApplication
     /// </summary>
     public partial class BuyerFinishWindow : Window
     {
-        public BuyerFinishWindow()
+        private Buyer buyer;
+        public BuyerFinishWindow(Buyer b)
         {
+            buyer = b;
             InitializeComponent();
         }
-       
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (checkInRKI.IsChecked == true)
+            {
+                buyer.InRKI = true;
+            }
+            if (checkBuyerApproved.IsChecked == true)
+            {
+                buyer.BuyerApproved = true;
+            }
+            if (checkOwner.IsChecked == true)
+            {
+                buyer.OwnesHouse = true;
+            }
+            if (checkRents.IsChecked == true)
+            {
+                buyer.LivesForRent = true;
+            }
+
+        }
+
     }
 }
