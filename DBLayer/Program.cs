@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ModelLayer.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,9 @@ namespace DBLayer
     {
         static void Main(string[] args)
         {
+            var db = new SystemContext();
+            Console.WriteLine(db.Database.Connection.ConnectionString);
+            Console.ReadLine();
         }
     }
 }
