@@ -30,7 +30,7 @@ namespace ControlLayerTest
                 Location location = new Location();
 
                 //Create the user itself
-                User johnDoe = new User() { Name = "John Doe", Address = "Sofiendalsvej 60", Appointments = appointmentList, Email = "john@doe.com", Location = location, Misc = "Her skal stå noget", Mobil = "51203985", Phone = "51203985" };
+                User johnDoe = new User() { Name = "John Doe", Address = "Sofiendalsvej 60", Appointments = appointmentList, Email = "john@doe.com", Misc = "Her skal stå noget", Mobile = "51203985", Phone = "51203985" };
                 //Save it to the database
                 context.Users.Add(johnDoe);
                 context.SaveChanges();
@@ -53,7 +53,7 @@ namespace ControlLayerTest
                 List<Appointment> appointmentList = new List<Appointment>();
                 Location location = new Location();
                 //Create the user itself
-                User johnDoe = new User() { Name = "John Doe", Address = "Sofiendalsvej 60", Appointments = appointmentList, Email = "john@doe.com", Location = location, Misc = "Her skal stå noget", Mobil = "51203985", Phone = "51203985" };
+                User johnDoe = new User() { Name = "John Doe", Address = "Sofiendalsvej 60", Appointments = appointmentList, Email = "john@doe.com", Misc = "Her skal stå noget", Mobile = "51203985", Phone = "51203985" };
                 //Save it to the database
                 context.Users.Add(johnDoe);
                 context.SaveChanges();
@@ -79,7 +79,7 @@ namespace ControlLayerTest
                 List<Appointment> appointmentList = new List<Appointment>();
                 Location location = new Location();
                 //Create the user itself
-                User johnDoe = new User() { Name = "John Doe", Address = "Sofiendalsvej 60", Appointments = appointmentList, Email = "john@doe.com", Location = location, Misc = "Her skal stå noget", Mobil = "51203985", Phone = "51203985" };
+                User johnDoe = new User() { Name = "John Doe", Address = "Sofiendalsvej 60", Appointments = appointmentList, Email = "john@doe.com", Misc = "Her skal stå noget", Mobile = "51203985", Phone = "51203985" };
                 
                 //Save it to the database
                 context.Users.Add(johnDoe);
