@@ -28,9 +28,9 @@ namespace WcfServiceLibrary
             return uCtr.GetAllUsers();
         }
 
-        public void UpdateUser(User user, List<Appointment> appointments, string name, string address, string zipCode, Location location, string phone, string mobil, string email, string misc)
+        public void UpdateUser(User user, List<Appointment> appointments, string name, string address, string zipCode, string phone, string mobil, string email, string misc)
         {
-            uCtr.UpdateUser(user, appointments, name, address, zipCode, location, phone, mobil, email, misc);
+            uCtr.UpdateUser(user, appointments, name, address, zipCode, phone, mobil, email, misc);
         }
 
         public void DeleteUser(User user)

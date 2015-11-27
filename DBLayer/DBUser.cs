@@ -33,7 +33,6 @@ namespace DBLayer
             {
                 user = ctx.Users.Where(x => x.Phone == phone).Single();
             }
-            user.Location = dbLoc.GetLocation(user.ZipCode);
             return user;
         }
 
@@ -44,22 +43,17 @@ namespace DBLayer
             {
                 users = ctx.Users.ToList();
             }
-            foreach (User user in users)
-            {
-                user.Location = dbLoc.GetLocation(user.ZipCode);
-            }
             return users;
         }
 
-        public void UpdateUser(User user, List<Appointment> appointments, string name, string address, string zipCode, Location location, string phone, string mobil, string email, string misc)
+        public void UpdateUser(User user, List<Appointment> appointments, string name, string address, string zipCode, string phone, string mobil, string email, string misc)
         {
             user.Name = name;
             user.Appointments = appointments;
             user.Address = address;
             user.ZipCode = zipCode;
-            user.Location = location;
             user.Phone = phone;
-            user.Mobil = mobil;
+            user.Mobile = mobil;
             user.Email = email;
             user.Misc = misc;
             using (var ctx = new SystemContext())

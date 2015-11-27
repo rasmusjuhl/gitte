@@ -15,10 +15,9 @@ namespace ModelLayer.DAL
         public DbSet<Property> Properties { get; set; }
         public DbSet<Seller> Sellers { get; set; }
         public DbSet<User> Users { get; set; }
-
         public SystemContext() : base("local")
-    {
-            
-    }
+        {
+        this.Configuration.LazyLoadingEnabled = true;
+        }
     }
 }

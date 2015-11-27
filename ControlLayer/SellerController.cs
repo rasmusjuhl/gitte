@@ -11,7 +11,6 @@ namespace ControlLayer
 {
     public class SellerController
     {
-        private LocationController lCtr = new LocationController();
         private DBSeller dbSel = new DBSeller();
         public SellerController()
         {
@@ -27,14 +26,19 @@ namespace ControlLayer
             return dbSel.GetSellerByPhone(phone);
         }
 
+        public Seller GetSellerByMobile(string mobile)
+        {
+            return dbSel.GetSellerByMobile(mobile);
+        }
+
         public List<Seller> GetAllSellers()
         {
             return dbSel.GetAllSellers();
         }
 
-        public void UpdateSeller(Seller seller, List<Property> properties, string name, string address, string zipCode, Location location, string phone, string mobil, string email, string misc)
+        public void UpdateSeller(Seller seller, List<Property> properties, string name, string address, string zipCode, string phone, string mobil, string email, string misc)
         {
-            dbSel.UpdateSeller(seller, properties, name, address, zipCode, location, phone, mobil, email, misc);
+            dbSel.UpdateSeller(seller, properties, name, address, zipCode, phone, mobil, email, misc);
         }
 
         public void DeleteSeller(Seller seller)

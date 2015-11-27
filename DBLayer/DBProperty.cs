@@ -25,15 +25,21 @@ namespace DBLayer
             }
         }
 
-        public Property GetPropertyByAddress(string address)
+        public List<Property> GetPropertiesByAdress(string adress)
         {
-            Property property;
+            List<Property> properties = new List<Property>();
             using (var ctx = new SystemContext())
             {
-                property = ctx.Properties.Where(x => x.Address == address).Single();
+                List<Property> allProps = ctx.Properties.ToList();
+                foreach (Property p in allProps)
+                { 
+                    if(p.Address.Contains(adress))
+                    {
+                        properties.Add(p);
+                    }
+                }   
             }
-            property.Location = dbLoc.GetLocation(property.ZipCode);
-            return property;
+            return properties;
         }
 
         public List<Property> GetAllProperties()
@@ -43,19 +49,14 @@ namespace DBLayer
             {
                 properties = ctx.Properties.ToList();
             }
-            foreach (Property property in properties)
-            {
-                property.Location = dbLoc.GetLocation(property.ZipCode);
-            }
             return properties;
         }
 
-        public void UpdateProperty(Property property, string address, string zipCode, Location location, string type, int rooms, int floors, double price,
+        public void UpdateProperty(Property property, string address, string zipCode, string type, int rooms, int floors, double price,
             double propertySize, double houseSize, int constructionYear)
         {
             property.Address = address;
             property.ZipCode = zipCode;
-            property.Location = location;
             property.Type = type;
             property.Rooms = rooms;
             property.Floors = floors;

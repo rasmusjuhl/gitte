@@ -8,10 +8,14 @@ namespace ModelLayer
 {
     public class Property
     {
+        public Property()
+        {
+            this.Buyers = new List<Buyer>();
+        }
+
         public int Id { get; set; }
         public string Address { get; set; }
         public string ZipCode { get; set; }
-        public Location Location { get; set; }
         public string Type { get; set; }
         public int Rooms { get; set; }
         public int Floors { get; set; }
@@ -19,6 +23,7 @@ namespace ModelLayer
         public double PropertySize { get; set; }
         public double HouseSize { get; set; }
         public int ConstructionYear { get; set; }
+        public virtual ICollection<Buyer> Buyers { get; set; }
 
         
     }

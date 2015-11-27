@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using ModelLayer;
 using ModelLayer.DAL;
+using System.Data.Entity;
+using System.Windows;
 
 namespace DBLayer
 {
     public class DBBuyer
     {
-        private DBLocation dbLoc = new DBLocation();
         public DBBuyer()
         {
 
@@ -24,6 +25,7 @@ namespace DBLayer
                 ctx.SaveChanges();
             }
         }
+
         public Buyer GetBuyerByPhone(string phone)
         {
             Buyer buyer;
@@ -31,9 +33,19 @@ namespace DBLayer
             {
                 buyer = ctx.Buyers.Where(x => x.Phone == phone).Single();
             }
-            buyer.Location = dbLoc.GetLocation(buyer.ZipCode);
             return buyer;
         }
+
+        public Buyer GetBuyerByMobile(string mobile)
+        {
+            Buyer buyer;
+            using (var ctx = new SystemContext())
+            {
+                buyer = ctx.Buyers.Where(x => x.Mobile == mobile).Single();
+            }
+            return buyer;
+        }
+
         public List<Buyer> GetAllBuyers()
         {
             List<Buyer> buyers;
@@ -41,23 +53,63 @@ namespace DBLayer
             {
                 buyers = ctx.Buyers.ToList();
             }
-            foreach (Buyer buyer in buyers)
-            {
-                buyer.Location = dbLoc.GetLocation(buyer.ZipCode);
-            }
             return buyers;
         }
-        public void UpdateBuyer(Buyer buyer, List<Property> properties, string name, string address, string zipCode, Location location, string phone, string mobil, string email, string misc, string estateType, double minPrice, double maxPrice,
-            double lotSizeMin, double lotSizeMax, double probertySizeMin, double probertySizeMax, double desiredRoomsMin, double desiredRoomsMax, List<Location> desiredLocations, string otherPref, Boolean contactAllowedByBoligOne,
+
+        public List<Location> GetAllLocationsByPhone(string phone)
+        {
+            List<Location> locations;
+            using (var ctx = new SystemContext())
+            {
+                Buyer b = ctx.Buyers.Where(x => x.Phone == phone).Single();
+                locations = b.Locations.ToList();
+            }
+            return locations;
+        }
+
+        public List<Location> GetAllLocationsByMobile(string mobile)
+        {
+            List<Location> locations;
+            using (var ctx = new SystemContext())
+            {
+                Buyer b = ctx.Buyers.Where(x => x.Mobile == mobile).Single();
+                locations = b.Locations.ToList();
+            }
+            return locations;
+        }
+
+        public List<Property> GetAllPropertiesByPhone(string phone)
+        {
+            List<Property> properties;
+            using (var ctx = new SystemContext())
+            {
+                Buyer b = ctx.Buyers.Where(x => x.Phone == phone).Single();
+                properties = b.Properties.ToList();
+            }
+            return properties;
+        }
+
+        public List<Property> GetAllPropertiesByMobile(string mobile)
+        {
+            List<Property> properties;
+            using (var ctx = new SystemContext())
+            {
+                Buyer b = ctx.Buyers.Where(x => x.Mobile == mobile).Single();
+                properties = b.Properties.ToList();
+            }
+            return properties;
+        }
+
+        public void UpdateBuyer(Buyer buyer, List<Property> properties, string name, string address, string zipCode, string phone, string mobile, string email, string misc, string estateType, double minPrice, double maxPrice,
+            double lotSizeMin, double lotSizeMax, double probertySizeMin, double probertySizeMax, double desiredRoomsMin, double desiredRoomsMax, List<Location> locations, string otherPref, Boolean contactAllowedByBoligOne,
             Boolean contactAllowedByReal, Boolean allowedEmailSpam, Boolean inRKI, Boolean buyerApproved, string bank, Boolean ownesHouse, Boolean livesForRent)
         {
             buyer.Name = name;
             buyer.Properties = properties;
             buyer.Address = address;
             buyer.ZipCode = zipCode;
-            buyer.Location = location;
             buyer.Phone = phone;
-            buyer.Mobil = mobil;
+            buyer.Mobile = mobile;
             buyer.Email = email;
             buyer.Misc = misc;
             buyer.EstateType = estateType;
@@ -69,7 +121,7 @@ namespace DBLayer
             buyer.ProbertySizeMax = probertySizeMax;
             buyer.DesiredRoomsMin = desiredRoomsMin;
             buyer.DesiredRoomsMax = desiredRoomsMax;
-            buyer.DesiredLocations = desiredLocations;
+            buyer.Locations = locations;
             buyer.OtherPref = otherPref;
             buyer.ContactAllowedByBoligOne = contactAllowedByBoligOne;
             buyer.ContactAllowedByReal = contactAllowedByReal;

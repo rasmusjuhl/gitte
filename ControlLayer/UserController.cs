@@ -11,7 +11,6 @@ namespace ControlLayer
 {
     public class UserController
     {
-        private LocationController lCtr = new LocationController();
         private DBUser dbUser = new DBUser();
 
 
@@ -33,10 +32,10 @@ namespace ControlLayer
         {
             return dbUser.GetAllUsers();
         }
-        
-        public void UpdateUser(User user, List<Appointment> appointments, string name, string address, string zipCode, Location location, string phone, string mobil, string email, string misc)
+
+        public void UpdateUser(User user, List<Appointment> appointments, string name, string address, string zipCode, string phone, string mobil, string email, string misc)
         {
-            dbUser.UpdateUser(user, appointments, name, address, zipCode, location, phone, mobil, email, misc);
+            dbUser.UpdateUser(user, appointments, name, address, zipCode, phone, mobil, email, misc);
         }
 
         public void DeleteUser(User user)
