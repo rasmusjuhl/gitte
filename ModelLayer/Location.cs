@@ -15,6 +15,6 @@ namespace ModelLayer
         public int Id { get; set; }
         public string ZipCode { get; set; }
         public string City { get; set; }
-        public virtual ICollection<Buyer> Buyers { get; set; }
+        public ICollection<Buyer> Buyers { get; set; }
     }
 }
