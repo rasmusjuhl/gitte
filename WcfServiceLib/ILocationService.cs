@@ -4,7 +4,6 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
-using ControlLayer;
 using ModelLayer;
 
 namespace WcfServiceLib
@@ -13,6 +12,16 @@ namespace WcfServiceLib
     public interface ILocationService
     {
         [OperationContract]
+        void InsertLocation(Location location);
+        [OperationContract]
+        Location GetLocation(string zipCode);
+        [OperationContract]
+        List<Location> GetLocationsByCity(string city);
+        [OperationContract]
         List<Location> GetAllLocations();
+        [OperationContract]
+        void UpdateLocation(Location loc, string zipCode, string city);
+        [OperationContract]
+        void DeleteLocation(Location loc);
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
-
+using System.Runtime.Serialization;
 namespace ModelLayer
 {
     public class Buyer : Person
@@ -34,8 +34,8 @@ namespace ModelLayer
         public string Bank { get; set; }
         public Boolean OwnesHouse { get; set; }
         public Boolean LivesForRent { get; set; }
-        public virtual ICollection<Property> Properties { get; set; }
-        public virtual ICollection<Location> Locations { get; set; }
+        public ICollection<Property> Properties { get; set; }
+        public ICollection<Location> Locations { get; set; }
 
         
     }
