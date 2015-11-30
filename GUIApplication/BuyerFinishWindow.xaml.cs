@@ -23,9 +23,13 @@ namespace GUIApplication
     {
         static IBuyerService iBuyer = new BuyerServiceClient();
         private Buyer buyer;
-        public BuyerFinishWindow(Buyer b)
+        private BuyerPrefsWindow buyerWindow;
+        private CreateSeller createWindow;
+        public BuyerFinishWindow(Buyer b, CreateSeller cs, BuyerPrefsWindow w)
         {
             buyer = b;
+            buyerWindow = w;
+            createWindow = cs;
             InitializeComponent();
         }
 
@@ -56,6 +60,8 @@ namespace GUIApplication
 
         private void BtnCancel(object sender, RoutedEventArgs e)
         {
+            createWindow.Close();
+            buyerWindow.Close();
             this.Close();
         }
 

@@ -102,7 +102,7 @@ namespace GUIApplication
                     Email = txtEmail.Text,
                     Misc = txtMisc.Text
                 };
-                BuyerPrefsWindow window = new BuyerPrefsWindow(buyer);
+                BuyerPrefsWindow window = new BuyerPrefsWindow(buyer, this);
                 this.Topmost = false;               
                 window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                 window.Topmost = true;

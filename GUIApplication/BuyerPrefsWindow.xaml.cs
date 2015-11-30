@@ -22,9 +22,11 @@ namespace GUIApplication
     public partial class BuyerPrefsWindow : Window
     {
         private Buyer buyer;
-        public BuyerPrefsWindow(Buyer b)
+        private CreateSeller createWindow;
+        public BuyerPrefsWindow(Buyer b, CreateSeller cs)
         {
             buyer = b;
+            createWindow = cs;
             InitializeComponent();
         }
 
@@ -39,7 +41,8 @@ namespace GUIApplication
             buyer.LotSizeMin = Convert.ToDouble(txtLotMin.Text);
             buyer.LotSizeMax = Convert.ToDouble(txtLotMax.Text);
             buyer.Misc = txtMisc.Text;
-            BuyerFinishWindow window = new BuyerFinishWindow(buyer);
+
+            BuyerFinishWindow window = new BuyerFinishWindow(buyer, createWindow, this);
             this.Topmost = false;
             window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             window.Topmost = true;
