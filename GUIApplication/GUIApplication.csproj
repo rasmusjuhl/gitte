@@ -65,26 +65,6 @@
     <Compile Include="CreateSeller.xaml.cs">
       <DependentUpon>CreateSeller.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Service References\BuyerServiceReferenceNew\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Service References\LocationServiceReferenceNew\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Service References\SellerServiceReferenceNew\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Service References\UserServiceReferenceNew\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="UpdateCustomer.xaml.cs">
       <DependentUpon>UpdateCustomer.xaml</DependentUpon>
     </Compile>
@@ -141,124 +121,12 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="Service References\BuyerServiceReferenceNew\GUIApplication.BuyerServiceReferenceNew.Buyer.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\BuyerServiceReferenceNew\GUIApplication.BuyerServiceReferenceNew.Location.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\BuyerServiceReferenceNew\GUIApplication.BuyerServiceReferenceNew.Property.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\BuyerServiceReferenceNew\ModelLayer.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\BuyerServiceReferenceNew\service.wsdl" />
-    <None Include="Service References\BuyerServiceReferenceNew\service.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\BuyerServiceReferenceNew\service1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\LocationServiceReferenceNew\GUIApplication.LocationServiceReferenceNew.Location.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\LocationServiceReferenceNew\ModelLayer.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\LocationServiceReferenceNew\service.wsdl" />
-    <None Include="Service References\LocationServiceReferenceNew\service.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\LocationServiceReferenceNew\service1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\SellerServiceReferenceNew\GUIApplication.SellerServiceReferenceNew.Seller.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\SellerServiceReferenceNew\ModelLayer.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\SellerServiceReferenceNew\service.wsdl" />
-    <None Include="Service References\SellerServiceReferenceNew\service.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\SellerServiceReferenceNew\service1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\UserServiceReferenceNew\GUIApplication.UserServiceReferenceNew.User.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\UserServiceReferenceNew\ModelLayer.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\UserServiceReferenceNew\service.wsdl" />
-    <None Include="Service References\UserServiceReferenceNew\service.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\UserServiceReferenceNew\service1.xsd">
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Service References\BuyerServiceReferenceNew\" />
-    <WCFMetadataStorage Include="Service References\LocationServiceReferenceNew\" />
-    <WCFMetadataStorage Include="Service References\SellerServiceReferenceNew\" />
-    <WCFMetadataStorage Include="Service References\UserServiceReferenceNew\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\BuyerServiceReferenceNew\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\BuyerServiceReferenceNew\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\BuyerServiceReferenceNew\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\LocationServiceReferenceNew\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\LocationServiceReferenceNew\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\LocationServiceReferenceNew\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\SellerServiceReferenceNew\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\SellerServiceReferenceNew\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\SellerServiceReferenceNew\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\UserServiceReferenceNew\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\UserServiceReferenceNew\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\UserServiceReferenceNew\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -12,12 +12,12 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using GUIApplication.UserServiceReferenceNew;
-using User = GUIApplication.UserServiceReferenceNew.User;
-using GUIApplication.SellerServiceReferenceNew;
-using Seller = GUIApplication.SellerServiceReferenceNew.Seller;
-using GUIApplication.BuyerServiceReferenceNew;
-using Buyer = GUIApplication.BuyerServiceReferenceNew.Buyer;
+using GUIApplication.UserServiceReference;
+using User = GUIApplication.UserServiceReference.User;
+using GUIApplication.SellerServiceReference;
+using Seller = GUIApplication.SellerServiceReference.Seller;
+using GUIApplication.BuyerServiceReference;
+using Buyer = GUIApplication.BuyerServiceReference.Buyer;
 
 namespace GUIApplication
 {
@@ -40,7 +40,7 @@ namespace GUIApplication
 
         private void sellerData_Loaded(object sender, RoutedEventArgs e)
         {
-            List<Seller> sellers = iSeller.GetAllSellers().ToList();
+            List<Seller> sellers = iSeller.GetAllSellers();
             var grid = sender as DataGrid;
             grid.ItemsSource = sellers;
         }
@@ -51,12 +51,12 @@ namespace GUIApplication
             if (buyerTab.IsSelected)
             {
                 Buyer buyer = (Buyer)buyerData.SelectedItem;
-                MessageBox.Show("KøberID: " + buyer.Id + "\nNavn: " + buyer.Name + "\nAdresse: " + buyer.Address + "\nPostnummer: " + buyer.ZipCode + " By: " + buyer + "\nTelefon: " + buyer.Phone + "\nMobil: " + buyer.Mobile + "\nEmail: " + buyer.Email + "\nMisc: " + buyer.Misc);
+                MessageBox.Show("KøberID: " + buyer.Id + "\nNavn: " + buyer.Name + "\nAdresse: " + buyer.Address + "\nPostnummer: " + buyer.Location.ZipCode + " By: " + buyer.Location.City + "\nTelefon: " + buyer.Phone + "\nMobil: " + buyer.Mobil + "\nEmail: " + buyer.Email + "\nMisc: " + buyer.Misc);
             }
             else
             {
                 Seller seller = (Seller)sellerData.SelectedItem;
-                MessageBox.Show("SælgerID: " + seller.Id + "\nNavn: " + seller.Name + "\nAdresse: " + seller.Address + "\nPostnummer: " + seller.ZipCode + " By: " + seller + "\nTelefon: " + seller.Phone + "\nMobil: " + seller.Mobile + "\nEmail: " + seller.Email + "\nMisc: " + seller.Misc);
+                MessageBox.Show("SælgerID: " + seller.Id + "\nNavn: " + seller.Name + "\nAdresse: " + seller.Address + "\nPostnummer: " + seller.Location.ZipCode + " By: " + seller.Location.City + "\nTelefon: " + seller.Phone + "\nMobil: " + seller.Mobil + "\nEmail: " + seller.Email + "\nMisc: " + seller.Misc);
             }
         }
 

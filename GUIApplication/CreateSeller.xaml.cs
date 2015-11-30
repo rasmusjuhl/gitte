@@ -11,12 +11,12 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using GUIApplication.SellerServiceReferenceNew;
-using Seller = GUIApplication.SellerServiceReferenceNew.Seller;
-using GUIApplication.LocationServiceReferenceNew;
-using Location = GUIApplication.LocationServiceReferenceNew.Location;
-using GUIApplication.BuyerServiceReferenceNew;
-using Buyer = GUIApplication.BuyerServiceReferenceNew.Buyer;
+using GUIApplication.SellerServiceReference;
+using Seller = GUIApplication.SellerServiceReference.Seller;
+using GUIApplication.LocationServiceReference;
+using Location = GUIApplication.LocationServiceReference.Location;
+using GUIApplication.BuyerServiceReference;
+using Buyer = GUIApplication.BuyerServiceReference.Buyer;
 
 namespace GUIApplication
 {
@@ -45,7 +45,7 @@ namespace GUIApplication
                     Address = txtAddress.Text,
                     ZipCode = txtZipCode.Text,
                     Phone = txtPhone.Text,
-                    Mobile = txtMobil.Text,
+                    Mobil = txtMobil.Text,
                     Email = txtEmail.Text,
                     Misc = txtMisc.Text,
                 };
@@ -61,7 +61,7 @@ namespace GUIApplication
                     Address = txtAddress.Text,
                     ZipCode = txtZipCode.Text,
                     Phone = txtPhone.Text,
-                    Mobile = txtMobil.Text,
+                    Mobil = txtMobil.Text,
                     Email = txtEmail.Text,
                     Misc = txtMisc.Text,
                 };
