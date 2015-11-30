@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using ControlLayer;
+using ModelLayer;
 
 namespace WcfServiceLib
 {
@@ -12,32 +13,32 @@ namespace WcfServiceLib
     {
         static LocationController lCtr = new LocationController();
 
-        public void InsertLocation(ModelLayer.Location location)
+        public void InsertLocation(Location location)
         {
             lCtr.InsertLocation(location);
         }
 
-        public ModelLayer.Location GetLocation(string zipCode)
+        public Location GetLocation(string zipCode)
         {
             return lCtr.GetLocation(zipCode);
         }
 
-        public List<ModelLayer.Location> GetLocationsByCity(string city)
+        public List<Location> GetLocationsByCity(string city)
         {
             return lCtr.GetLocationsByCity(city);
         }
 
-        public List<ModelLayer.Location> GetAllLocations()
+        public List<Location> GetAllLocations()
         {
             return lCtr.GetAllLocations();
         }
 
-        public void UpdateLocation(ModelLayer.Location loc, string zipCode, string city)
+        public void UpdateLocation(Location loc, string zipCode, string city)
         {
             lCtr.UpdateLocation(loc, zipCode, city);
         }
 
-        public void DeleteLocation(ModelLayer.Location loc)
+        public void DeleteLocation(Location loc)
         {
             lCtr.DeleteLocation(loc);
         }
