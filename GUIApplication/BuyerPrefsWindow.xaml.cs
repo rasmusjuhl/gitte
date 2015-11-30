@@ -59,5 +59,69 @@ namespace GUIApplication
         {
             this.Close();
         }
+
+        private void txtPriceMin_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (txtPriceMin.Text == "Pris fra")
+            {
+                txtPriceMin.Text = "";
+            }
+        }
+
+        private void txtPriceMax_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (txtPriceMax.Text == "Pris til")
+            {
+                txtPriceMax.Text = "";
+            }
+        }
+
+        private void txtPropertyMin_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (txtPropertyMin.Text == "Boligareal fra")
+            {
+                txtPropertyMin.Text = "";
+            }
+        }
+
+        private void txtRoomsMin_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (txtRoomsMin.Text == "Værelser fra")
+            {
+                txtRoomsMin.Text = "";
+            }
+        }
+
+        private void txtLotMin_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (txtLotMin.Text == "Grundareal fra")
+            {
+                txtLotMin.Text = "";
+            }
+        }
+
+        private void txtPropertyMax_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (txtPropertyMax.Text == "Boligareal til")
+            {
+                txtPropertyMax.Text = "";
+            }
+        }
+
+        private void txtRoomsMax_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (txtRoomsMax.Text == "Værelser til")
+            {
+                txtRoomsMax.Text = "";
+            }
+        }
+
+        private void txtLotMax_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (txtLotMax.Text == "Grundareal til")
+            {
+                txtLotMax.Text = "";
+            }
+        }
     }
 }
