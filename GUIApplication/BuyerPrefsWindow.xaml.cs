@@ -32,21 +32,28 @@ namespace GUIApplication
 
         private void BtnNext(object sender, RoutedEventArgs e)
         {
-            buyer.MinPrice = Convert.ToDouble(txtPriceMin.Text);
-            buyer.MaxPrice = Convert.ToDouble(txtPriceMax.Text);
-            buyer.ProbertySizeMin = Convert.ToDouble(txtPropertyMin.Text);
-            buyer.ProbertySizeMax = Convert.ToDouble(txtPropertyMax.Text);
-            buyer.DesiredRoomsMin = Convert.ToDouble(txtRoomsMin.Text);
-            buyer.DesiredRoomsMax = Convert.ToDouble(txtRoomsMax.Text);
-            buyer.LotSizeMin = Convert.ToDouble(txtLotMin.Text);
-            buyer.LotSizeMax = Convert.ToDouble(txtLotMax.Text);
-            buyer.Misc = txtMisc.Text;
-
-            BuyerFinishWindow window = new BuyerFinishWindow(buyer, createWindow, this);
-            this.Topmost = false;
-            window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            window.Topmost = true;
-            window.Show();
+            try
+            {
+                buyer.MinPrice = Convert.ToDouble(txtPriceMin.Text);
+                buyer.MaxPrice = Convert.ToDouble(txtPriceMax.Text);
+                buyer.ProbertySizeMin = Convert.ToDouble(txtPropertyMin.Text);
+                buyer.ProbertySizeMax = Convert.ToDouble(txtPropertyMax.Text);
+                buyer.DesiredRoomsMin = Convert.ToDouble(txtRoomsMin.Text);
+                buyer.DesiredRoomsMax = Convert.ToDouble(txtRoomsMax.Text);
+                buyer.LotSizeMin = Convert.ToDouble(txtLotMin.Text);
+                buyer.LotSizeMax = Convert.ToDouble(txtLotMax.Text);
+                buyer.Misc = txtMisc.Text;
+                BuyerFinishWindow window = new BuyerFinishWindow(buyer, createWindow, this);
+                this.Topmost = false;
+                window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                window.Topmost = true;
+                window.Show();
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Alle felter skal være udfyldt korrekt.");
+            }
+            
         }
 
         private void BtnCancel(object sender, RoutedEventArgs e)
