@@ -8,49 +8,28 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GUIApplication.PropertyServiceReference {
+namespace GUIApplication.LocationServiceReference {
     using System.Runtime.Serialization;
     using System;
     
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Property", Namespace="http://schemas.datacontract.org/2004/07/ModelLayer")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Location", Namespace="http://schemas.datacontract.org/2004/07/ModelLayer")]
     [System.SerializableAttribute()]
-    public partial class Property : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class Location : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AddressField;
+        private GUIApplication.LocationServiceReference.Buyer[] BuyersField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private GUIApplication.PropertyServiceReference.Buyer[] BuyersField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ConstructionYearField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int FloorsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double HouseSizeField;
+        private string CityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double PriceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double PropertySizeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int RoomsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ZipCodeField;
@@ -66,20 +45,7 @@ namespace GUIApplication.PropertyServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Address {
-            get {
-                return this.AddressField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AddressField, value) != true)) {
-                    this.AddressField = value;
-                    this.RaisePropertyChanged("Address");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public GUIApplication.PropertyServiceReference.Buyer[] Buyers {
+        public GUIApplication.LocationServiceReference.Buyer[] Buyers {
             get {
                 return this.BuyersField;
             }
@@ -92,40 +58,14 @@ namespace GUIApplication.PropertyServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ConstructionYear {
+        public string City {
             get {
-                return this.ConstructionYearField;
+                return this.CityField;
             }
             set {
-                if ((this.ConstructionYearField.Equals(value) != true)) {
-                    this.ConstructionYearField = value;
-                    this.RaisePropertyChanged("ConstructionYear");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Floors {
-            get {
-                return this.FloorsField;
-            }
-            set {
-                if ((this.FloorsField.Equals(value) != true)) {
-                    this.FloorsField = value;
-                    this.RaisePropertyChanged("Floors");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double HouseSize {
-            get {
-                return this.HouseSizeField;
-            }
-            set {
-                if ((this.HouseSizeField.Equals(value) != true)) {
-                    this.HouseSizeField = value;
-                    this.RaisePropertyChanged("HouseSize");
+                if ((object.ReferenceEquals(this.CityField, value) != true)) {
+                    this.CityField = value;
+                    this.RaisePropertyChanged("City");
                 }
             }
         }
@@ -139,58 +79,6 @@ namespace GUIApplication.PropertyServiceReference {
                 if ((this.IdField.Equals(value) != true)) {
                     this.IdField = value;
                     this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double Price {
-            get {
-                return this.PriceField;
-            }
-            set {
-                if ((this.PriceField.Equals(value) != true)) {
-                    this.PriceField = value;
-                    this.RaisePropertyChanged("Price");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double PropertySize {
-            get {
-                return this.PropertySizeField;
-            }
-            set {
-                if ((this.PropertySizeField.Equals(value) != true)) {
-                    this.PropertySizeField = value;
-                    this.RaisePropertyChanged("PropertySize");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Rooms {
-            get {
-                return this.RoomsField;
-            }
-            set {
-                if ((this.RoomsField.Equals(value) != true)) {
-                    this.RoomsField = value;
-                    this.RaisePropertyChanged("Rooms");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Type {
-            get {
-                return this.TypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TypeField, value) != true)) {
-                    this.TypeField = value;
-                    this.RaisePropertyChanged("Type");
                 }
             }
         }
@@ -222,7 +110,7 @@ namespace GUIApplication.PropertyServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Buyer", Namespace="http://schemas.datacontract.org/2004/07/ModelLayer")]
     [System.SerializableAttribute()]
-    public partial class Buyer : GUIApplication.PropertyServiceReference.Person {
+    public partial class Buyer : GUIApplication.LocationServiceReference.Person {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool AllowedEmailSpamField;
@@ -258,7 +146,7 @@ namespace GUIApplication.PropertyServiceReference {
         private bool LivesForRentField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private GUIApplication.PropertyServiceReference.Location[] LocationsField;
+        private GUIApplication.LocationServiceReference.Location[] LocationsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double LotSizeMaxField;
@@ -285,7 +173,7 @@ namespace GUIApplication.PropertyServiceReference {
         private double ProbertySizeMinField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private GUIApplication.PropertyServiceReference.Property[] PropertiesField;
+        private GUIApplication.LocationServiceReference.Property[] PropertiesField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool AllowedEmailSpam {
@@ -431,7 +319,7 @@ namespace GUIApplication.PropertyServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public GUIApplication.PropertyServiceReference.Location[] Locations {
+        public GUIApplication.LocationServiceReference.Location[] Locations {
             get {
                 return this.LocationsField;
             }
@@ -548,7 +436,7 @@ namespace GUIApplication.PropertyServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public GUIApplication.PropertyServiceReference.Property[] Properties {
+        public GUIApplication.LocationServiceReference.Property[] Properties {
             get {
                 return this.PropertiesField;
             }
@@ -565,7 +453,7 @@ namespace GUIApplication.PropertyServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Person", Namespace="http://schemas.datacontract.org/2004/07/ModelLayer")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(GUIApplication.PropertyServiceReference.Buyer))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(GUIApplication.LocationServiceReference.Buyer))]
     public partial class Person : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -705,21 +593,42 @@ namespace GUIApplication.PropertyServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Location", Namespace="http://schemas.datacontract.org/2004/07/ModelLayer")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Property", Namespace="http://schemas.datacontract.org/2004/07/ModelLayer")]
     [System.SerializableAttribute()]
-    public partial class Location : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class Property : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private GUIApplication.PropertyServiceReference.Buyer[] BuyersField;
+        private string AddressField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CityField;
+        private GUIApplication.LocationServiceReference.Buyer[] BuyersField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ConstructionYearField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int FloorsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double HouseSizeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double PriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double PropertySizeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int RoomsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ZipCodeField;
@@ -735,7 +644,20 @@ namespace GUIApplication.PropertyServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public GUIApplication.PropertyServiceReference.Buyer[] Buyers {
+        public string Address {
+            get {
+                return this.AddressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AddressField, value) != true)) {
+                    this.AddressField = value;
+                    this.RaisePropertyChanged("Address");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GUIApplication.LocationServiceReference.Buyer[] Buyers {
             get {
                 return this.BuyersField;
             }
@@ -748,14 +670,40 @@ namespace GUIApplication.PropertyServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string City {
+        public int ConstructionYear {
             get {
-                return this.CityField;
+                return this.ConstructionYearField;
             }
             set {
-                if ((object.ReferenceEquals(this.CityField, value) != true)) {
-                    this.CityField = value;
-                    this.RaisePropertyChanged("City");
+                if ((this.ConstructionYearField.Equals(value) != true)) {
+                    this.ConstructionYearField = value;
+                    this.RaisePropertyChanged("ConstructionYear");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Floors {
+            get {
+                return this.FloorsField;
+            }
+            set {
+                if ((this.FloorsField.Equals(value) != true)) {
+                    this.FloorsField = value;
+                    this.RaisePropertyChanged("Floors");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double HouseSize {
+            get {
+                return this.HouseSizeField;
+            }
+            set {
+                if ((this.HouseSizeField.Equals(value) != true)) {
+                    this.HouseSizeField = value;
+                    this.RaisePropertyChanged("HouseSize");
                 }
             }
         }
@@ -769,6 +717,58 @@ namespace GUIApplication.PropertyServiceReference {
                 if ((this.IdField.Equals(value) != true)) {
                     this.IdField = value;
                     this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Price {
+            get {
+                return this.PriceField;
+            }
+            set {
+                if ((this.PriceField.Equals(value) != true)) {
+                    this.PriceField = value;
+                    this.RaisePropertyChanged("Price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double PropertySize {
+            get {
+                return this.PropertySizeField;
+            }
+            set {
+                if ((this.PropertySizeField.Equals(value) != true)) {
+                    this.PropertySizeField = value;
+                    this.RaisePropertyChanged("PropertySize");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Rooms {
+            get {
+                return this.RoomsField;
+            }
+            set {
+                if ((this.RoomsField.Equals(value) != true)) {
+                    this.RoomsField = value;
+                    this.RaisePropertyChanged("Rooms");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Type {
+            get {
+                return this.TypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TypeField, value) != true)) {
+                    this.TypeField = value;
+                    this.RaisePropertyChanged("Type");
                 }
             }
         }
@@ -797,105 +797,119 @@ namespace GUIApplication.PropertyServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PropertyServiceReference.IPropertyService")]
-    public interface IPropertyService {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="LocationServiceReference.ILocationService")]
+    public interface ILocationService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPropertyService/InsertProperty", ReplyAction="http://tempuri.org/IPropertyService/InsertPropertyResponse")]
-        void InsertProperty(GUIApplication.PropertyServiceReference.Property property);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILocationService/InsertLocation", ReplyAction="http://tempuri.org/ILocationService/InsertLocationResponse")]
+        void InsertLocation(GUIApplication.LocationServiceReference.Location location);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPropertyService/InsertProperty", ReplyAction="http://tempuri.org/IPropertyService/InsertPropertyResponse")]
-        System.Threading.Tasks.Task InsertPropertyAsync(GUIApplication.PropertyServiceReference.Property property);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILocationService/InsertLocation", ReplyAction="http://tempuri.org/ILocationService/InsertLocationResponse")]
+        System.Threading.Tasks.Task InsertLocationAsync(GUIApplication.LocationServiceReference.Location location);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPropertyService/GetPropertiesByAddress", ReplyAction="http://tempuri.org/IPropertyService/GetPropertiesByAddressResponse")]
-        GUIApplication.PropertyServiceReference.Property[] GetPropertiesByAddress(string address);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILocationService/GetLocation", ReplyAction="http://tempuri.org/ILocationService/GetLocationResponse")]
+        GUIApplication.LocationServiceReference.Location GetLocation(string zipCode);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPropertyService/GetPropertiesByAddress", ReplyAction="http://tempuri.org/IPropertyService/GetPropertiesByAddressResponse")]
-        System.Threading.Tasks.Task<GUIApplication.PropertyServiceReference.Property[]> GetPropertiesByAddressAsync(string address);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILocationService/GetLocation", ReplyAction="http://tempuri.org/ILocationService/GetLocationResponse")]
+        System.Threading.Tasks.Task<GUIApplication.LocationServiceReference.Location> GetLocationAsync(string zipCode);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPropertyService/GetAllProperties", ReplyAction="http://tempuri.org/IPropertyService/GetAllPropertiesResponse")]
-        GUIApplication.PropertyServiceReference.Property[] GetAllProperties();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILocationService/GetLocationsByCity", ReplyAction="http://tempuri.org/ILocationService/GetLocationsByCityResponse")]
+        GUIApplication.LocationServiceReference.Location[] GetLocationsByCity(string city);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPropertyService/GetAllProperties", ReplyAction="http://tempuri.org/IPropertyService/GetAllPropertiesResponse")]
-        System.Threading.Tasks.Task<GUIApplication.PropertyServiceReference.Property[]> GetAllPropertiesAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILocationService/GetLocationsByCity", ReplyAction="http://tempuri.org/ILocationService/GetLocationsByCityResponse")]
+        System.Threading.Tasks.Task<GUIApplication.LocationServiceReference.Location[]> GetLocationsByCityAsync(string city);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPropertyService/UpdateProperty", ReplyAction="http://tempuri.org/IPropertyService/UpdatePropertyResponse")]
-        void UpdateProperty(GUIApplication.PropertyServiceReference.Property property, string address, string zipCode, string type, int rooms, int floors, double price, double propertySize, double houseSize, int constructionYear);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILocationService/GetAllLocations", ReplyAction="http://tempuri.org/ILocationService/GetAllLocationsResponse")]
+        GUIApplication.LocationServiceReference.Location[] GetAllLocations();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPropertyService/UpdateProperty", ReplyAction="http://tempuri.org/IPropertyService/UpdatePropertyResponse")]
-        System.Threading.Tasks.Task UpdatePropertyAsync(GUIApplication.PropertyServiceReference.Property property, string address, string zipCode, string type, int rooms, int floors, double price, double propertySize, double houseSize, int constructionYear);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILocationService/GetAllLocations", ReplyAction="http://tempuri.org/ILocationService/GetAllLocationsResponse")]
+        System.Threading.Tasks.Task<GUIApplication.LocationServiceReference.Location[]> GetAllLocationsAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPropertyService/DeleteProperty", ReplyAction="http://tempuri.org/IPropertyService/DeletePropertyResponse")]
-        void DeleteProperty(GUIApplication.PropertyServiceReference.Property property);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILocationService/UpdateLocation", ReplyAction="http://tempuri.org/ILocationService/UpdateLocationResponse")]
+        void UpdateLocation(GUIApplication.LocationServiceReference.Location loc, string zipCode, string city);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPropertyService/DeleteProperty", ReplyAction="http://tempuri.org/IPropertyService/DeletePropertyResponse")]
-        System.Threading.Tasks.Task DeletePropertyAsync(GUIApplication.PropertyServiceReference.Property property);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILocationService/UpdateLocation", ReplyAction="http://tempuri.org/ILocationService/UpdateLocationResponse")]
+        System.Threading.Tasks.Task UpdateLocationAsync(GUIApplication.LocationServiceReference.Location loc, string zipCode, string city);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILocationService/DeleteLocation", ReplyAction="http://tempuri.org/ILocationService/DeleteLocationResponse")]
+        void DeleteLocation(GUIApplication.LocationServiceReference.Location loc);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILocationService/DeleteLocation", ReplyAction="http://tempuri.org/ILocationService/DeleteLocationResponse")]
+        System.Threading.Tasks.Task DeleteLocationAsync(GUIApplication.LocationServiceReference.Location loc);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IPropertyServiceChannel : GUIApplication.PropertyServiceReference.IPropertyService, System.ServiceModel.IClientChannel {
+    public interface ILocationServiceChannel : GUIApplication.LocationServiceReference.ILocationService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class PropertyServiceClient : System.ServiceModel.ClientBase<GUIApplication.PropertyServiceReference.IPropertyService>, GUIApplication.PropertyServiceReference.IPropertyService {
+    public partial class LocationServiceClient : System.ServiceModel.ClientBase<GUIApplication.LocationServiceReference.ILocationService>, GUIApplication.LocationServiceReference.ILocationService {
         
-        public PropertyServiceClient() {
+        public LocationServiceClient() {
         }
         
-        public PropertyServiceClient(string endpointConfigurationName) : 
+        public LocationServiceClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public PropertyServiceClient(string endpointConfigurationName, string remoteAddress) : 
+        public LocationServiceClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public PropertyServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public LocationServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public PropertyServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public LocationServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
-        public void InsertProperty(GUIApplication.PropertyServiceReference.Property property) {
-            base.Channel.InsertProperty(property);
+        public void InsertLocation(GUIApplication.LocationServiceReference.Location location) {
+            base.Channel.InsertLocation(location);
         }
         
-        public System.Threading.Tasks.Task InsertPropertyAsync(GUIApplication.PropertyServiceReference.Property property) {
-            return base.Channel.InsertPropertyAsync(property);
+        public System.Threading.Tasks.Task InsertLocationAsync(GUIApplication.LocationServiceReference.Location location) {
+            return base.Channel.InsertLocationAsync(location);
         }
         
-        public GUIApplication.PropertyServiceReference.Property[] GetPropertiesByAddress(string address) {
-            return base.Channel.GetPropertiesByAddress(address);
+        public GUIApplication.LocationServiceReference.Location GetLocation(string zipCode) {
+            return base.Channel.GetLocation(zipCode);
         }
         
-        public System.Threading.Tasks.Task<GUIApplication.PropertyServiceReference.Property[]> GetPropertiesByAddressAsync(string address) {
-            return base.Channel.GetPropertiesByAddressAsync(address);
+        public System.Threading.Tasks.Task<GUIApplication.LocationServiceReference.Location> GetLocationAsync(string zipCode) {
+            return base.Channel.GetLocationAsync(zipCode);
         }
         
-        public GUIApplication.PropertyServiceReference.Property[] GetAllProperties() {
-            return base.Channel.GetAllProperties();
+        public GUIApplication.LocationServiceReference.Location[] GetLocationsByCity(string city) {
+            return base.Channel.GetLocationsByCity(city);
         }
         
-        public System.Threading.Tasks.Task<GUIApplication.PropertyServiceReference.Property[]> GetAllPropertiesAsync() {
-            return base.Channel.GetAllPropertiesAsync();
+        public System.Threading.Tasks.Task<GUIApplication.LocationServiceReference.Location[]> GetLocationsByCityAsync(string city) {
+            return base.Channel.GetLocationsByCityAsync(city);
         }
         
-        public void UpdateProperty(GUIApplication.PropertyServiceReference.Property property, string address, string zipCode, string type, int rooms, int floors, double price, double propertySize, double houseSize, int constructionYear) {
-            base.Channel.UpdateProperty(property, address, zipCode, type, rooms, floors, price, propertySize, houseSize, constructionYear);
+        public GUIApplication.LocationServiceReference.Location[] GetAllLocations() {
+            return base.Channel.GetAllLocations();
         }
         
-        public System.Threading.Tasks.Task UpdatePropertyAsync(GUIApplication.PropertyServiceReference.Property property, string address, string zipCode, string type, int rooms, int floors, double price, double propertySize, double houseSize, int constructionYear) {
-            return base.Channel.UpdatePropertyAsync(property, address, zipCode, type, rooms, floors, price, propertySize, houseSize, constructionYear);
+        public System.Threading.Tasks.Task<GUIApplication.LocationServiceReference.Location[]> GetAllLocationsAsync() {
+            return base.Channel.GetAllLocationsAsync();
         }
         
-        public void DeleteProperty(GUIApplication.PropertyServiceReference.Property property) {
-            base.Channel.DeleteProperty(property);
+        public void UpdateLocation(GUIApplication.LocationServiceReference.Location loc, string zipCode, string city) {
+            base.Channel.UpdateLocation(loc, zipCode, city);
         }
         
-        public System.Threading.Tasks.Task DeletePropertyAsync(GUIApplication.PropertyServiceReference.Property property) {
-            return base.Channel.DeletePropertyAsync(property);
+        public System.Threading.Tasks.Task UpdateLocationAsync(GUIApplication.LocationServiceReference.Location loc, string zipCode, string city) {
+            return base.Channel.UpdateLocationAsync(loc, zipCode, city);
+        }
+        
+        public void DeleteLocation(GUIApplication.LocationServiceReference.Location loc) {
+            base.Channel.DeleteLocation(loc);
+        }
+        
+        public System.Threading.Tasks.Task DeleteLocationAsync(GUIApplication.LocationServiceReference.Location loc) {
+            return base.Channel.DeleteLocationAsync(loc);
         }
     }
 }

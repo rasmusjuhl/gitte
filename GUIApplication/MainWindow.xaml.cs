@@ -51,12 +51,12 @@ namespace GUIApplication
             if (buyerTab.IsSelected)
             {
                 Buyer buyer = (Buyer)buyerData.SelectedItem;
-                MessageBox.Show("KøberID: " + buyer.Id + "\nNavn: " + buyer.Name + "\nAdresse: " + buyer.Address + "\nPostnummer: " + buyer.Location.ZipCode + " By: " + buyer.Location.City + "\nTelefon: " + buyer.Phone + "\nMobil: " + buyer.Mobil + "\nEmail: " + buyer.Email + "\nMisc: " + buyer.Misc);
+                MessageBox.Show("KøberID: " + buyer.Id + "\nNavn: " + buyer.Name + "\nAdresse: " + buyer.Address + "\nPostnummer: " + buyer.ZipCode + " By: " + "\nTelefon: " + buyer.Phone + "\nMobil: " + buyer.Mobile + "\nEmail: " + buyer.Email + "\nMisc: " + buyer.Misc);
             }
             else
             {
                 Seller seller = (Seller)sellerData.SelectedItem;
-                MessageBox.Show("SælgerID: " + seller.Id + "\nNavn: " + seller.Name + "\nAdresse: " + seller.Address + "\nPostnummer: " + seller.Location.ZipCode + " By: " + seller.Location.City + "\nTelefon: " + seller.Phone + "\nMobil: " + seller.Mobil + "\nEmail: " + seller.Email + "\nMisc: " + seller.Misc);
+                MessageBox.Show("SælgerID: " + seller.Id + "\nNavn: " + seller.Name + "\nAdresse: " + seller.Address + "\nPostnummer: " + seller.ZipCode + " By: "  + "\nTelefon: " + seller.Phone + "\nMobil: " + seller.Mobile + "\nEmail: " + seller.Email + "\nMisc: " + seller.Misc);
             }
         }
 

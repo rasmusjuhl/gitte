@@ -8,16 +8,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GUIApplication.PropertyServiceReference {
+namespace GUIApplication.UserServiceReference {
     using System.Runtime.Serialization;
     using System;
     
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Property", Namespace="http://schemas.datacontract.org/2004/07/ModelLayer")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Person", Namespace="http://schemas.datacontract.org/2004/07/ModelLayer")]
     [System.SerializableAttribute()]
-    public partial class Property : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(GUIApplication.UserServiceReference.Buyer))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(GUIApplication.UserServiceReference.Seller))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(GUIApplication.UserServiceReference.User))]
+    public partial class Person : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -26,31 +29,19 @@ namespace GUIApplication.PropertyServiceReference {
         private string AddressField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private GUIApplication.PropertyServiceReference.Buyer[] BuyersField;
+        private string EmailField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ConstructionYearField;
+        private string MiscField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int FloorsField;
+        private string MobileField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double HouseSizeField;
+        private string NameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double PriceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double PropertySizeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int RoomsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TypeField;
+        private string PhoneField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ZipCodeField;
@@ -79,118 +70,66 @@ namespace GUIApplication.PropertyServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public GUIApplication.PropertyServiceReference.Buyer[] Buyers {
+        public string Email {
             get {
-                return this.BuyersField;
+                return this.EmailField;
             }
             set {
-                if ((object.ReferenceEquals(this.BuyersField, value) != true)) {
-                    this.BuyersField = value;
-                    this.RaisePropertyChanged("Buyers");
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ConstructionYear {
+        public string Misc {
             get {
-                return this.ConstructionYearField;
+                return this.MiscField;
             }
             set {
-                if ((this.ConstructionYearField.Equals(value) != true)) {
-                    this.ConstructionYearField = value;
-                    this.RaisePropertyChanged("ConstructionYear");
+                if ((object.ReferenceEquals(this.MiscField, value) != true)) {
+                    this.MiscField = value;
+                    this.RaisePropertyChanged("Misc");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Floors {
+        public string Mobile {
             get {
-                return this.FloorsField;
+                return this.MobileField;
             }
             set {
-                if ((this.FloorsField.Equals(value) != true)) {
-                    this.FloorsField = value;
-                    this.RaisePropertyChanged("Floors");
+                if ((object.ReferenceEquals(this.MobileField, value) != true)) {
+                    this.MobileField = value;
+                    this.RaisePropertyChanged("Mobile");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public double HouseSize {
+        public string Name {
             get {
-                return this.HouseSizeField;
+                return this.NameField;
             }
             set {
-                if ((this.HouseSizeField.Equals(value) != true)) {
-                    this.HouseSizeField = value;
-                    this.RaisePropertyChanged("HouseSize");
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
+        public string Phone {
             get {
-                return this.IdField;
+                return this.PhoneField;
             }
             set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double Price {
-            get {
-                return this.PriceField;
-            }
-            set {
-                if ((this.PriceField.Equals(value) != true)) {
-                    this.PriceField = value;
-                    this.RaisePropertyChanged("Price");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double PropertySize {
-            get {
-                return this.PropertySizeField;
-            }
-            set {
-                if ((this.PropertySizeField.Equals(value) != true)) {
-                    this.PropertySizeField = value;
-                    this.RaisePropertyChanged("PropertySize");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Rooms {
-            get {
-                return this.RoomsField;
-            }
-            set {
-                if ((this.RoomsField.Equals(value) != true)) {
-                    this.RoomsField = value;
-                    this.RaisePropertyChanged("Rooms");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Type {
-            get {
-                return this.TypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TypeField, value) != true)) {
-                    this.TypeField = value;
-                    this.RaisePropertyChanged("Type");
+                if ((object.ReferenceEquals(this.PhoneField, value) != true)) {
+                    this.PhoneField = value;
+                    this.RaisePropertyChanged("Phone");
                 }
             }
         }
@@ -222,7 +161,7 @@ namespace GUIApplication.PropertyServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Buyer", Namespace="http://schemas.datacontract.org/2004/07/ModelLayer")]
     [System.SerializableAttribute()]
-    public partial class Buyer : GUIApplication.PropertyServiceReference.Person {
+    public partial class Buyer : GUIApplication.UserServiceReference.Person {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool AllowedEmailSpamField;
@@ -258,7 +197,7 @@ namespace GUIApplication.PropertyServiceReference {
         private bool LivesForRentField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private GUIApplication.PropertyServiceReference.Location[] LocationsField;
+        private GUIApplication.UserServiceReference.Location[] LocationsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double LotSizeMaxField;
@@ -285,7 +224,7 @@ namespace GUIApplication.PropertyServiceReference {
         private double ProbertySizeMinField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private GUIApplication.PropertyServiceReference.Property[] PropertiesField;
+        private GUIApplication.UserServiceReference.Property[] PropertiesField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool AllowedEmailSpam {
@@ -431,7 +370,7 @@ namespace GUIApplication.PropertyServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public GUIApplication.PropertyServiceReference.Location[] Locations {
+        public GUIApplication.UserServiceReference.Location[] Locations {
             get {
                 return this.LocationsField;
             }
@@ -548,7 +487,7 @@ namespace GUIApplication.PropertyServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public GUIApplication.PropertyServiceReference.Property[] Properties {
+        public GUIApplication.UserServiceReference.Property[] Properties {
             get {
                 return this.PropertiesField;
             }
@@ -563,34 +502,117 @@ namespace GUIApplication.PropertyServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Person", Namespace="http://schemas.datacontract.org/2004/07/ModelLayer")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Seller", Namespace="http://schemas.datacontract.org/2004/07/ModelLayer")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(GUIApplication.PropertyServiceReference.Buyer))]
-    public partial class Person : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class Seller : GUIApplication.UserServiceReference.Person {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private GUIApplication.UserServiceReference.Property[] PropertiesField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GUIApplication.UserServiceReference.Property[] Properties {
+            get {
+                return this.PropertiesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PropertiesField, value) != true)) {
+                    this.PropertiesField = value;
+                    this.RaisePropertyChanged("Properties");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="User", Namespace="http://schemas.datacontract.org/2004/07/ModelLayer")]
+    [System.SerializableAttribute()]
+    public partial class User : GUIApplication.UserServiceReference.Person {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private GUIApplication.UserServiceReference.Appointment[] AppointmentsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GUIApplication.UserServiceReference.Appointment[] Appointments {
+            get {
+                return this.AppointmentsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AppointmentsField, value) != true)) {
+                    this.AppointmentsField = value;
+                    this.RaisePropertyChanged("Appointments");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Appointment", Namespace="http://schemas.datacontract.org/2004/07/ModelLayer")]
+    [System.SerializableAttribute()]
+    public partial class Appointment : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AddressField;
+        private GUIApplication.UserServiceReference.Buyer BuyerField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EmailField;
+        private string CategoryField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MiscField;
+        private System.DateTime DateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MobileField;
+        private string DescriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
+        private System.DateTime EndTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PhoneField;
+        private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ZipCodeField;
+        private GUIApplication.UserServiceReference.Seller SellerField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime StarTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StatusField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -603,92 +625,118 @@ namespace GUIApplication.PropertyServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Address {
+        public GUIApplication.UserServiceReference.Buyer Buyer {
             get {
-                return this.AddressField;
+                return this.BuyerField;
             }
             set {
-                if ((object.ReferenceEquals(this.AddressField, value) != true)) {
-                    this.AddressField = value;
-                    this.RaisePropertyChanged("Address");
+                if ((object.ReferenceEquals(this.BuyerField, value) != true)) {
+                    this.BuyerField = value;
+                    this.RaisePropertyChanged("Buyer");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Email {
+        public string Category {
             get {
-                return this.EmailField;
+                return this.CategoryField;
             }
             set {
-                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
-                    this.EmailField = value;
-                    this.RaisePropertyChanged("Email");
+                if ((object.ReferenceEquals(this.CategoryField, value) != true)) {
+                    this.CategoryField = value;
+                    this.RaisePropertyChanged("Category");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Misc {
+        public System.DateTime Date {
             get {
-                return this.MiscField;
+                return this.DateField;
             }
             set {
-                if ((object.ReferenceEquals(this.MiscField, value) != true)) {
-                    this.MiscField = value;
-                    this.RaisePropertyChanged("Misc");
+                if ((this.DateField.Equals(value) != true)) {
+                    this.DateField = value;
+                    this.RaisePropertyChanged("Date");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Mobile {
+        public string Description {
             get {
-                return this.MobileField;
+                return this.DescriptionField;
             }
             set {
-                if ((object.ReferenceEquals(this.MobileField, value) != true)) {
-                    this.MobileField = value;
-                    this.RaisePropertyChanged("Mobile");
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
+        public System.DateTime EndTime {
             get {
-                return this.NameField;
+                return this.EndTimeField;
             }
             set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
+                if ((this.EndTimeField.Equals(value) != true)) {
+                    this.EndTimeField = value;
+                    this.RaisePropertyChanged("EndTime");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Phone {
+        public int Id {
             get {
-                return this.PhoneField;
+                return this.IdField;
             }
             set {
-                if ((object.ReferenceEquals(this.PhoneField, value) != true)) {
-                    this.PhoneField = value;
-                    this.RaisePropertyChanged("Phone");
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ZipCode {
+        public GUIApplication.UserServiceReference.Seller Seller {
             get {
-                return this.ZipCodeField;
+                return this.SellerField;
             }
             set {
-                if ((object.ReferenceEquals(this.ZipCodeField, value) != true)) {
-                    this.ZipCodeField = value;
-                    this.RaisePropertyChanged("ZipCode");
+                if ((object.ReferenceEquals(this.SellerField, value) != true)) {
+                    this.SellerField = value;
+                    this.RaisePropertyChanged("Seller");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime StarTime {
+            get {
+                return this.StarTimeField;
+            }
+            set {
+                if ((this.StarTimeField.Equals(value) != true)) {
+                    this.StarTimeField = value;
+                    this.RaisePropertyChanged("StarTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Status {
+            get {
+                return this.StatusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StatusField, value) != true)) {
+                    this.StatusField = value;
+                    this.RaisePropertyChanged("Status");
                 }
             }
         }
@@ -713,7 +761,7 @@ namespace GUIApplication.PropertyServiceReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private GUIApplication.PropertyServiceReference.Buyer[] BuyersField;
+        private GUIApplication.UserServiceReference.Buyer[] BuyersField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CityField;
@@ -735,7 +783,7 @@ namespace GUIApplication.PropertyServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public GUIApplication.PropertyServiceReference.Buyer[] Buyers {
+        public GUIApplication.UserServiceReference.Buyer[] Buyers {
             get {
                 return this.BuyersField;
             }
@@ -796,106 +844,311 @@ namespace GUIApplication.PropertyServiceReference {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PropertyServiceReference.IPropertyService")]
-    public interface IPropertyService {
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Property", Namespace="http://schemas.datacontract.org/2004/07/ModelLayer")]
+    [System.SerializableAttribute()]
+    public partial class Property : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPropertyService/InsertProperty", ReplyAction="http://tempuri.org/IPropertyService/InsertPropertyResponse")]
-        void InsertProperty(GUIApplication.PropertyServiceReference.Property property);
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPropertyService/InsertProperty", ReplyAction="http://tempuri.org/IPropertyService/InsertPropertyResponse")]
-        System.Threading.Tasks.Task InsertPropertyAsync(GUIApplication.PropertyServiceReference.Property property);
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AddressField;
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPropertyService/GetPropertiesByAddress", ReplyAction="http://tempuri.org/IPropertyService/GetPropertiesByAddressResponse")]
-        GUIApplication.PropertyServiceReference.Property[] GetPropertiesByAddress(string address);
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private GUIApplication.UserServiceReference.Buyer[] BuyersField;
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPropertyService/GetPropertiesByAddress", ReplyAction="http://tempuri.org/IPropertyService/GetPropertiesByAddressResponse")]
-        System.Threading.Tasks.Task<GUIApplication.PropertyServiceReference.Property[]> GetPropertiesByAddressAsync(string address);
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ConstructionYearField;
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPropertyService/GetAllProperties", ReplyAction="http://tempuri.org/IPropertyService/GetAllPropertiesResponse")]
-        GUIApplication.PropertyServiceReference.Property[] GetAllProperties();
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int FloorsField;
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPropertyService/GetAllProperties", ReplyAction="http://tempuri.org/IPropertyService/GetAllPropertiesResponse")]
-        System.Threading.Tasks.Task<GUIApplication.PropertyServiceReference.Property[]> GetAllPropertiesAsync();
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double HouseSizeField;
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPropertyService/UpdateProperty", ReplyAction="http://tempuri.org/IPropertyService/UpdatePropertyResponse")]
-        void UpdateProperty(GUIApplication.PropertyServiceReference.Property property, string address, string zipCode, string type, int rooms, int floors, double price, double propertySize, double houseSize, int constructionYear);
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPropertyService/UpdateProperty", ReplyAction="http://tempuri.org/IPropertyService/UpdatePropertyResponse")]
-        System.Threading.Tasks.Task UpdatePropertyAsync(GUIApplication.PropertyServiceReference.Property property, string address, string zipCode, string type, int rooms, int floors, double price, double propertySize, double houseSize, int constructionYear);
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double PriceField;
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPropertyService/DeleteProperty", ReplyAction="http://tempuri.org/IPropertyService/DeletePropertyResponse")]
-        void DeleteProperty(GUIApplication.PropertyServiceReference.Property property);
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double PropertySizeField;
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPropertyService/DeleteProperty", ReplyAction="http://tempuri.org/IPropertyService/DeletePropertyResponse")]
-        System.Threading.Tasks.Task DeletePropertyAsync(GUIApplication.PropertyServiceReference.Property property);
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int RoomsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ZipCodeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Address {
+            get {
+                return this.AddressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AddressField, value) != true)) {
+                    this.AddressField = value;
+                    this.RaisePropertyChanged("Address");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GUIApplication.UserServiceReference.Buyer[] Buyers {
+            get {
+                return this.BuyersField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BuyersField, value) != true)) {
+                    this.BuyersField = value;
+                    this.RaisePropertyChanged("Buyers");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ConstructionYear {
+            get {
+                return this.ConstructionYearField;
+            }
+            set {
+                if ((this.ConstructionYearField.Equals(value) != true)) {
+                    this.ConstructionYearField = value;
+                    this.RaisePropertyChanged("ConstructionYear");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Floors {
+            get {
+                return this.FloorsField;
+            }
+            set {
+                if ((this.FloorsField.Equals(value) != true)) {
+                    this.FloorsField = value;
+                    this.RaisePropertyChanged("Floors");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double HouseSize {
+            get {
+                return this.HouseSizeField;
+            }
+            set {
+                if ((this.HouseSizeField.Equals(value) != true)) {
+                    this.HouseSizeField = value;
+                    this.RaisePropertyChanged("HouseSize");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Price {
+            get {
+                return this.PriceField;
+            }
+            set {
+                if ((this.PriceField.Equals(value) != true)) {
+                    this.PriceField = value;
+                    this.RaisePropertyChanged("Price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double PropertySize {
+            get {
+                return this.PropertySizeField;
+            }
+            set {
+                if ((this.PropertySizeField.Equals(value) != true)) {
+                    this.PropertySizeField = value;
+                    this.RaisePropertyChanged("PropertySize");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Rooms {
+            get {
+                return this.RoomsField;
+            }
+            set {
+                if ((this.RoomsField.Equals(value) != true)) {
+                    this.RoomsField = value;
+                    this.RaisePropertyChanged("Rooms");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Type {
+            get {
+                return this.TypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TypeField, value) != true)) {
+                    this.TypeField = value;
+                    this.RaisePropertyChanged("Type");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ZipCode {
+            get {
+                return this.ZipCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ZipCodeField, value) != true)) {
+                    this.ZipCodeField = value;
+                    this.RaisePropertyChanged("ZipCode");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IPropertyServiceChannel : GUIApplication.PropertyServiceReference.IPropertyService, System.ServiceModel.IClientChannel {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="UserServiceReference.IUserService")]
+    public interface IUserService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/InsertUser", ReplyAction="http://tempuri.org/IUserService/InsertUserResponse")]
+        void InsertUser(GUIApplication.UserServiceReference.User user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/InsertUser", ReplyAction="http://tempuri.org/IUserService/InsertUserResponse")]
+        System.Threading.Tasks.Task InsertUserAsync(GUIApplication.UserServiceReference.User user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/GetUserUserByPhone", ReplyAction="http://tempuri.org/IUserService/GetUserUserByPhoneResponse")]
+        GUIApplication.UserServiceReference.User GetUserUserByPhone(string phone);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/GetUserUserByPhone", ReplyAction="http://tempuri.org/IUserService/GetUserUserByPhoneResponse")]
+        System.Threading.Tasks.Task<GUIApplication.UserServiceReference.User> GetUserUserByPhoneAsync(string phone);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/GetAllUsers", ReplyAction="http://tempuri.org/IUserService/GetAllUsersResponse")]
+        GUIApplication.UserServiceReference.User[] GetAllUsers();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/GetAllUsers", ReplyAction="http://tempuri.org/IUserService/GetAllUsersResponse")]
+        System.Threading.Tasks.Task<GUIApplication.UserServiceReference.User[]> GetAllUsersAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/UpdateUser", ReplyAction="http://tempuri.org/IUserService/UpdateUserResponse")]
+        void UpdateUser(GUIApplication.UserServiceReference.User user, GUIApplication.UserServiceReference.Appointment[] appointments, string name, string address, string zipCode, string phone, string mobil, string email, string misc);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/UpdateUser", ReplyAction="http://tempuri.org/IUserService/UpdateUserResponse")]
+        System.Threading.Tasks.Task UpdateUserAsync(GUIApplication.UserServiceReference.User user, GUIApplication.UserServiceReference.Appointment[] appointments, string name, string address, string zipCode, string phone, string mobil, string email, string misc);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/DeleteUser", ReplyAction="http://tempuri.org/IUserService/DeleteUserResponse")]
+        void DeleteUser(GUIApplication.UserServiceReference.User user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/DeleteUser", ReplyAction="http://tempuri.org/IUserService/DeleteUserResponse")]
+        System.Threading.Tasks.Task DeleteUserAsync(GUIApplication.UserServiceReference.User user);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IUserServiceChannel : GUIApplication.UserServiceReference.IUserService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class PropertyServiceClient : System.ServiceModel.ClientBase<GUIApplication.PropertyServiceReference.IPropertyService>, GUIApplication.PropertyServiceReference.IPropertyService {
+    public partial class UserServiceClient : System.ServiceModel.ClientBase<GUIApplication.UserServiceReference.IUserService>, GUIApplication.UserServiceReference.IUserService {
         
-        public PropertyServiceClient() {
+        public UserServiceClient() {
         }
         
-        public PropertyServiceClient(string endpointConfigurationName) : 
+        public UserServiceClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public PropertyServiceClient(string endpointConfigurationName, string remoteAddress) : 
+        public UserServiceClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public PropertyServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public UserServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public PropertyServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public UserServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
-        public void InsertProperty(GUIApplication.PropertyServiceReference.Property property) {
-            base.Channel.InsertProperty(property);
+        public void InsertUser(GUIApplication.UserServiceReference.User user) {
+            base.Channel.InsertUser(user);
         }
         
-        public System.Threading.Tasks.Task InsertPropertyAsync(GUIApplication.PropertyServiceReference.Property property) {
-            return base.Channel.InsertPropertyAsync(property);
+        public System.Threading.Tasks.Task InsertUserAsync(GUIApplication.UserServiceReference.User user) {
+            return base.Channel.InsertUserAsync(user);
         }
         
-        public GUIApplication.PropertyServiceReference.Property[] GetPropertiesByAddress(string address) {
-            return base.Channel.GetPropertiesByAddress(address);
+        public GUIApplication.UserServiceReference.User GetUserUserByPhone(string phone) {
+            return base.Channel.GetUserUserByPhone(phone);
         }
         
-        public System.Threading.Tasks.Task<GUIApplication.PropertyServiceReference.Property[]> GetPropertiesByAddressAsync(string address) {
-            return base.Channel.GetPropertiesByAddressAsync(address);
+        public System.Threading.Tasks.Task<GUIApplication.UserServiceReference.User> GetUserUserByPhoneAsync(string phone) {
+            return base.Channel.GetUserUserByPhoneAsync(phone);
         }
         
-        public GUIApplication.PropertyServiceReference.Property[] GetAllProperties() {
-            return base.Channel.GetAllProperties();
+        public GUIApplication.UserServiceReference.User[] GetAllUsers() {
+            return base.Channel.GetAllUsers();
         }
         
-        public System.Threading.Tasks.Task<GUIApplication.PropertyServiceReference.Property[]> GetAllPropertiesAsync() {
-            return base.Channel.GetAllPropertiesAsync();
+        public System.Threading.Tasks.Task<GUIApplication.UserServiceReference.User[]> GetAllUsersAsync() {
+            return base.Channel.GetAllUsersAsync();
         }
         
-        public void UpdateProperty(GUIApplication.PropertyServiceReference.Property property, string address, string zipCode, string type, int rooms, int floors, double price, double propertySize, double houseSize, int constructionYear) {
-            base.Channel.UpdateProperty(property, address, zipCode, type, rooms, floors, price, propertySize, houseSize, constructionYear);
+        public void UpdateUser(GUIApplication.UserServiceReference.User user, GUIApplication.UserServiceReference.Appointment[] appointments, string name, string address, string zipCode, string phone, string mobil, string email, string misc) {
+            base.Channel.UpdateUser(user, appointments, name, address, zipCode, phone, mobil, email, misc);
         }
         
-        public System.Threading.Tasks.Task UpdatePropertyAsync(GUIApplication.PropertyServiceReference.Property property, string address, string zipCode, string type, int rooms, int floors, double price, double propertySize, double houseSize, int constructionYear) {
-            return base.Channel.UpdatePropertyAsync(property, address, zipCode, type, rooms, floors, price, propertySize, houseSize, constructionYear);
+        public System.Threading.Tasks.Task UpdateUserAsync(GUIApplication.UserServiceReference.User user, GUIApplication.UserServiceReference.Appointment[] appointments, string name, string address, string zipCode, string phone, string mobil, string email, string misc) {
+            return base.Channel.UpdateUserAsync(user, appointments, name, address, zipCode, phone, mobil, email, misc);
         }
         
-        public void DeleteProperty(GUIApplication.PropertyServiceReference.Property property) {
-            base.Channel.DeleteProperty(property);
+        public void DeleteUser(GUIApplication.UserServiceReference.User user) {
+            base.Channel.DeleteUser(user);
         }
         
-        public System.Threading.Tasks.Task DeletePropertyAsync(GUIApplication.PropertyServiceReference.Property property) {
-            return base.Channel.DeletePropertyAsync(property);
+        public System.Threading.Tasks.Task DeleteUserAsync(GUIApplication.UserServiceReference.User user) {
+            return base.Channel.DeleteUserAsync(user);
         }
     }
 }

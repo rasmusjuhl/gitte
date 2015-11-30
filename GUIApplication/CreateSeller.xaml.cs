@@ -45,7 +45,7 @@ namespace GUIApplication
                     Address = txtAddress.Text,
                     ZipCode = txtZipCode.Text,
                     Phone = txtPhone.Text,
-                    Mobil = txtMobil.Text,
+                    Mobile = txtMobil.Text,
                     Email = txtEmail.Text,
                     Misc = txtMisc.Text,
                 };
@@ -61,7 +61,7 @@ namespace GUIApplication
                     Address = txtAddress.Text,
                     ZipCode = txtZipCode.Text,
                     Phone = txtPhone.Text,
-                    Mobil = txtMobil.Text,
+                    Mobile = txtMobil.Text,
                     Email = txtEmail.Text,
                     Misc = txtMisc.Text,
                 };
