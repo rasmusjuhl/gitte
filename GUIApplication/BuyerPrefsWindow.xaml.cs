@@ -51,6 +51,7 @@ namespace GUIApplication
 
         private void BtnCancel(object sender, RoutedEventArgs e)
         {
+            createWindow.Close();
             this.Close();
         }
 
