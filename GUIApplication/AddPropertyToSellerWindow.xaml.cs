@@ -57,15 +57,21 @@ namespace GUIApplication
                 SellerID = seller.Id
             };
             iProp.InsertProperty(property);
+            this.Close();
 
         }
 
         private void BtnSearchAddress(object sender, RoutedEventArgs e)
         {
             Property property = iProp.GetPropertiesByAddress(txtSearchProperty.Text).Single();
-
+            txtAddress.Text = property.Address;
+            txtZipCode.Text = property.ZipCode;
+            txtRooms.Text = property.Rooms.ToString();
+            txtFloors.Text = property.Floors.ToString();
+            txtHouseSize.Text = property.HouseSize.ToString();
+            txtLotSize.Text = property.PropertySize.ToString();
+            txtPrice.Text = property.Price.ToString();
+            txtType.Text = property.Type.ToString();
         }
-
-        
     }
 }
