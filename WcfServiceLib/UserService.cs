@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using ControlLayer;
+using ModelLayer;
 
 namespace WcfServiceLib
 {
@@ -12,27 +13,27 @@ namespace WcfServiceLib
     {
         static UserController uCtr = new UserController();
 
-        public void InsertUser(ModelLayer.User user)
+        public void InsertUser(User user)
         {
             uCtr.InsertUser(user);
         }
 
-        public ModelLayer.User GetUserUserByPhone(string phone)
+        public User GetUserUserByPhone(string phone)
         {
             return uCtr.GetUserByPhone(phone);
         }
 
-        public List<ModelLayer.User> GetAllUsers()
+        public List<User> GetAllUsers()
         {
             return uCtr.GetAllUsers();
         }
 
-        public void UpdateUser(ModelLayer.User user, List<ModelLayer.Appointment> appointments, string name, string address, string zipCode, string phone, string mobil, string email, string misc)
+        public void UpdateUser(User user, List<Appointment> appointments, string name, string address, string zipCode, string phone, string mobil, string email, string misc)
         {
             uCtr.UpdateUser(user, appointments, name, address, zipCode, phone, mobil, email, misc);
         }
 
-        public void DeleteUser(ModelLayer.User user)
+        public void DeleteUser(User user)
         {
             uCtr.DeleteUser(user);
         }

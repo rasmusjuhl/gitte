@@ -25,6 +25,7 @@ namespace GUIApplication
     /// </summary>
     public partial class CreateSeller : Window
     {
+        private Buyer buyer;
         static ISellerService iSeller = new SellerServiceClient();
         static IBuyerService iBuyer = new BuyerServiceClient();
         static ILocationService iLoc = new LocationServiceClient();
@@ -84,15 +85,25 @@ namespace GUIApplication
             {
                 //Window skal laves
 
-                //SellerDetailsWindow window = new SellerDetailsWindow();
+                //SellerPropertyWindow window = new SellerPropertyWindow();
                 //window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                 //window.Topmost = true;
                 //window.Show();
             }
             else if(customerType.SelectedIndex == 1)
             {
-                BuyerPrefsWindow window = new BuyerPrefsWindow();
-                this.Topmost = false;
+                buyer = new Buyer()
+                {
+                    Name = txtName.Text,
+                    Address = txtAddress.Text,
+                    ZipCode = txtZipCode.Text,
+                    Phone = txtPhone.Text,
+                    Mobile = txtMobil.Text,
+                    Email = txtEmail.Text,
+                    Misc = txtMisc.Text
+                };
+                BuyerPrefsWindow window = new BuyerPrefsWindow(buyer, this);
+                this.Topmost = false;               
                 window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                 window.Topmost = true;
                 window.Show();
@@ -147,7 +158,7 @@ namespace GUIApplication
                 catch (Exception)
                 {
                     MessageBox.Show("Ugyldigt postnummer!");
-                }                
+                }
             }
         }
 
@@ -199,6 +210,6 @@ namespace GUIApplication
                 txtMisc.Text = "Diverse";
         }
 
-        
+
     }
 }

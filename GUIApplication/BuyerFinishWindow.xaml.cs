@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GUIApplication.BuyerServiceReference;
+using Buyer = GUIApplication.BuyerServiceReference.Buyer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,10 +21,56 @@ namespace GUIApplication
     /// </summary>
     public partial class BuyerFinishWindow : Window
     {
-        public BuyerFinishWindow()
+        static IBuyerService iBuyer = new BuyerServiceClient();
+        private Buyer buyer;
+        private BuyerPrefsWindow buyerWindow;
+        private CreateSeller createWindow;
+        public BuyerFinishWindow(Buyer b, CreateSeller cs, BuyerPrefsWindow w)
         {
+            buyer = b;
+            buyerWindow = w;
+            createWindow = cs;
             InitializeComponent();
         }
-       
+
+        private void BtnSaveAndClose(object sender, RoutedEventArgs e)
+        {
+            if (checkInRKI.IsChecked == true)
+            {
+                buyer.InRKI = true;
+            }
+            if (checkBuyerApproved.IsChecked == true)
+            {
+                buyer.BuyerApproved = true;
+                buyer.Bank = txtBank.Text;
+
+                // INDSÆT BELØB HER - SKAL OPRETTES I MODELLEN BUYER  Convert.ToDouble(txtApprovedAmount.Text);
+            }
+            if (checkOwner.IsChecked == true)
+            {
+                buyer.OwnesHouse = true;
+            }
+            if (checkRents.IsChecked == true)
+            {
+                buyer.LivesForRent = true;
+            }
+            iBuyer.InsertBuyer(buyer);
+            createWindow.Close();
+            buyerWindow.Close();
+            this.Close();
+        }
+
+        private void BtnCancel(object sender, RoutedEventArgs e)
+        {
+            createWindow.Close();
+            buyerWindow.Close();
+            this.Close();
+        }
+
+        private void BtnBack(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }
