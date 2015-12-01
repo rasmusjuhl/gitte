@@ -18,6 +18,8 @@ using GUIApplication.SellerServiceReference;
 using Seller = GUIApplication.SellerServiceReference.Seller;
 using GUIApplication.BuyerServiceReference;
 using Buyer = GUIApplication.BuyerServiceReference.Buyer;
+using GUIApplication.LocationServiceReference;
+using Location = GUIApplication.LocationServiceReference.Location;
 
 namespace GUIApplication
 {
@@ -29,7 +31,8 @@ namespace GUIApplication
         static IUserService iUser = new UserServiceClient();
         static ISellerService iSeller = new SellerServiceClient();
         static IBuyerService iBuyer = new BuyerServiceClient();
-        
+        static ILocationService iLoc = new LocationServiceClient();
+
         public MainWindow()
         {
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
@@ -51,12 +54,14 @@ namespace GUIApplication
             if (buyerTab.IsSelected)
             {
                 Buyer buyer = (Buyer)buyerData.SelectedItem;
-                MessageBox.Show("KøberID: " + buyer.Id + "\nNavn: " + buyer.Name + "\nAdresse: " + buyer.Address + "\nPostnummer: " + buyer.ZipCode + " By: " + "\nTelefon: " + buyer.Phone + "\nMobil: " + buyer.Mobile + "\nEmail: " + buyer.Email + "\nMisc: " + buyer.Misc);
+                Location loc = iLoc.GetLocation(buyer.ZipCode);
+                MessageBox.Show("KøberID: " + buyer.Id + "\nNavn: " + buyer.Name + "\nAdresse: " + buyer.Address + "\nPostnummer: " + buyer.ZipCode + " By: " + loc.City + "\nTelefon: " + buyer.Phone + "\nMobil: " + buyer.Mobile + "\nEmail: " + buyer.Email + "\nMisc: " + buyer.Misc);
             }
             else
             {
                 Seller seller = (Seller)sellerData.SelectedItem;
-                MessageBox.Show("SælgerID: " + seller.Id + "\nNavn: " + seller.Name + "\nAdresse: " + seller.Address + "\nPostnummer: " + seller.ZipCode + " By: "  + "\nTelefon: " + seller.Phone + "\nMobil: " + seller.Mobile + "\nEmail: " + seller.Email + "\nMisc: " + seller.Misc);
+                Location loc = iLoc.GetLocation(seller.ZipCode);
+                MessageBox.Show("SælgerID: " + seller.Id + "\nNavn: " + seller.Name + "\nAdresse: " + seller.Address + "\nPostnummer: " + seller.ZipCode + " By: " + loc.City + "\nTelefon: " + seller.Phone + "\nMobil: " + seller.Mobile + "\nEmail: " + seller.Email + "\nMisc: " + seller.Misc);
             }
         }
 
@@ -78,8 +83,6 @@ namespace GUIApplication
             window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             window.Topmost = true;
             window.Show();
-
-
         }
 
         private void buyerData_Loaded(object sender, RoutedEventArgs e)
@@ -96,6 +99,8 @@ namespace GUIApplication
             window.Topmost = true;
             window.Show();
         }
+
+       
 
     }
 
