@@ -53,10 +53,10 @@ namespace GUIApplication
                 Price = Convert.ToDouble(txtPrice.Text),
                 PropertySize = Convert.ToDouble(txtLotSize.Text),
                 HouseSize = Convert.ToDouble(txtHouseSize.Text),
-                ConstructionYear = Convert.ToInt32(txtConstructionYear.Text)
+                ConstructionYear = Convert.ToInt32(txtConstructionYear.Text),
+                SellerID = seller.Id
             };
             iProp.InsertProperty(property);
-            //iSeller.AddPropertyToSeller(seller, iProp.GetPropertiesByAddress(property.Address));
 
         }
 

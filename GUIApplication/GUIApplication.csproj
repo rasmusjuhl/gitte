@@ -216,6 +216,9 @@
     <None Include="Service References\PropertyServiceReference\service1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\SellerServiceReference\GUIApplication.SellerServiceReference.Property.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\SellerServiceReference\GUIApplication.SellerServiceReference.Seller.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

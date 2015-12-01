@@ -49,6 +49,12 @@
   <wsdl:message name="ISellerService_AddPropertyToSeller_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddPropertyToSellerResponse" />
   </wsdl:message>
+  <wsdl:message name="ISellerService_GetAllPropertiesFromSeller_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPropertiesFromSeller" />
+  </wsdl:message>
+  <wsdl:message name="ISellerService_GetAllPropertiesFromSeller_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPropertiesFromSellerResponse" />
+  </wsdl:message>
   <wsdl:portType name="ISellerService">
     <wsdl:operation name="InsertSeller">
       <wsdl:input wsaw:Action="http://tempuri.org/ISellerService/InsertSeller" message="tns:ISellerService_InsertSeller_InputMessage" />
@@ -77,6 +83,10 @@
     <wsdl:operation name="AddPropertyToSeller">
       <wsdl:input wsaw:Action="http://tempuri.org/ISellerService/AddPropertyToSeller" message="tns:ISellerService_AddPropertyToSeller_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISellerService/AddPropertyToSellerResponse" message="tns:ISellerService_AddPropertyToSeller_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPropertiesFromSeller">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISellerService/GetAllPropertiesFromSeller" message="tns:ISellerService_GetAllPropertiesFromSeller_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISellerService/GetAllPropertiesFromSellerResponse" message="tns:ISellerService_GetAllPropertiesFromSeller_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ISellerService" type="tns:ISellerService">
@@ -137,6 +147,15 @@
     </wsdl:operation>
     <wsdl:operation name="AddPropertyToSeller">
       <soap:operation soapAction="http://tempuri.org/ISellerService/AddPropertyToSeller" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPropertiesFromSeller">
+      <soap:operation soapAction="http://tempuri.org/ISellerService/GetAllPropertiesFromSeller" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -98,4 +98,18 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetAllPropertiesFromSeller">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/ModelLayer" minOccurs="0" name="seller" nillable="true" type="q10:Seller" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllPropertiesFromSellerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/ModelLayer" minOccurs="0" name="GetAllPropertiesFromSellerResult" nillable="true" type="q11:ArrayOfProperty" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

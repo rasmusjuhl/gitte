@@ -40,6 +40,7 @@
       <xs:element minOccurs="0" name="Price" type="xs:double" />
       <xs:element minOccurs="0" name="PropertySize" type="xs:double" />
       <xs:element minOccurs="0" name="Rooms" type="xs:int" />
+      <xs:element minOccurs="0" name="SellerID" type="xs:int" />
       <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string" />
     </xs:sequence>
@@ -56,6 +57,7 @@
       <xs:extension base="tns:Person">
         <xs:sequence>
           <xs:element minOccurs="0" name="AllowedEmailSpam" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ApprovedAmount" type="xs:double" />
           <xs:element minOccurs="0" name="Bank" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="BuyerApproved" type="xs:boolean" />
           <xs:element minOccurs="0" name="ContactAllowedByBoligOne" type="xs:boolean" />
