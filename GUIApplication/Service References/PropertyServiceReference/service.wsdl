@@ -37,6 +37,12 @@
   <wsdl:message name="IPropertyService_DeleteProperty_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeletePropertyResponse" />
   </wsdl:message>
+  <wsdl:message name="IPropertyService_GetPropertyBySellerID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPropertyBySellerID" />
+  </wsdl:message>
+  <wsdl:message name="IPropertyService_GetPropertyBySellerID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPropertyBySellerIDResponse" />
+  </wsdl:message>
   <wsdl:portType name="IPropertyService">
     <wsdl:operation name="InsertProperty">
       <wsdl:input wsaw:Action="http://tempuri.org/IPropertyService/InsertProperty" message="tns:IPropertyService_InsertProperty_InputMessage" />
@@ -57,6 +63,10 @@
     <wsdl:operation name="DeleteProperty">
       <wsdl:input wsaw:Action="http://tempuri.org/IPropertyService/DeleteProperty" message="tns:IPropertyService_DeleteProperty_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPropertyService/DeletePropertyResponse" message="tns:IPropertyService_DeleteProperty_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyBySellerID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPropertyService/GetPropertyBySellerID" message="tns:IPropertyService_GetPropertyBySellerID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPropertyService/GetPropertyBySellerIDResponse" message="tns:IPropertyService_GetPropertyBySellerID_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IPropertyService" type="tns:IPropertyService">
@@ -99,6 +109,15 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteProperty">
       <soap:operation soapAction="http://tempuri.org/IPropertyService/DeleteProperty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyBySellerID">
+      <soap:operation soapAction="http://tempuri.org/IPropertyService/GetPropertyBySellerID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

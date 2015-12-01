@@ -861,6 +861,12 @@ namespace GUIApplication.PropertyServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPropertyService/DeleteProperty", ReplyAction="http://tempuri.org/IPropertyService/DeletePropertyResponse")]
         System.Threading.Tasks.Task DeletePropertyAsync(GUIApplication.PropertyServiceReference.Property property);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPropertyService/GetPropertyBySellerID", ReplyAction="http://tempuri.org/IPropertyService/GetPropertyBySellerIDResponse")]
+        GUIApplication.PropertyServiceReference.Property GetPropertyBySellerID(int sellerID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPropertyService/GetPropertyBySellerID", ReplyAction="http://tempuri.org/IPropertyService/GetPropertyBySellerIDResponse")]
+        System.Threading.Tasks.Task<GUIApplication.PropertyServiceReference.Property> GetPropertyBySellerIDAsync(int sellerID);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -928,6 +934,14 @@ namespace GUIApplication.PropertyServiceReference {
         
         public System.Threading.Tasks.Task DeletePropertyAsync(GUIApplication.PropertyServiceReference.Property property) {
             return base.Channel.DeletePropertyAsync(property);
+        }
+        
+        public GUIApplication.PropertyServiceReference.Property GetPropertyBySellerID(int sellerID) {
+            return base.Channel.GetPropertyBySellerID(sellerID);
+        }
+        
+        public System.Threading.Tasks.Task<GUIApplication.PropertyServiceReference.Property> GetPropertyBySellerIDAsync(int sellerID) {
+            return base.Channel.GetPropertyBySellerIDAsync(sellerID);
         }
     }
 }

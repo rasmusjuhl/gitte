@@ -37,5 +37,9 @@ namespace WcfServiceLib
         {
             pCtr.DeleteProperty(property);
         }
+        public Property GetPropertyBySellerID(int sellerID)
+        {
+            return pCtr.GetPropertyBySellerID(sellerID);
+        }
     }
 }

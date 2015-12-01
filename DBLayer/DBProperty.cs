@@ -24,6 +24,15 @@ namespace DBLayer
                 ctx.SaveChanges();
             }
         }
+        public Property GetPropertyBySellerID(int sellerID)
+        {
+            Property property;
+            using (var ctx = new SystemContext())
+            {
+                property = ctx.Properties.Where(x => x.SellerID == sellerID).Single();
+            }
+            return property;
+        }
 
         public List<Property> GetPropertiesByAdress(string adress)
         {
