@@ -23,5 +23,15 @@ namespace GUIApplication
         {
             InitializeComponent();
         }
+
+        private void BtnCancel(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void BtnAddProperty(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
