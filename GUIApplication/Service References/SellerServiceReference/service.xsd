@@ -85,4 +85,17 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="AddPropertyToSeller">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/ModelLayer" minOccurs="0" name="seller" nillable="true" type="q8:Seller" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/ModelLayer" minOccurs="0" name="property" nillable="true" type="q9:Property" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPropertyToSellerResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

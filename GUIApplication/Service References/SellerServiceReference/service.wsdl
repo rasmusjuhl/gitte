@@ -43,6 +43,12 @@
   <wsdl:message name="ISellerService_DeleteSeller_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteSellerResponse" />
   </wsdl:message>
+  <wsdl:message name="ISellerService_AddPropertyToSeller_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPropertyToSeller" />
+  </wsdl:message>
+  <wsdl:message name="ISellerService_AddPropertyToSeller_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPropertyToSellerResponse" />
+  </wsdl:message>
   <wsdl:portType name="ISellerService">
     <wsdl:operation name="InsertSeller">
       <wsdl:input wsaw:Action="http://tempuri.org/ISellerService/InsertSeller" message="tns:ISellerService_InsertSeller_InputMessage" />
@@ -67,6 +73,10 @@
     <wsdl:operation name="DeleteSeller">
       <wsdl:input wsaw:Action="http://tempuri.org/ISellerService/DeleteSeller" message="tns:ISellerService_DeleteSeller_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISellerService/DeleteSellerResponse" message="tns:ISellerService_DeleteSeller_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPropertyToSeller">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISellerService/AddPropertyToSeller" message="tns:ISellerService_AddPropertyToSeller_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISellerService/AddPropertyToSellerResponse" message="tns:ISellerService_AddPropertyToSeller_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ISellerService" type="tns:ISellerService">
@@ -118,6 +128,15 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteSeller">
       <soap:operation soapAction="http://tempuri.org/ISellerService/DeleteSeller" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPropertyToSeller">
+      <soap:operation soapAction="http://tempuri.org/ISellerService/AddPropertyToSeller" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

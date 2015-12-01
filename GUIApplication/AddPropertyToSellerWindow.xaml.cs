@@ -11,6 +11,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using GUIApplication.SellerServiceReference;
+using Seller = GUIApplication.SellerServiceReference.Seller;
+using GUIApplication.PropertyServiceReference;
+using Property = GUIApplication.PropertyServiceReference.Property;
 
 namespace GUIApplication
 {
@@ -19,19 +23,49 @@ namespace GUIApplication
     /// </summary>
     public partial class AddPropertyToSellerWindow : Window
     {
-        public AddPropertyToSellerWindow()
+        private Seller seller;
+        private CreateSeller createSeller;
+        static IPropertyService iProp = new PropertyServiceClient();
+        static ISellerService iSeller = new SellerServiceClient();
+        public AddPropertyToSellerWindow(Seller s, CreateSeller cs)
         {
+            createSeller = cs;
+            seller = s;
             InitializeComponent();
         }
 
         private void BtnCancel(object sender, RoutedEventArgs e)
         {
+            createSeller.Close();
             this.Close();
         }
 
         private void BtnAddProperty(object sender, RoutedEventArgs e)
         {
 
+            Property property = new Property()
+            {
+                Address = txtAddress.Text,
+                ZipCode = txtZipCode.Text,
+                Type = txtType.Text,
+                Rooms = Convert.ToInt32(txtRooms.Text),
+                Floors = Convert.ToInt32(txtFloors.Text),
+                Price = Convert.ToDouble(txtPrice.Text),
+                PropertySize = Convert.ToDouble(txtLotSize.Text),
+                HouseSize = Convert.ToDouble(txtHouseSize.Text),
+                ConstructionYear = Convert.ToInt32(txtConstructionYear.Text)
+            };
+            iProp.InsertProperty(property);
+            //iSeller.AddPropertyToSeller(seller, iProp.GetPropertiesByAddress(property.Address));
+
         }
+
+        private void BtnSearchAddress(object sender, RoutedEventArgs e)
+        {
+            Property property = iProp.GetPropertiesByAddress(txtSearchProperty.Text).Single();
+
+        }
+
+        
     }
 }

@@ -79,6 +79,15 @@ namespace DBLayer
                 ctx.SaveChanges();
             }
         }
+        public List<Property> GetAllProperties(Seller seller)
+        {
+            List<Property> properties;
+            using (var ctx = new SystemContext())
+            {
+                properties = ctx.Properties.Where(x => x.SellerID == seller.Id).ToList();
+            }
+            return properties;
+        }
 
     }
 }

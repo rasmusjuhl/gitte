@@ -41,5 +41,13 @@ namespace WcfServiceLib
         {
             sCtr.DeleteSeller(seller);
         }
+        public void AddPropertyToSeller(Seller seller, Property property)
+        {
+            sCtr.AddPropertyToSeller(seller, property);
+        }
+        public List<Property> GetAllPropertiesFromSeller(Seller seller)
+        {
+            return sCtr.GetAllProperties(seller);
+        }
     }
 }
