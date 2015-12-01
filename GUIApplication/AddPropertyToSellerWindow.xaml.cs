@@ -53,10 +53,20 @@ namespace GUIApplication
                 Price = Convert.ToDouble(txtPrice.Text),
                 PropertySize = Convert.ToDouble(txtLotSize.Text),
                 HouseSize = Convert.ToDouble(txtHouseSize.Text),
-                ConstructionYear = Convert.ToInt32(txtConstructionYear.Text),
-                SellerID = seller.Id
+                ConstructionYear = Convert.ToInt32(txtConstructionYear.Text)
             };
-            iProp.InsertProperty(property);
+            iSeller.InsertSeller(seller);
+            Seller newSeller = iSeller.GetSellerByPhone(seller.Phone);
+            property.SellerID = newSeller.Id;
+            try
+            {
+                iProp.InsertProperty(property);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("FUCK" + ex);
+            }
+
             this.Close();
 
         }
@@ -72,6 +82,7 @@ namespace GUIApplication
             txtLotSize.Text = property.PropertySize.ToString();
             txtPrice.Text = property.Price.ToString();
             txtType.Text = property.Type.ToString();
+            txtConstructionYear.Text = property.ConstructionYear.ToString();
         }
     }
 }
