@@ -56,6 +56,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddPropertyToSellerWindow.xaml.cs">
+      <DependentUpon>AddPropertyToSellerWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="BuyerFinishWindow.xaml.cs">
       <DependentUpon>BuyerFinishWindow.xaml</DependentUpon>
     </Compile>
@@ -98,6 +101,10 @@
     <Compile Include="UpdateCustomer.xaml.cs">
       <DependentUpon>UpdateCustomer.xaml</DependentUpon>
     </Compile>
+    <Page Include="AddPropertyToSellerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="BuyerFinishWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
