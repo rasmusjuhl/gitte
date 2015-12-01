@@ -55,6 +55,8 @@ namespace GUIApplication
                 buyer.LivesForRent = true;
             }
             iBuyer.InsertBuyer(buyer);
+            createWindow.Close();
+            buyerWindow.Close();
             this.Close();
         }
 
