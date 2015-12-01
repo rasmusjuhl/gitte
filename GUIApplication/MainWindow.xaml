@@ -42,9 +42,10 @@
                                 </Grid>
                             </TabItem>
                         </TabControl>
-                        <Button Content="Vis info" HorizontalAlignment="Left" Margin="10,385,0,0" VerticalAlignment="Top" Width="85" Click="BtnVisInfo"/>
-                        <Button Content="Opret kunde" HorizontalAlignment="Left" Margin="100,385,0,0" VerticalAlignment="Top" Width="85" Click="BtnCreateCustomer"/>
-                        <Button Content="Rediger Kunde" HorizontalAlignment="Left" Margin="190,385,0,0" VerticalAlignment="Top" Width="85" Click="BtnUpdateCustomer"/>
+                        <Button Content="Vis info" HorizontalAlignment="Left" Margin="10,385,0,0" VerticalAlignment="Top" Width="65" Click="BtnVisInfo"/>
+                        <Button Content="Opret kunde" HorizontalAlignment="Left" Margin="80,385,0,0" VerticalAlignment="Top" Width="85" Click="BtnCreateCustomer"/>
+                        <Button Content="Rediger Kunde" HorizontalAlignment="Left" Margin="170,385,0,0" VerticalAlignment="Top" Width="85" Click="BtnUpdateCustomer"/>
+                        <Button Content="Slet kunde" HorizontalAlignment="Left" Margin="260,385,0,0" VerticalAlignment="Top" Width="75" Click="BtnDeleteCustomer"/>
                     </Grid>
                 </TabItem>
                 <TabItem Header="Ruteplanlægning" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="110">

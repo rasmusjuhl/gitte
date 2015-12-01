@@ -20,6 +20,8 @@ using GUIApplication.BuyerServiceReference;
 using Buyer = GUIApplication.BuyerServiceReference.Buyer;
 using GUIApplication.LocationServiceReference;
 using Location = GUIApplication.LocationServiceReference.Location;
+using GUIApplication.PropertyServiceReference;
+using Property = GUIApplication.PropertyServiceReference.Property;
 
 namespace GUIApplication
 {
@@ -32,6 +34,7 @@ namespace GUIApplication
         static ISellerService iSeller = new SellerServiceClient();
         static IBuyerService iBuyer = new BuyerServiceClient();
         static ILocationService iLoc = new LocationServiceClient();
+        static IPropertyService iProp = new PropertyServiceClient();
 
         public MainWindow()
         {
@@ -43,9 +46,7 @@ namespace GUIApplication
 
         private void sellerData_Loaded(object sender, RoutedEventArgs e)
         {
-            List<Seller> sellers = iSeller.GetAllSellers();
-            var grid = sender as DataGrid;
-            grid.ItemsSource = sellers;
+            UpdateSellerDatagrid(sender);
         }
 
         //Viser info om en kunde, både fra buyer og seller tab
@@ -87,20 +88,58 @@ namespace GUIApplication
 
         private void buyerData_Loaded(object sender, RoutedEventArgs e)
         {
-            List<Buyer> buyers = iBuyer.GetAllBuyers().ToList();
-            var grid = sender as DataGrid;
-            grid.ItemsSource = buyers;
+            UpdateBuyerDatagrid(sender);
         }
 
         private void BtnUpdateCustomer(object sender, RoutedEventArgs e)
         {
-            UpdateCustomer window = new UpdateCustomer();
-            window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            window.Topmost = true;
-            window.Show();
+            if (buyerTab.IsSelected)
+            {
+                //Buyer buyer = (Buyer)buyerData.SelectedItem;
+                //UpdateCustomer window = new UpdateCustomer(buyer);
+                //window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                //window.Topmost = true;
+                //window.Show();
+            }
+            else
+            {
+                Seller seller = (Seller)sellerData.SelectedItem;
+            }
+            //UpdateCustomer window = new UpdateCustomer();
+            //window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            //window.Topmost = true;
+            //window.Show();
         }
 
-       
+        private void BtnDeleteCustomer(object sender, RoutedEventArgs e)
+        {
+            if (buyerTab.IsSelected)
+            {
+                Buyer buyer = (Buyer)buyerData.SelectedItem;
+                iBuyer.DeleteBuyer(buyer);
+                UpdateBuyerDatagrid(sender);
+            }
+            else
+            {
+                Seller seller = (Seller)sellerData.SelectedItem;
+                Property property = iProp.GetPropertiesByAddress(seller.Address).Single();
+                iProp.DeleteProperty(property); 
+                iSeller.DeleteSeller(seller);
+                UpdateSellerDatagrid(sender);
+            }
+        }
+        private void UpdateBuyerDatagrid(object sender)
+        {
+            List<Buyer> buyers = iBuyer.GetAllBuyers().ToList();
+            var grid = sender as DataGrid;
+            grid.ItemsSource = buyers;
+        }
+        private void UpdateSellerDatagrid(object sender)
+        {
+            List<Seller> sellers = iSeller.GetAllSellers();
+            var grid = sender as DataGrid;
+            grid.ItemsSource = sellers;
+        }
 
     }
 
