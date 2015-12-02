@@ -24,7 +24,7 @@
         <xctk:TimePicker HorizontalAlignment="Left" Margin="84,280,0,0" VerticalAlignment="Top" Width="76"/>
         <Label Content="Sluttid:" HorizontalAlignment="Left" Margin="185,274,0,0" VerticalAlignment="Top"/>
         <xctk:TimePicker HorizontalAlignment="Left" Margin="259,280,0,0" VerticalAlignment="Top" Width="76"/>
-        <Label Content="Starttid:" HorizontalAlignment="Left" Margin="360,274,0,0" VerticalAlignment="Top"/>
+        <Label Content="Varighed:" HorizontalAlignment="Left" Margin="360,274,0,0" VerticalAlignment="Top"/>
         <xctk:TimePicker HorizontalAlignment="Left" Margin="434,280,0,0" VerticalAlignment="Top" Width="76"/>
         <Label Content="Alarm:" HorizontalAlignment="Left" Margin="10,305,0,0" VerticalAlignment="Top"/>
         <ComboBox HorizontalAlignment="Left" Margin="84,309,0,0" VerticalAlignment="Top" Width="75"/>
