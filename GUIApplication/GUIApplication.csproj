@@ -62,6 +62,9 @@
     <Compile Include="BuyerPrefsWindow.xaml.cs">
       <DependentUpon>BuyerPrefsWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CreateAppointment.xaml.cs">
+      <DependentUpon>CreateAppointment.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CreateSeller.xaml.cs">
       <DependentUpon>CreateSeller.xaml</DependentUpon>
     </Compile>
@@ -103,6 +106,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="BuyerPrefsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CreateAppointment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
