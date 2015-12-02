@@ -14,7 +14,7 @@ using System.Windows.Shapes;
 using GUIApplication.SellerServiceReference;
 using Seller = GUIApplication.SellerServiceReference.Seller;
 using GUIApplication.PropertyServiceReference;
-using Property = GUIApplication.PropertyServiceReference.Property;
+using Property = GUIApplication.SellerServiceReference.Property;
 using GUIApplication.LocationServiceReference;
 using Location = GUIApplication.LocationServiceReference.Location;
 
@@ -58,17 +58,10 @@ namespace GUIApplication
                 HouseSize = Convert.ToDouble(txtHouseSize.Text),
                 ConstructionYear = Convert.ToInt32(txtConstructionYear.Text)
             };
+            List<Property> props = new List<Property>();
+            props.Add(property);
+            seller.Properties = props;
             iSeller.InsertSeller(seller);
-            Seller newSeller = iSeller.GetSellerByPhone(seller.Phone);
-            property.SellerID = newSeller.Id;
-            try
-            {
-                iProp.InsertProperty(property);
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Fejl " + ex);
-            }
             createSeller.Close();
             this.Close();
 
@@ -76,7 +69,7 @@ namespace GUIApplication
 
         private void BtnSearchAddress(object sender, RoutedEventArgs e)
         {
-            Property property = iProp.GetPropertiesByAddress(txtSearchProperty.Text).Single();
+            Property property = iSeller.GetAllPropertiesFromSeller(seller).FirstOrDefault();
             txtAddress.Text = property.Address;
             txtZipCode.Text = property.ZipCode;
             txtRooms.Text = property.Rooms.ToString();
