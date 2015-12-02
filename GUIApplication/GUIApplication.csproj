@@ -101,6 +101,9 @@
     <Compile Include="UpdateCustomer.xaml.cs">
       <DependentUpon>UpdateCustomer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UpdateSeller.xaml.cs">
+      <DependentUpon>UpdateSeller.xaml</DependentUpon>
+    </Compile>
     <Page Include="AddPropertyToSellerWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -130,6 +133,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="UpdateCustomer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdateSeller.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

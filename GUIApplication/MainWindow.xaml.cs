@@ -95,7 +95,7 @@ namespace GUIApplication
         {
             if (buyerTab.IsSelected)
             {
-                //Buyer buyer = (Buyer)buyerData.SelectedItem;
+                Buyer buyer = (Buyer)buyerData.SelectedItem;
                 //UpdateCustomer window = new UpdateCustomer(buyer);
                 //window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                 //window.Topmost = true;
@@ -104,11 +104,11 @@ namespace GUIApplication
             else
             {
                 Seller seller = (Seller)sellerData.SelectedItem;
-            }
-            //UpdateCustomer window = new UpdateCustomer();
-            //window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            //window.Topmost = true;
-            //window.Show();
+                UpdateSeller window = new UpdateSeller(seller);
+                window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                window.Topmost = true;
+                window.Show();
+            }           
         }
 
         private void BtnDeleteCustomer(object sender, RoutedEventArgs e)
@@ -117,15 +117,13 @@ namespace GUIApplication
             {
                 Buyer buyer = (Buyer)buyerData.SelectedItem;
                 iBuyer.DeleteBuyer(buyer);
-                UpdateBuyerDatagrid(sender);
+                //UpdateBuyerDatagrid(sender);
             }
             else
             {
                 Seller seller = (Seller)sellerData.SelectedItem;
-                Property property = iProp.GetPropertiesByAddress(seller.Address).Single();
-                iProp.DeleteProperty(property); 
                 iSeller.DeleteSeller(seller);
-                UpdateSellerDatagrid(sender);
+                //UpdateSellerDatagrid(sender);
             }
         }
         private void UpdateBuyerDatagrid(object sender)

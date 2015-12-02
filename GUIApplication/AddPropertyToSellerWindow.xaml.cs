@@ -15,6 +15,8 @@ using GUIApplication.SellerServiceReference;
 using Seller = GUIApplication.SellerServiceReference.Seller;
 using GUIApplication.PropertyServiceReference;
 using Property = GUIApplication.PropertyServiceReference.Property;
+using GUIApplication.LocationServiceReference;
+using Location = GUIApplication.LocationServiceReference.Location;
 
 namespace GUIApplication
 {
@@ -27,6 +29,7 @@ namespace GUIApplication
         private CreateSeller createSeller;
         static IPropertyService iProp = new PropertyServiceClient();
         static ISellerService iSeller = new SellerServiceClient();
+        static ILocationService iLoc = new LocationServiceClient();
         public AddPropertyToSellerWindow(Seller s, CreateSeller cs)
         {
             createSeller = cs;
@@ -66,7 +69,7 @@ namespace GUIApplication
             {
                 MessageBox.Show("FUCK" + ex);
             }
-
+            createSeller.Close();
             this.Close();
 
         }
@@ -83,6 +86,25 @@ namespace GUIApplication
             txtPrice.Text = property.Price.ToString();
             txtType.Text = property.Type.ToString();
             txtConstructionYear.Text = property.ConstructionYear.ToString();
+        }
+
+        private void txtZipCode_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (txtZipCode.Text == "")
+            {
+                txtZipCode.Text = "Postnummer";
+            }
+            else
+            {
+                try
+                {
+                    lblCity.Content = iLoc.GetLocation(txtZipCode.Text).City;
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Ugyldigt postnummer!");
+                }
+            }
         }
     }
 }
