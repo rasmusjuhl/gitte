@@ -21,7 +21,7 @@ using Buyer = GUIApplication.BuyerServiceReference.Buyer;
 using GUIApplication.LocationServiceReference;
 using Location = GUIApplication.LocationServiceReference.Location;
 using GUIApplication.PropertyServiceReference;
-using Property = GUIApplication.PropertyServiceReference.Property;
+using Property = GUIApplication.SellerServiceReference.Property;
 
 namespace GUIApplication
 {
@@ -106,9 +106,9 @@ namespace GUIApplication
                 Seller seller = (Seller)sellerData.SelectedItem;
                 UpdateSeller window = new UpdateSeller(seller);
                 window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-                window.Topmost = true;
+                window.Topmost = false;
                 window.Show();
-            }           
+            }
         }
 
         private void BtnDeleteCustomer(object sender, RoutedEventArgs e)
@@ -117,13 +117,11 @@ namespace GUIApplication
             {
                 Buyer buyer = (Buyer)buyerData.SelectedItem;
                 iBuyer.DeleteBuyer(buyer);
-                //UpdateBuyerDatagrid(sender);
             }
             else
             {
                 Seller seller = (Seller)sellerData.SelectedItem;
                 iSeller.DeleteSeller(seller);
-                //UpdateSellerDatagrid(sender);
             }
         }
         private void UpdateBuyerDatagrid(object sender)

@@ -15,8 +15,8 @@ using GUIApplication.SellerServiceReference;
 using Seller = GUIApplication.SellerServiceReference.Seller;
 using GUIApplication.LocationServiceReference;
 using Location = GUIApplication.LocationServiceReference.Location;
-using GUIApplication.PropertyServiceReference;
-using Property = GUIApplication.PropertyServiceReference.Property;
+//using GUIApplication.PropertyServiceReference;
+using Property = GUIApplication.SellerServiceReference.Property;
 
 
 namespace GUIApplication
@@ -28,19 +28,24 @@ namespace GUIApplication
     {
         static ISellerService iSeller = new SellerServiceClient();
         static ILocationService iLoc = new LocationServiceClient();
-        static IPropertyService iProp = new PropertyServiceClient();
+        //static IPropertyService iProp = new PropertyServiceClient();
         private Seller seller;
+        private Property property;
+        private List<Property> properties;
         public UpdateSeller(Seller s)
         {
-            seller = s;
             InitializeComponent();
+
+            property = new Property();
+            seller = s;
+            properties = seller.Properties;
             AddText();
-
-
         }
 
         private void AddText()
-        {            
+        {
+            Property prop = properties.FirstOrDefault();
+            property.Id = prop.Id;
             txtName.Text = seller.Name;
             txtAddress.Text = seller.Address;
             txtZipCode.Text = seller.ZipCode;
@@ -49,16 +54,16 @@ namespace GUIApplication
             txtMobile.Text = seller.Mobile;
             txtEmail.Text = seller.Email;
             txtMisc.Text = seller.Misc;
-            Property property = iProp.GetPropertyBySellerID(seller.Id);
-            txtAddressProperty.Text = property.Address;
-            txtZipCodeProperty.Text = property.ZipCode;
-            lblCityProperty.Content = iLoc.GetLocation(property.ZipCode);
-            txtRooms.Text = property.Rooms.ToString();
-            txtFloors.Text = property.Floors.ToString();
-            txtHouseSize.Text = property.HouseSize.ToString();
-            txtLotSize.Text = property.PropertySize.ToString();
-            txtPrice.Text = property.Price.ToString();
-            txtConstructionYear.Text = property.ConstructionYear.ToString();
+
+            txtAddressProperty.Text = prop.Address;
+            txtZipCodeProperty.Text = prop.ZipCode;
+            txtRooms.Text = prop.Rooms.ToString();
+            txtFloors.Text = prop.Floors.ToString();
+            txtHouseSize.Text = prop.HouseSize.ToString();
+            txtLotSize.Text = prop.PropertySize.ToString();
+            txtPrice.Text = prop.Price.ToString();
+            txtConstructionYear.Text = prop.ConstructionYear.ToString();
+
         }
 
         private void BtnCancel(object sender, RoutedEventArgs e)
@@ -68,6 +73,17 @@ namespace GUIApplication
 
         private void BtnUpdate(object sender, RoutedEventArgs e)
         {
+            property.Address = txtAddressProperty.Text;
+            property.ZipCode = txtZipCodeProperty.Text;
+            property.Type = txtType.Text;
+            property.Rooms = Convert.ToInt32(txtRooms.Text);
+            property.Floors = Convert.ToInt32(txtFloors.Text);
+            property.HouseSize = Convert.ToDouble(txtHouseSize.Text);
+            property.PropertySize = Convert.ToDouble(txtLotSize.Text);
+            property.Price = Convert.ToDouble(txtPrice.Text);
+            property.ConstructionYear = Convert.ToInt32(txtConstructionYear.Text);
+
+
             string name = txtName.Text;
             string address = txtAddress.Text;
             string zipCode = txtZipCode.Text;
@@ -75,7 +91,17 @@ namespace GUIApplication
             string mobile = txtMobile.Text;
             string email = txtEmail.Text;
             string misc = txtMisc.Text;
-            
+            properties.Clear();
+            properties.Add(property);
+            try
+            {
+                iSeller.UpdateSeller(seller, properties, name, address, zipCode, phone, mobile, email, misc);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Fejl");
+            }
+            this.Close();
         }
 
         private void txtZipCode_LostFocus(object sender, RoutedEventArgs e)
@@ -114,7 +140,7 @@ namespace GUIApplication
                     MessageBox.Show("Ugyldigt postnummer!");
                 }
             }
-        }       
+        }
 
 
     }

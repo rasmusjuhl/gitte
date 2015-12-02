@@ -67,7 +67,7 @@ namespace GUIApplication
             }
             catch(Exception ex)
             {
-                MessageBox.Show("FUCK" + ex);
+                MessageBox.Show("Fejl " + ex);
             }
             createSeller.Close();
             this.Close();

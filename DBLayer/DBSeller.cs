@@ -50,23 +50,25 @@ namespace DBLayer
             List<Seller> sellers;
             using (var ctx = new SystemContext())
             {
-                sellers = ctx.Sellers.ToList();
+                sellers = ctx.Sellers.Include("Properties").ToList();
             }
             return sellers;
         }
         public void UpdateSeller(Seller seller, List<Property> properties, string name, string address, string zipCode, string phone, string mobil, string email, string misc)
         {
-            seller.Name = name;
-            seller.Properties = properties;
-            seller.Address = address;
-            seller.ZipCode = zipCode;
-            seller.Phone = phone;
-            seller.Mobile = mobil;
-            seller.Email = email;
-            seller.Misc = misc;
             using (var ctx = new SystemContext())
             {
-                ctx.Entry(seller).State = System.Data.Entity.EntityState.Modified;
+                Seller s = ctx.Sellers.Where(x => x.Id == seller.Id).SingleOrDefault();
+                s.Name = name;
+                s.Properties = properties;
+                s.Address = address;
+                s.ZipCode = zipCode;
+                s.Phone = phone;
+                s.Mobile = mobil;
+                s.Email = email;
+                s.Misc = misc;
+
+                ctx.Entry(s).State = System.Data.Entity.EntityState.Modified;
                 ctx.SaveChanges();
             }
         }
