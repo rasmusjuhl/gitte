@@ -14,7 +14,7 @@
         <DatePicker HorizontalAlignment="Left" VerticalAlignment="Top" Margin="84,12,0,0"/>
         <ComboBox HorizontalAlignment="Left" Margin="84,45,0,0" VerticalAlignment="Top" Width="251"/>
         <ComboBox HorizontalAlignment="Left" Margin="84,76,0,0" VerticalAlignment="Top" Width="251"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="84,106,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="251" TextChanged="TextBox_TextChanged"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="84,106,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="251"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="84,138,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="251"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="84,168,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="251"/>
         <Label Content="Starttid:" HorizontalAlignment="Left" Margin="10,274,0,0" VerticalAlignment="Top"/>

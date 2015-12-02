@@ -18,6 +18,8 @@ using GUIApplication.SellerServiceReference;
 using Seller = GUIApplication.SellerServiceReference.Seller;
 using GUIApplication.BuyerServiceReference;
 using Buyer = GUIApplication.BuyerServiceReference.Buyer;
+using GUIApplication.AppointmentServiceReference;
+using Appointment = GUIApplication.AppointmentServiceReference.Appointment;
 
 namespace GUIApplication
 {
@@ -29,6 +31,7 @@ namespace GUIApplication
         static IUserService iUser = new UserServiceClient();
         static ISellerService iSeller = new SellerServiceClient();
         static IBuyerService iBuyer = new BuyerServiceClient();
+        static IAppointmentService iAppointment = new AppointmentServiceClient();
         
         public MainWindow()
         {
@@ -97,6 +100,12 @@ namespace GUIApplication
             window.Show();
         }
 
+        private void BtnCreateAppointment(object sender, RoutedEventArgs e)
+        {
+            CreateAppointment window = new CreateAppointment();
+            window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            window.Topmost = true;
+            window.Show();
+        }
     }
-
 }
