@@ -63,6 +63,7 @@ namespace GUIApplication
             txtLotSize.Text = prop.PropertySize.ToString();
             txtPrice.Text = prop.Price.ToString();
             txtConstructionYear.Text = prop.ConstructionYear.ToString();
+            txtType.Text = prop.Type;
 
         }
 
