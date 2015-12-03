@@ -30,7 +30,7 @@
                                     </DataGrid.Columns>
                                 </DataGrid>
                             </Grid>
-                            <Button Content="Vis info" HorizontalAlignment="Left" Margin="10,391,0,0" VerticalAlignment="Top" Width="85" Grid.RowSpan="2"/>
+                            <Button Content="Vis info" HorizontalAlignment="Left" Margin="10,391,0,0" VerticalAlignment="Top" Width="85" Grid.RowSpan="2" Click="Button_VisInfo"/>
                             <Button Grid.ColumnSpan="3" Content="Opret aftale" HorizontalAlignment="Left" Margin="100,391,0,0" VerticalAlignment="Top" Width="85" Grid.RowSpan="2" Click="BtnCreateAppointment"/>
                             <Button Content="Rediger aftale" Grid.Column="2" HorizontalAlignment="Left" Margin="51,391,0,0" VerticalAlignment="Top" Width="85" Grid.RowSpan="2"/>
                         </Grid>
