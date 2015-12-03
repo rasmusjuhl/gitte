@@ -127,12 +127,20 @@ namespace GUIApplication
 
         private void appointmentData_Loaded(object sender, RoutedEventArgs e)
         {
+            DateTime date = DateTime.Today;
             List<Appointment> appointments = currentUser.Appointments.ToList();
-            var grid = sender as DataGrid;
-            grid.ItemsSource = appointments;
+
+            List<Appointment> appointmentsToShow = new List<Appointment>();
+            foreach (Appointment ap in appointments)
+            {
+                if (ap.Date >= date)
+                {
+                    appointmentsToShow.Add(ap);
+                }
+            }
+            var grid = appointmentData as DataGrid;
+            grid.ItemsSource = appointmentsToShow;
 
         }
-
-        
     }
 }

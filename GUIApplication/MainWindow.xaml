@@ -23,9 +23,9 @@
                                 <DataGrid x:Name="appointmentData" AutoGenerateColumns="False" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Loaded="appointmentData_Loaded" Grid.ColumnSpan="2">
                                     <DataGrid.Columns>
                                         <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
-                                        <DataGridTextColumn Header="Dato" Binding="{Binding Date}" />
-                                        <DataGridTextColumn Header="Tid" Binding="{Binding StarTime}" />
-                                        <DataGridTextColumn Header="Sluttid" Binding="{Binding EndTime}" />
+                                        <DataGridTextColumn Header="Dato" Binding="{Binding Date, StringFormat=\{0:dd.MM.yy\}}" />
+                                        <DataGridTextColumn Header="Tid" Binding="{Binding StarTime, StringFormat=\{0:HH:mm\}}" />
+                                        <DataGridTextColumn Header="Sluttid" Binding="{Binding EndTime, StringFormat=\{0:HH:mm\}}" />
                                         <DataGridTextColumn Header="Status" Binding="{Binding Status}" />
                                     </DataGrid.Columns>
                                 </DataGrid>
