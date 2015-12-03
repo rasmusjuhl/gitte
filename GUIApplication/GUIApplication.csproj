@@ -98,8 +98,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="UpdateCustomer.xaml.cs">
-      <DependentUpon>UpdateCustomer.xaml</DependentUpon>
+    <Compile Include="UpdateBuyer.xaml.cs">
+      <DependentUpon>UpdateBuyer.xaml</DependentUpon>
     </Compile>
     <Compile Include="UpdateSeller.xaml.cs">
       <DependentUpon>UpdateSeller.xaml</DependentUpon>
@@ -132,7 +132,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="UpdateCustomer.xaml">
+    <Page Include="UpdateBuyer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

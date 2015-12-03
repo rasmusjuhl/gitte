@@ -96,10 +96,10 @@ namespace GUIApplication
             if (buyerTab.IsSelected)
             {
                 Buyer buyer = (Buyer)buyerData.SelectedItem;
-                //UpdateCustomer window = new UpdateCustomer(buyer);
-                //window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-                //window.Topmost = true;
-                //window.Show();
+                UpdateBuyer window = new UpdateBuyer(buyer);
+                window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                window.Topmost = true;
+                window.Show();
             }
             else
             {
