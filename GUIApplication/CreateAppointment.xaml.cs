@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using GUIApplication.UserServiceReference;
+using User = GUIApplication.UserServiceReference.User;
 
 namespace GUIApplication
 {
@@ -19,9 +21,29 @@ namespace GUIApplication
     /// </summary>
     public partial class CreateAppointment : Window
     {
+        static IUserService iUser = new UserServiceClient();
         public CreateAppointment()
         {
             InitializeComponent();
+        }
+
+        private void Button_CreateAppointment(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ComboBox_User(object sender, SelectionChangedEventArgs e)
+        {
+            cbUser = sender as ComboBox;
+        }
+
+        private void cbUser_Loaded(object sender, RoutedEventArgs e)
+        {
+            List<User> users = iUser.GetAllUsers().ToList();
+
+            cbUser = sender as ComboBox;
+
+            cbUser.ItemsSource = users;
         }
     }
 }
