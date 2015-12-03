@@ -20,8 +20,17 @@
                             </Grid.ColumnDefinitions>
                             <Grid HorizontalAlignment="Left" Height="385" VerticalAlignment="Top" Width="357" Grid.ColumnSpan="3">
                                 <Border BorderBrush="White" BorderThickness="1" HorizontalAlignment="Left" Height="385" VerticalAlignment="Top" Width="357"/>
+                                <DataGrid x:Name="appointmentData" AutoGenerateColumns="False" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Loaded="appointmentData_Loaded" Grid.ColumnSpan="2">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
+                                        <DataGridTextColumn Header="Dato" Binding="{Binding Date, StringFormat=\{0:dd.MM.yy\}}" />
+                                        <DataGridTextColumn Header="Tid" Binding="{Binding StarTime, StringFormat=\{0:HH:mm\}}" />
+                                        <DataGridTextColumn Header="Sluttid" Binding="{Binding EndTime, StringFormat=\{0:HH:mm\}}" />
+                                        <DataGridTextColumn Header="Status" Binding="{Binding Status}" />
+                                    </DataGrid.Columns>
+                                </DataGrid>
                             </Grid>
-                            <Button Content="Vis info" HorizontalAlignment="Left" Margin="10,391,0,0" VerticalAlignment="Top" Width="85" Grid.RowSpan="2"/>
+                            <Button Content="Vis info" HorizontalAlignment="Left" Margin="10,391,0,0" VerticalAlignment="Top" Width="85" Grid.RowSpan="2" Click="Button_VisInfo"/>
                             <Button Grid.ColumnSpan="3" Content="Opret aftale" HorizontalAlignment="Left" Margin="100,391,0,0" VerticalAlignment="Top" Width="85" Grid.RowSpan="2" Click="BtnCreateAppointment"/>
                             <Button Content="Rediger aftale" Grid.Column="2" HorizontalAlignment="Left" Margin="51,391,0,0" VerticalAlignment="Top" Width="85" Grid.RowSpan="2"/>
                         </Grid>
@@ -92,6 +101,10 @@
             <TextBox Name="txtUser" HorizontalAlignment="Left" Height="23" Margin="0,46,0,0" TextWrapping="Wrap" Text="User navn her" VerticalAlignment="Top" Width="363" IsEnabled="False"/>
             <ToolBarTray HorizontalAlignment="Left" Height="23" Margin="0,23,0,0" VerticalAlignment="Top" Width="363"/>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="569" Margin="363,0,0,0" VerticalAlignment="Top" Width="539"/>
+        <Grid HorizontalAlignment="Left" Height="569" Margin="363,0,0,0" VerticalAlignment="Top" Width="539">
+            <Viewbox HorizontalAlignment="Left" Height="549" Margin="10,10,0,0" VerticalAlignment="Top" Width="519">
+                <Calendar Name="calendar" MouseDoubleClick="calendar_MouseDoubleClick"/>
+            </Viewbox>
+        </Grid>
     </Grid>
 </Window>
