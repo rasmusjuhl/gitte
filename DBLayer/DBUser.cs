@@ -41,7 +41,7 @@ namespace DBLayer
             List<User> users;
             using (var ctx = new SystemContext())
             {
-                users = ctx.Users.ToList();
+                users = ctx.Users.Include("Appointments").ToList();
             }
             return users;
         }

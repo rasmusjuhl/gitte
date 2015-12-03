@@ -19,7 +19,7 @@ using Seller = GUIApplication.SellerServiceReference.Seller;
 using GUIApplication.BuyerServiceReference;
 using Buyer = GUIApplication.BuyerServiceReference.Buyer;
 using GUIApplication.AppointmentServiceReference;
-using Appointment = GUIApplication.AppointmentServiceReference.Appointment;
+using Appointment = GUIApplication.UserServiceReference.Appointment;
 
 namespace GUIApplication
 {
@@ -32,13 +32,14 @@ namespace GUIApplication
         static ISellerService iSeller = new SellerServiceClient();
         static IBuyerService iBuyer = new BuyerServiceClient();
         static IAppointmentService iAppointment = new AppointmentServiceClient();
+        private User currentUser;
         
         public MainWindow()
         {
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            User user = iUser.GetAllUsers().First();
+            currentUser = iUser.GetAllUsers().First();
             InitializeComponent();
-            txtUser.Text = user.Name + ", " + DateTime.Today.Day + "/" + DateTime.Today.Month + "-" + DateTime.Today.Year;
+            txtUser.Text = currentUser.Name + ", " + DateTime.Today.Day + "/" + DateTime.Today.Month + "-" + DateTime.Today.Year;
         }
 
         private void sellerData_Loaded(object sender, RoutedEventArgs e)
@@ -107,5 +108,31 @@ namespace GUIApplication
             window.Topmost = true;
             window.Show();
         }
+
+        private void calendar_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            DateTime date = calendar.SelectedDate.Value;
+            List<Appointment> appointments = currentUser.Appointments.ToList();
+            List<Appointment> appointmentsToShow = new List<Appointment>();
+            foreach(Appointment ap in appointments)
+            {
+                if(ap.Date == date)
+                {
+                    appointmentsToShow.Add(ap);
+                }
+            }
+            var grid = appointmentData as DataGrid;
+            grid.ItemsSource = appointmentsToShow;
+        }
+
+        private void appointmentData_Loaded(object sender, RoutedEventArgs e)
+        {
+            List<Appointment> appointments = currentUser.Appointments.ToList();
+            var grid = sender as DataGrid;
+            grid.ItemsSource = appointments;
+
+        }
+
+        
     }
 }
