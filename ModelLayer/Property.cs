@@ -3,10 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Entity.Infrastructure.Annotations;
-using System.Data.Entity.ModelConfiguration.Configuration;
-using System.ComponentModel.DataAnnotations;
 
 namespace ModelLayer
 {
@@ -18,11 +14,7 @@ namespace ModelLayer
         }
 
         public int Id { get; set; }
-        [StringLength(450)]
-        [Index("AddresseAndZipCode", 1, IsUnique = true)]
         public string Address { get; set; }
-        [StringLength(450)]
-        [Index("AddresseAndZipCode", 2, IsUnique = true)]
         public string ZipCode { get; set; }
         public string Type { get; set; }
         public int Rooms { get; set; }

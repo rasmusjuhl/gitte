@@ -60,10 +60,6 @@
     <Compile Include="Migrations\201511261405158_init.Designer.cs">
       <DependentUpon>201511261405158_init.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201512041002259_modelUniqueAndNotNullable.cs" />
-    <Compile Include="Migrations\201512041002259_modelUniqueAndNotNullable.Designer.cs">
-      <DependentUpon>201512041002259_modelUniqueAndNotNullable.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
@@ -82,9 +78,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201511261405158_init.resx">
       <DependentUpon>201511261405158_init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512041002259_modelUniqueAndNotNullable.resx">
-      <DependentUpon>201512041002259_modelUniqueAndNotNullable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
