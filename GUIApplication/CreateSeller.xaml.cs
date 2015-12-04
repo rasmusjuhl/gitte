@@ -26,6 +26,7 @@ namespace GUIApplication
     public partial class CreateSeller : Window
     {
         private Buyer buyer;
+        private Seller seller;
         static ISellerService iSeller = new SellerServiceClient();
         static IBuyerService iBuyer = new BuyerServiceClient();
         static ILocationService iLoc = new LocationServiceClient();
@@ -35,45 +36,43 @@ namespace GUIApplication
 
         }
 
-        private void BtnCreateCustomer(object sender, RoutedEventArgs e)
-        {
-            Location loc = iLoc.GetLocation(txtZipCode.Text);
-            if (customerType.SelectedIndex == 0)
-            {
-                Seller seller = new Seller()
-                {
-                    Name = txtName.Text,
-                    Address = txtAddress.Text,
-                    ZipCode = txtZipCode.Text,
-                    Phone = txtPhone.Text,
-                    Mobile = txtMobil.Text,
-                    Email = txtEmail.Text,
-                    Misc = txtMisc.Text,
-                };
-                iSeller.InsertSeller(seller);
-                this.Close();
-            }
-            else if (customerType.SelectedIndex == 1)
-            {
+        //private void BtnCreateCustomer(object sender, RoutedEventArgs e)
+        //{
+        //    Location loc = iLoc.GetLocation(txtZipCode.Text);
+        //    if (customerType.SelectedIndex == 0)
+        //    {
+        //        Seller seller = new Seller()
+        //        {
+        //            Name = txtName.Text,
+        //            Address = txtAddress.Text,
+        //            ZipCode = txtZipCode.Text,
+        //            Phone = txtPhone.Text,
+        //            Mobile = txtMobil.Text,
+        //            Email = txtEmail.Text,
+        //            Misc = txtMisc.Text,
+        //        };
+        //        this.Close();
+        //    }
+        //    else if (customerType.SelectedIndex == 1)
+        //    {
 
-                Buyer buyer = new Buyer()
-                {
-                    Name = txtName.Text,
-                    Address = txtAddress.Text,
-                    ZipCode = txtZipCode.Text,
-                    Phone = txtPhone.Text,
-                    Mobile = txtMobil.Text,
-                    Email = txtEmail.Text,
-                    Misc = txtMisc.Text,
-                };
-                iBuyer.InsertBuyer(buyer);
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Du skal vælge en kunde type");
-            }
-        }
+        //        Buyer buyer = new Buyer()
+        //        {
+        //            Name = txtName.Text,
+        //            Address = txtAddress.Text,
+        //            ZipCode = txtZipCode.Text,
+        //            Phone = txtPhone.Text,
+        //            Mobile = txtMobil.Text,
+        //            Email = txtEmail.Text,
+        //            Misc = txtMisc.Text,
+        //        };
+        //        this.Close();
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Du skal vælge en kunde type");
+        //    }
+        //}
         private void BtnAnnuller(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -81,16 +80,25 @@ namespace GUIApplication
 
         private void BtnCreateNext(object sender, RoutedEventArgs e)
         {
-            if(customerType.SelectedIndex == 0)
+            if (customerType.SelectedIndex == 0)
             {
-                //Window skal laves
-
-                //SellerPropertyWindow window = new SellerPropertyWindow();
-                //window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                seller = new Seller()
+                {
+                    Name = txtName.Text,
+                    Address = txtAddress.Text,
+                    ZipCode = txtZipCode.Text,
+                    Phone = txtPhone.Text,
+                    Mobile = txtMobil.Text,
+                    Email = txtEmail.Text,
+                    Misc = txtMisc.Text
+                };
+                AddPropertyToSellerWindow window = new AddPropertyToSellerWindow(seller, this);
+                this.Topmost = false;
+                window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                 //window.Topmost = true;
-                //window.Show();
+                window.Show();
             }
-            else if(customerType.SelectedIndex == 1)
+            else if (customerType.SelectedIndex == 1)
             {
                 buyer = new Buyer()
                 {
@@ -103,13 +111,12 @@ namespace GUIApplication
                     Misc = txtMisc.Text
                 };
                 BuyerPrefsWindow window = new BuyerPrefsWindow(buyer, this);
-                this.Topmost = false;               
+                this.Topmost = false;
                 window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                 window.Topmost = true;
                 window.Show();
             }
         }
-
 
         private void txtName_GotFocus(object sender, RoutedEventArgs e)
         {

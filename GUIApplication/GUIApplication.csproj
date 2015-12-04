@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>GUIApplication.App</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -80,6 +83,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddPropertyToSellerWindow.xaml.cs">
+      <DependentUpon>AddPropertyToSellerWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="BuyerFinishWindow.xaml.cs">
       <DependentUpon>BuyerFinishWindow.xaml</DependentUpon>
     </Compile>
@@ -91,6 +97,9 @@
     </Compile>
     <Compile Include="CreateSeller.xaml.cs">
       <DependentUpon>CreateSeller.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Service References\AppointmentServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -122,9 +131,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="UpdateCustomer.xaml.cs">
-      <DependentUpon>UpdateCustomer.xaml</DependentUpon>
+    <Compile Include="UpdateBuyer.xaml.cs">
+      <DependentUpon>UpdateBuyer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UpdateSeller.xaml.cs">
+      <DependentUpon>UpdateSeller.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AddPropertyToSellerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="BuyerFinishWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -141,6 +157,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -153,7 +173,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="UpdateCustomer.xaml">
+    <Page Include="UpdateBuyer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdateSeller.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -240,6 +264,9 @@
     </None>
     <None Include="Service References\PropertyServiceReference\service1.xsd">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SellerServiceReference\GUIApplication.SellerServiceReference.Property.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\SellerServiceReference\GUIApplication.SellerServiceReference.Seller.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>

@@ -46,6 +46,7 @@
                 </TabItem>
                 <TabItem Header="Kunder" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="54">
                     <Grid Background="#FFE5E5E5">
+
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="3*"/>
                             <ColumnDefinition Width="6*"/>
@@ -53,6 +54,7 @@
                             <ColumnDefinition Width="93*"/>
                         </Grid.ColumnDefinitions>
                         <TabControl HorizontalAlignment="Left" Height="380" VerticalAlignment="Top" Width="357" Grid.ColumnSpan="4">
+
                             <TabItem Name="buyerTab" Header="Købere">
                                 <Grid Background="#FFE5E5E5">
                                     <Grid.ColumnDefinitions>
@@ -82,9 +84,11 @@
                                 </Grid>
                             </TabItem>
                         </TabControl>
-                        <Button Content="Vis info" HorizontalAlignment="Left" Margin="1,385,0,0" VerticalAlignment="Top" Width="85" Click="BtnVisInfo" Grid.ColumnSpan="3" Grid.Column="1"/>
-                        <Button Content="Opret kunde" HorizontalAlignment="Left" Margin="21.925,385,0,0" VerticalAlignment="Top" Width="85" Click="BtnCreateCustomer" Grid.Column="3"/>
-                        <Button Content="Rediger Kunde" HorizontalAlignment="Left" Margin="111.925,385,0,0" VerticalAlignment="Top" Width="85" Click="BtnUpdateCustomer" Grid.Column="3"/>
+                        <Button Content="Vis info" HorizontalAlignment="Left" Margin="10,385,0,0" VerticalAlignment="Top" Width="65" Click="BtnVisInfo" Grid.ColumnSpan="3" Grid.Column="1"/>
+                        <Button Content="Opret kunde" HorizontalAlignment="Left" Margin="10,385,0,0" VerticalAlignment="Top" Width="85" Click="BtnCreateCustomer" Grid.Column="3"/>
+                        <Button Content="Rediger Kunde" HorizontalAlignment="Left" Margin="100,385,0,0" VerticalAlignment="Top" Width="85" Click="BtnUpdateCustomer" Grid.Column="3"/>
+                        <Button Content="Slet kunde" HorizontalAlignment="Left" Margin="190,385,0,0" VerticalAlignment="Top" Width="75" Click="BtnDeleteCustomer" Grid.Column="3" />
+
                     </Grid>
                 </TabItem>
                 <TabItem Header="Ruteplanlægning" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="110">

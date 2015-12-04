@@ -21,5 +21,7 @@ namespace WcfServiceLib
         void UpdateProperty(Property property, string address, string zipCode, string type, int rooms, int floors, double price, double propertySize, double houseSize, int constructionYear);
         [OperationContract]
         void DeleteProperty(Property property);
+        [OperationContract]
+        Property GetPropertyBySellerID(int sellerID);
     }
 }

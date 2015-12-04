@@ -12,7 +12,7 @@
         <CheckBox Content="Andet" HorizontalAlignment="Left" Margin="10,152,0,0" VerticalAlignment="Top"/>
         <CheckBox Content="Ejerlejlighed" HorizontalAlignment="Left" Margin="126,72,0,0" VerticalAlignment="Top"/>
         <CheckBox Content="Villalejlighed" HorizontalAlignment="Left" Margin="126,92,0,0" VerticalAlignment="Top" RenderTransformOrigin="3.738,2.8"/>
-        <CheckBox Content="Bolig ogerhverv" HorizontalAlignment="Left" Margin="126,112,0,0" VerticalAlignment="Top"/>
+        <CheckBox Content="Bolig og erhverv" HorizontalAlignment="Left" Margin="126,112,0,0" VerticalAlignment="Top"/>
         <CheckBox Content="Landejendom" HorizontalAlignment="Left" Margin="126,132,0,0" VerticalAlignment="Top"/>
         <CheckBox Content="Rækkehus" HorizontalAlignment="Left" Margin="266,72,0,0" VerticalAlignment="Top"/>
         <CheckBox Content="Fritidshus" HorizontalAlignment="Left" Margin="266,92,0,0" VerticalAlignment="Top"/>

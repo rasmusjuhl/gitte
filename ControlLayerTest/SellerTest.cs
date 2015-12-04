@@ -26,13 +26,14 @@ namespace ControlLayerTest
 
                 //Create the seller itself.
                 Seller sellDatHouse = new Seller() { Name = "Mr. Sell D. House", Address = "Sofiendalsvej 60", Email = "sell@house.com", Misc = "Han vil virkelig gerne have sit hus solgt", Mobile = "40528283", Phone = "40528283", ZipCode = "9000", Properties = propertyList };
+                
                 //Save it to the database
                 ctx.Sellers.Add(sellDatHouse);
                 ctx.SaveChanges();
 
                 //Compare sellers.
-                Seller sellDatHouseFromDB = ctx.Sellers.Where(x => x.Name == "Mr. Sell D. House").Single();
-                Assert.AreEqual<Seller>(sellDatHouse, sellDatHouseFromDB);
+                Seller sellDatHouseFromDB = ctx.Sellers.Where(x => x.Name == "Mr. Sell D. House").SingleOrDefault();
+                Assert.IsNotNull(sellDatHouseFromDB);
                 ctx.Sellers.Remove(sellDatHouse);
                 ctx.SaveChanges();
             }

@@ -35,6 +35,7 @@ namespace ModelLayer
         public Boolean InRKI { get; set; }
         public Boolean BuyerApproved { get; set; }
         public string Bank { get; set; }
+        public double ApprovedAmount { get; set; }
         public Boolean OwnesHouse { get; set; }
         public Boolean LivesForRent { get; set; }
         public ICollection<Property> Properties { get; set; }
