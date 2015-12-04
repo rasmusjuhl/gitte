@@ -23,6 +23,7 @@ namespace ModelLayer
         public double PropertySize { get; set; }
         public double HouseSize { get; set; }
         public int ConstructionYear { get; set; }
+        public int SellerID { get; set; }
         public ICollection<Buyer> Buyers { get; set; }
 
         

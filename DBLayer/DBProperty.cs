@@ -24,6 +24,15 @@ namespace DBLayer
                 ctx.SaveChanges();
             }
         }
+        public Property GetPropertyBySellerID(int sellerID)
+        {
+            Property property;
+            using (var ctx = new SystemContext())
+            {
+                property = ctx.Properties.Where(x => x.SellerID == sellerID).Single();
+            }
+            return property;
+        }
 
         public List<Property> GetPropertiesByAdress(string adress)
         {
@@ -55,18 +64,20 @@ namespace DBLayer
         public void UpdateProperty(Property property, string address, string zipCode, string type, int rooms, int floors, double price,
             double propertySize, double houseSize, int constructionYear)
         {
-            property.Address = address;
-            property.ZipCode = zipCode;
-            property.Type = type;
-            property.Rooms = rooms;
-            property.Floors = floors;
-            property.Price = price;
-            property.PropertySize = propertySize;
-            property.HouseSize = houseSize;
-            property.ConstructionYear = constructionYear;
+            
             using (var ctx = new SystemContext())
             {
-                ctx.Entry(property).State = System.Data.Entity.EntityState.Modified;
+                Property p = ctx.Properties.Where(x => x.Id == property.Id).Single();
+                p.Address = address;
+                p.ZipCode = zipCode;
+                p.Type = type;
+                p.Rooms = rooms;
+                p.Floors = floors;
+                p.Price = price;
+                p.PropertySize = propertySize;
+                p.HouseSize = houseSize;
+                p.ConstructionYear = constructionYear;
+                ctx.Entry(p).State = System.Data.Entity.EntityState.Modified;
                 ctx.SaveChanges();
             }
         }

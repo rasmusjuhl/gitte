@@ -31,6 +31,10 @@ namespace ControlLayer
         {
             return dbProp.GetAllProperties();
         }
+        public Property GetPropertyBySellerID(int sellerID)
+        {
+            return dbProp.GetPropertyBySellerID(sellerID);
+        }
 
         public void UpdateProperty(Property property, string address, string zipCode, string type, int rooms, int floors, double price,
             double propertySize, double houseSize, int constructionYear)
