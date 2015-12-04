@@ -34,19 +34,19 @@ namespace ModelLayer.Migrations
             for (int i = 1; i < 5; i++)
             {
                 context.Users.AddOrUpdate(
-                    new User { Name = "UserTest" + i, ZipCode = "9000" }
+                    new User { Name = "UserTest" + i, ZipCode = "9000", Phone = "9999" + i.ToString(), Mobile = "8888" + i.ToString() }
                     );
             }
             for (int i = 1; i < 5; i++)
-            {                               
+            {
                 context.Sellers.AddOrUpdate(
-                    new Seller { Name = "SellerTest" + i, Address = "Address" + i, ZipCode = "9000", Email = "Email" + i + "@testmail.dk", Phone = Convert.ToString(i+1000), Mobile= Convert.ToString(i+2000)  }
+                    new Seller { Name = "SellerTest" + i, Address = "Address" + i, ZipCode = "9000", Email = "Email" + i + "@testmail.dk", Phone = "1000" + i.ToString(), Mobile = "2000" + i.ToString() }
                     );
             }
             for (int i = 1; i < 5; i++)
             {
                 context.Buyers.AddOrUpdate(
-                    new Buyer { Name = "BuyerTest" + i, Address = "Address" + (i+5), ZipCode = "9000", Email = "Email" + (i+5) + "@testmail.dk", Phone = Convert.ToString(i + 3000), Mobile = Convert.ToString(i + 4000) }
+                    new Buyer { Name = "BuyerTest" + i, Address = "Address" + (i + 5), ZipCode = "9000", Email = "Email" + (i + 5) + "@testmail.dk", Phone = "3000" + i.ToString(), Mobile = "4000" + i.ToString() }
                     );
             }
         }
