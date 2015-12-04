@@ -60,6 +60,14 @@
     <Compile Include="Migrations\201511261405158_init.Designer.cs">
       <DependentUpon>201511261405158_init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512041142264_modelLayerUniquenessAndNotNullAdded.cs" />
+    <Compile Include="Migrations\201512041142264_modelLayerUniquenessAndNotNullAdded.Designer.cs">
+      <DependentUpon>201512041142264_modelLayerUniquenessAndNotNullAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512041147217_personMobileRequired.cs" />
+    <Compile Include="Migrations\201512041147217_personMobileRequired.Designer.cs">
+      <DependentUpon>201512041147217_personMobileRequired.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
@@ -78,6 +86,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201511261405158_init.resx">
       <DependentUpon>201511261405158_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512041142264_modelLayerUniquenessAndNotNullAdded.resx">
+      <DependentUpon>201512041142264_modelLayerUniquenessAndNotNullAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512041147217_personMobileRequired.resx">
+      <DependentUpon>201512041147217_personMobileRequired.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

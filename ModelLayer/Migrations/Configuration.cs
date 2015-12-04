@@ -34,7 +34,7 @@ namespace ModelLayer.Migrations
             for (int i = 1; i < 5; i++)
             {
                 context.Users.AddOrUpdate(
-                    new User { Name = "UserTest" + i, ZipCode = "9000" }
+                    new User { Name = "UserTest" + i, ZipCode = "9000", Phone = Convert.ToString(i + 9000), Mobile = Convert.ToString(i + 90000) }
                     );
             }
             for (int i = 1; i < 5; i++)
