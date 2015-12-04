@@ -24,6 +24,7 @@ namespace GUIApplication
     public partial class UpdateBuyer : Window
     {
         static ILocationService iLoc = new LocationServiceClient();
+        static IBuyerService iBuyer = new BuyerServiceClient();
         private Buyer buyer;
         public UpdateBuyer(Buyer buyer)
         {
@@ -50,7 +51,6 @@ namespace GUIApplication
             txtRoomsMax.Text = Convert.ToString(buyer.DesiredRoomsMax);
             txtLotMin.Text =  Convert.ToString(buyer.LotSizeMin);
             txtLotMax.Text =  Convert.ToString(buyer.LotSizeMax);
-            txtMisc.Text = buyer.Misc;
             if(buyer.InRKI == true)
             {
                 checkInRKI.IsChecked = true;
@@ -59,7 +59,7 @@ namespace GUIApplication
             {
                 checkBuyerApproved.IsChecked = true;
                 txtBank.Text = buyer.Bank;
-                //INDSÆT BELØB
+                txtApprovedAmount.Text = Convert.ToString(buyer.ApprovedAmount);
             }
             if(buyer.OwnesHouse == true)
             {
@@ -97,6 +97,50 @@ namespace GUIApplication
 
         private void BtnUpdate(object sender, RoutedEventArgs e)
         {
+            string name = txtName.Text;
+            string address = txtAddress.Text;
+            string zipCode = txtZipCode.Text;
+            string phone = txtPhone.Text;
+            string mobile = txtMobile.Text;
+            string email = txtEmail.Text;
+            string misc = txtMisc.Text;
+            double minPrice = Convert.ToDouble(txtPriceMin.Text);
+            double maxPrice = Convert.ToDouble(txtPriceMax.Text);
+            double minHouseSize = Convert.ToDouble(txtPropertyMin.Text);
+            double maxHouseSize = Convert.ToDouble(txtPropertyMax.Text);
+            int minRooms = Convert.ToInt32(txtRoomsMin.Text);
+            int maxRooms = Convert.ToInt32(txtRoomsMax.Text);
+            double minLot = Convert.ToDouble(txtLotMin.Text);
+            double maxLot = Convert.ToDouble(txtLotMax.Text);
+            bool inRKI = false;
+            bool buyerApproved = false;
+            bool owner = false;
+            bool rents = false;
+            string bank = buyer.Bank;
+            if (checkInRKI.IsChecked == true)
+            {
+                inRKI = true;
+            }
+            if (checkBuyerApproved.IsChecked == true)
+            {
+                buyerApproved = true;
+                bank = txtBank.Text;
+                double approvedAmount = Convert.ToDouble(txtApprovedAmount.Text);
+            }
+            if (checkOwner.IsChecked == true)
+            {
+                owner = true;
+            }
+            if (checkRents.IsChecked == true)
+            {
+                rents = true;
+            }
+
+            iBuyer.UpdateBuyer(buyer, buyer.Properties, name, address, zipCode, phone, mobile, email, misc, buyer.EstateType, minPrice, maxPrice,
+                minLot, maxLot, minHouseSize, maxHouseSize, minRooms, maxRooms, buyer.Locations, buyer.OtherPref, buyer.ContactAllowedByBoligOne, buyer.ContactAllowedByReal
+                , buyer.AllowedEmailSpam, inRKI, buyerApproved, bank, owner, rents);
+
+
 
         }
         private void txtPriceMin_GotFocus(object sender, RoutedEventArgs e)
