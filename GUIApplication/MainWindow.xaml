@@ -29,7 +29,7 @@
                                         <DataGridTextColumn Header="Status" Binding="{Binding Status}" />
                                     </DataGrid.Columns>
                                 </DataGrid>
-                    </Grid>
+                            </Grid>
                             <Button Content="Vis info" HorizontalAlignment="Left" Margin="10,391,0,0" VerticalAlignment="Top" Width="85" Grid.RowSpan="2" Click="Button_VisInfo"/>
                             <Button Grid.ColumnSpan="3" Content="Opret aftale" HorizontalAlignment="Left" Margin="100,391,0,0" VerticalAlignment="Top" Width="85" Grid.RowSpan="2" Click="BtnCreateAppointment"/>
                             <Button Content="Rediger aftale" Grid.Column="2" HorizontalAlignment="Left" Margin="51,391,0,0" VerticalAlignment="Top" Width="85" Grid.RowSpan="2"/>
@@ -46,6 +46,7 @@
                 </TabItem>
                 <TabItem Header="Kunder" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="54">
                     <Grid Background="#FFE5E5E5">
+
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="3*"/>
                             <ColumnDefinition Width="6*"/>
@@ -53,6 +54,7 @@
                             <ColumnDefinition Width="93*"/>
                         </Grid.ColumnDefinitions>
                         <TabControl HorizontalAlignment="Left" Height="380" VerticalAlignment="Top" Width="357" Grid.ColumnSpan="4">
+
                             <TabItem Name="buyerTab" Header="Købere">
                                 <Grid Background="#FFE5E5E5">
                                     <Grid.ColumnDefinitions>
@@ -82,10 +84,11 @@
                                 </Grid>
                             </TabItem>
                         </TabControl>
-                        <Button Content="Vis info" HorizontalAlignment="Left" Margin="10,385,0,0" VerticalAlignment="Top" Width="65" Click="BtnVisInfo"/>
-                        <Button Content="Opret kunde" HorizontalAlignment="Left" Margin="80,385,0,0" VerticalAlignment="Top" Width="85" Click="BtnCreateCustomer"/>
-                        <Button Content="Rediger Kunde" HorizontalAlignment="Left" Margin="170,385,0,0" VerticalAlignment="Top" Width="85" Click="BtnUpdateCustomer"/>
-                        <Button Content="Slet kunde" HorizontalAlignment="Left" Margin="260,385,0,0" VerticalAlignment="Top" Width="75" Click="BtnDeleteCustomer"/>
+                        <Button Content="Vis info" HorizontalAlignment="Left" Margin="10,385,0,0" VerticalAlignment="Top" Width="65" Click="BtnVisInfo" Grid.ColumnSpan="3" Grid.Column="1"/>
+                        <Button Content="Opret kunde" HorizontalAlignment="Left" Margin="10,385,0,0" VerticalAlignment="Top" Width="85" Click="BtnCreateCustomer" Grid.Column="3"/>
+                        <Button Content="Rediger Kunde" HorizontalAlignment="Left" Margin="100,385,0,0" VerticalAlignment="Top" Width="85" Click="BtnUpdateCustomer" Grid.Column="3"/>
+                        <Button Content="Slet kunde" HorizontalAlignment="Left" Margin="190,385,0,0" VerticalAlignment="Top" Width="75" Click="BtnDeleteCustomer" Grid.Column="3" />
+
                     </Grid>
                 </TabItem>
                 <TabItem Header="Ruteplanlægning" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="110">
