@@ -34,10 +34,10 @@ namespace GUIApplication
         static IAppointmentService iAppointment = new AppointmentServiceClient();
         private User currentUser;
 
-        public MainWindow()
+        public MainWindow(User user)
         {
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            currentUser = iUser.GetAllUsers().First();
+            currentUser = user;
             InitializeComponent();
             txtUser.Text = currentUser.Name + ", " + DateTime.Today.Day + "/" + DateTime.Today.Month + "-" + DateTime.Today.Year;
         }
