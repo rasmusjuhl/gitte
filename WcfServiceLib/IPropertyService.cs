@@ -14,6 +14,8 @@ namespace WcfServiceLib
         [OperationContract]
         void InsertProperty(Property property);
         [OperationContract]
+        Property GetProperty(string address);
+        [OperationContract]
         List<Property> GetPropertiesByAddress(string address);
         [OperationContract]
         List<Property> GetAllProperties();

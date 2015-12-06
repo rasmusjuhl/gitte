@@ -174,6 +174,13 @@ namespace GUIApplication
             tpDuration.Text = "00:00:00";
         }
 
+        private void btnSearchProperty_Click(object sender, RoutedEventArgs e)
+        {
+            Window searchWin = new SearchProperty_Seller();
+            searchWin.Owner = this;
+            searchWin.Show();
+        }
+
         //private void Button_SearchBuyer(object sender, RoutedEventArgs e)
         //{
         //    // open a search window for buyer

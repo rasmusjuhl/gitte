@@ -25,7 +25,17 @@ namespace DBLayer
             }
         }
 
-        public List<Property> GetPropertiesByAdress(string adress)
+        public Property GetProperty(string address)
+        {
+            Property property;
+            using (var ctx = new SystemContext())
+            {
+                property = ctx.Properties.Where(x => x.Address.Equals(address)).Single();
+            }
+            return property;
+        }
+
+        public List<Property> GetPropertiesByAddress(string adress)
         {
             List<Property> properties = new List<Property>();
             using (var ctx = new SystemContext())

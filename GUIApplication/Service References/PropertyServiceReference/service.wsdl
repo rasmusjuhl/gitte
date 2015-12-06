@@ -13,6 +13,12 @@
   <wsdl:message name="IPropertyService_InsertProperty_OutputMessage">
     <wsdl:part name="parameters" element="tns:InsertPropertyResponse" />
   </wsdl:message>
+  <wsdl:message name="IPropertyService_GetProperty_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProperty" />
+  </wsdl:message>
+  <wsdl:message name="IPropertyService_GetProperty_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPropertyResponse" />
+  </wsdl:message>
   <wsdl:message name="IPropertyService_GetPropertiesByAddress_InputMessage">
     <wsdl:part name="parameters" element="tns:GetPropertiesByAddress" />
   </wsdl:message>
@@ -42,6 +48,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IPropertyService/InsertProperty" message="tns:IPropertyService_InsertProperty_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPropertyService/InsertPropertyResponse" message="tns:IPropertyService_InsertProperty_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetProperty">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPropertyService/GetProperty" message="tns:IPropertyService_GetProperty_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPropertyService/GetPropertyResponse" message="tns:IPropertyService_GetProperty_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetPropertiesByAddress">
       <wsdl:input wsaw:Action="http://tempuri.org/IPropertyService/GetPropertiesByAddress" message="tns:IPropertyService_GetPropertiesByAddress_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPropertyService/GetPropertiesByAddressResponse" message="tns:IPropertyService_GetPropertiesByAddress_OutputMessage" />
@@ -63,6 +73,15 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="InsertProperty">
       <soap:operation soapAction="http://tempuri.org/IPropertyService/InsertProperty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProperty">
+      <soap:operation soapAction="http://tempuri.org/IPropertyService/GetProperty" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

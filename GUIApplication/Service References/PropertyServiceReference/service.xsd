@@ -13,6 +13,20 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetProperty">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPropertyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ModelLayer" minOccurs="0" name="GetPropertyResult" nillable="true" type="q2:Property" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetPropertiesByAddress">
     <xs:complexType>
       <xs:sequence>
@@ -23,7 +37,7 @@
   <xs:element name="GetPropertiesByAddressResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ModelLayer" minOccurs="0" name="GetPropertiesByAddressResult" nillable="true" type="q2:ArrayOfProperty" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ModelLayer" minOccurs="0" name="GetPropertiesByAddressResult" nillable="true" type="q3:ArrayOfProperty" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -35,14 +49,14 @@
   <xs:element name="GetAllPropertiesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ModelLayer" minOccurs="0" name="GetAllPropertiesResult" nillable="true" type="q3:ArrayOfProperty" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ModelLayer" minOccurs="0" name="GetAllPropertiesResult" nillable="true" type="q4:ArrayOfProperty" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdateProperty">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ModelLayer" minOccurs="0" name="property" nillable="true" type="q4:Property" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ModelLayer" minOccurs="0" name="property" nillable="true" type="q5:Property" />
         <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="zipCode" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
@@ -63,7 +77,7 @@
   <xs:element name="DeleteProperty">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ModelLayer" minOccurs="0" name="property" nillable="true" type="q5:Property" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/ModelLayer" minOccurs="0" name="property" nillable="true" type="q6:Property" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

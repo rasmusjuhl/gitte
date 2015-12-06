@@ -37,5 +37,10 @@ namespace WcfServiceLib
         {
             pCtr.DeleteProperty(property);
         }
+
+        public Property GetProperty(string address)
+        {
+            return pCtr.GetProperty(address);
+        }
     }
 }
