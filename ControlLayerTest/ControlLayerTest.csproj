@@ -59,6 +59,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="AppointmentTest.cs" />
     <Compile Include="BuyerTest.cs" />
     <Compile Include="propertyTest.cs" />
     <Compile Include="SellerTest.cs" />
