@@ -50,6 +50,9 @@ namespace GUIApplication.PropertyServiceReference {
         private int RoomsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SellerIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -183,6 +186,19 @@ namespace GUIApplication.PropertyServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SellerID {
+            get {
+                return this.SellerIDField;
+            }
+            set {
+                if ((this.SellerIDField.Equals(value) != true)) {
+                    this.SellerIDField = value;
+                    this.RaisePropertyChanged("SellerID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string Type {
             get {
                 return this.TypeField;
@@ -226,6 +242,9 @@ namespace GUIApplication.PropertyServiceReference {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool AllowedEmailSpamField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double ApprovedAmountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string BankField;
@@ -296,6 +315,19 @@ namespace GUIApplication.PropertyServiceReference {
                 if ((this.AllowedEmailSpamField.Equals(value) != true)) {
                     this.AllowedEmailSpamField = value;
                     this.RaisePropertyChanged("AllowedEmailSpam");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double ApprovedAmount {
+            get {
+                return this.ApprovedAmountField;
+            }
+            set {
+                if ((this.ApprovedAmountField.Equals(value) != true)) {
+                    this.ApprovedAmountField = value;
+                    this.RaisePropertyChanged("ApprovedAmount");
                 }
             }
         }
@@ -835,6 +867,12 @@ namespace GUIApplication.PropertyServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPropertyService/DeleteProperty", ReplyAction="http://tempuri.org/IPropertyService/DeletePropertyResponse")]
         System.Threading.Tasks.Task DeletePropertyAsync(GUIApplication.PropertyServiceReference.Property property);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPropertyService/GetPropertyBySellerID", ReplyAction="http://tempuri.org/IPropertyService/GetPropertyBySellerIDResponse")]
+        GUIApplication.PropertyServiceReference.Property GetPropertyBySellerID(int sellerID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPropertyService/GetPropertyBySellerID", ReplyAction="http://tempuri.org/IPropertyService/GetPropertyBySellerIDResponse")]
+        System.Threading.Tasks.Task<GUIApplication.PropertyServiceReference.Property> GetPropertyBySellerIDAsync(int sellerID);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -910,6 +948,14 @@ namespace GUIApplication.PropertyServiceReference {
         
         public System.Threading.Tasks.Task DeletePropertyAsync(GUIApplication.PropertyServiceReference.Property property) {
             return base.Channel.DeletePropertyAsync(property);
+        }
+        
+        public GUIApplication.PropertyServiceReference.Property GetPropertyBySellerID(int sellerID) {
+            return base.Channel.GetPropertyBySellerID(sellerID);
+        }
+        
+        public System.Threading.Tasks.Task<GUIApplication.PropertyServiceReference.Property> GetPropertyBySellerIDAsync(int sellerID) {
+            return base.Channel.GetPropertyBySellerIDAsync(sellerID);
         }
     }
 }

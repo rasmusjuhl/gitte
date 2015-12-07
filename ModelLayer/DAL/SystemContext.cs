@@ -17,7 +17,7 @@ namespace ModelLayer.DAL
         public DbSet<User> Users { get; set; }
         public SystemContext() : base("local")
         {
-        this.Configuration.LazyLoadingEnabled = true;
+        this.Configuration.LazyLoadingEnabled = false;
         }
     }
 }

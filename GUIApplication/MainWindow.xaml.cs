@@ -18,6 +18,10 @@ using GUIApplication.SellerServiceReference;
 using Seller = GUIApplication.SellerServiceReference.Seller;
 using GUIApplication.BuyerServiceReference;
 using Buyer = GUIApplication.BuyerServiceReference.Buyer;
+using GUIApplication.LocationServiceReference;
+using Location = GUIApplication.LocationServiceReference.Location;
+using GUIApplication.PropertyServiceReference;
+using Property = GUIApplication.SellerServiceReference.Property;
 using GUIApplication.AppointmentServiceReference;
 using Appointment = GUIApplication.UserServiceReference.Appointment;
 
@@ -31,22 +35,22 @@ namespace GUIApplication
         static IUserService iUser = new UserServiceClient();
         static ISellerService iSeller = new SellerServiceClient();
         static IBuyerService iBuyer = new BuyerServiceClient();
+        static ILocationService iLoc = new LocationServiceClient();
+        static IPropertyService iProp = new PropertyServiceClient();
         static IAppointmentService iAppointment = new AppointmentServiceClient();
         private User currentUser;
 
-        public MainWindow()
+        public MainWindow(User user)
         {
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            currentUser = iUser.GetAllUsers().First();
+            currentUser = user;
             InitializeComponent();
             txtUser.Text = currentUser.Name + ", " + DateTime.Today.Day + "/" + DateTime.Today.Month + "-" + DateTime.Today.Year;
         }
 
         private void sellerData_Loaded(object sender, RoutedEventArgs e)
         {
-            List<Seller> sellers = iSeller.GetAllSellers();
-            var grid = sender as DataGrid;
-            grid.ItemsSource = sellers;
+            UpdateSellerDatagrid(sender);
         }
 
         //Viser info om en kunde, både fra buyer og seller tab
@@ -55,12 +59,14 @@ namespace GUIApplication
             if (buyerTab.IsSelected)
             {
                 Buyer buyer = (Buyer)buyerData.SelectedItem;
-                MessageBox.Show("KøberID: " + buyer.Id + "\nNavn: " + buyer.Name + "\nAdresse: " + buyer.Address + "\nPostnummer: " + buyer.ZipCode + " By: " + "\nTelefon: " + buyer.Phone + "\nMobil: " + buyer.Mobile + "\nEmail: " + buyer.Email + "\nMisc: " + buyer.Misc);
+                Location loc = iLoc.GetLocation(buyer.ZipCode);
+                MessageBox.Show("KøberID: " + buyer.Id + "\nNavn: " + buyer.Name + "\nAdresse: " + buyer.Address + "\nPostnummer: " + buyer.ZipCode + " By: " + loc.City + "\nTelefon: " + buyer.Phone + "\nMobil: " + buyer.Mobile + "\nEmail: " + buyer.Email + "\nMisc: " + buyer.Misc);
             }
             else
             {
                 Seller seller = (Seller)sellerData.SelectedItem;
-                MessageBox.Show("SælgerID: " + seller.Id + "\nNavn: " + seller.Name + "\nAdresse: " + seller.Address + "\nPostnummer: " + seller.ZipCode + " By: " + "\nTelefon: " + seller.Phone + "\nMobil: " + seller.Mobile + "\nEmail: " + seller.Email + "\nMisc: " + seller.Misc);
+                Location loc = iLoc.GetLocation(seller.ZipCode);
+                MessageBox.Show("SælgerID: " + seller.Id + "\nNavn: " + seller.Name + "\nAdresse: " + seller.Address + "\nPostnummer: " + seller.ZipCode + " By: " + loc.City + "\nTelefon: " + seller.Phone + "\nMobil: " + seller.Mobile + "\nEmail: " + seller.Email + "\nMisc: " + seller.Misc);
             }
         }
 
@@ -86,17 +92,53 @@ namespace GUIApplication
 
         private void buyerData_Loaded(object sender, RoutedEventArgs e)
         {
-            List<Buyer> buyers = iBuyer.GetAllBuyers().ToList();
-            var grid = sender as DataGrid;
-            grid.ItemsSource = buyers;
+            UpdateBuyerDatagrid(sender);
         }
 
         private void BtnUpdateCustomer(object sender, RoutedEventArgs e)
         {
-            UpdateCustomer window = new UpdateCustomer();
-            window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            window.Topmost = true;
-            window.Show();
+            if (buyerTab.IsSelected)
+            {
+                Buyer buyer = (Buyer)buyerData.SelectedItem;
+                UpdateBuyer window = new UpdateBuyer(buyer);
+                window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                window.Topmost = true;
+                window.Show();
+            }
+            else
+            {
+                Seller seller = (Seller)sellerData.SelectedItem;
+                UpdateSeller window = new UpdateSeller(seller);
+                window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                window.Topmost = false;
+                window.Show();
+            }
+        }
+
+        private void BtnDeleteCustomer(object sender, RoutedEventArgs e)
+        {
+            if (buyerTab.IsSelected)
+            {
+                Buyer buyer = (Buyer)buyerData.SelectedItem;
+                iBuyer.DeleteBuyer(buyer);
+            }
+            else
+            {
+                Seller seller = (Seller)sellerData.SelectedItem;
+                iSeller.DeleteSeller(seller);
+            }
+        }
+        private void UpdateBuyerDatagrid(object sender)
+        {
+            List<Buyer> buyers = iBuyer.GetAllBuyers().ToList();
+            var grid = sender as DataGrid;
+            grid.ItemsSource = buyers;
+        }
+        private void UpdateSellerDatagrid(object sender)
+        {
+            List<Seller> sellers = iSeller.GetAllSellers();
+            var grid = sender as DataGrid;
+            grid.ItemsSource = sellers;
         }
 
         private void BtnCreateAppointment(object sender, RoutedEventArgs e)
