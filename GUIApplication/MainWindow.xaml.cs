@@ -121,11 +121,13 @@ namespace GUIApplication
             {
                 Buyer buyer = (Buyer)buyerData.SelectedItem;
                 iBuyer.DeleteBuyer(buyer);
+                buyerData.ItemsSource = iBuyer.GetAllBuyers();
             }
             else
             {
                 Seller seller = (Seller)sellerData.SelectedItem;
                 iSeller.DeleteSeller(seller);
+                sellerData.ItemsSource = iSeller.GetAllSellers();
             }
         }
         private void UpdateBuyerDatagrid(object sender)
