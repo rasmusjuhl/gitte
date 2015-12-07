@@ -11,6 +11,7 @@
       <xs:element minOccurs="0" name="Seller" nillable="true" type="tns:Seller" />
       <xs:element minOccurs="0" name="StarTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Appointment" nillable="true" type="tns:Appointment" />

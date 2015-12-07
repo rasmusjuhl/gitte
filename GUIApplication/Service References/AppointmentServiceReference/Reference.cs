@@ -49,6 +49,9 @@ namespace GUIApplication.AppointmentServiceReference {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StatusField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int UserIDField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -172,6 +175,19 @@ namespace GUIApplication.AppointmentServiceReference {
                 if ((object.ReferenceEquals(this.StatusField, value) != true)) {
                     this.StatusField = value;
                     this.RaisePropertyChanged("Status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UserID {
+            get {
+                return this.UserIDField;
+            }
+            set {
+                if ((this.UserIDField.Equals(value) != true)) {
+                    this.UserIDField = value;
+                    this.RaisePropertyChanged("UserID");
                 }
             }
         }

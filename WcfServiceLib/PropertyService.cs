@@ -42,5 +42,11 @@ namespace WcfServiceLib
         {
             return pCtr.GetProperty(address);
         }
+
+
+        public Property GetPropertyBySellerID(int sellerID)
+        {
+            return pCtr.GetPropertyBySellerID(sellerID);
+        }
     }
 }

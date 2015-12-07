@@ -96,7 +96,7 @@
   <xs:element name="GetPropertyBySellerIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/ModelLayer" minOccurs="0" name="GetPropertyBySellerIDResult" nillable="true" type="q6:Property" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/ModelLayer" minOccurs="0" name="GetPropertyBySellerIDResult" nillable="true" type="q7:Property" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
