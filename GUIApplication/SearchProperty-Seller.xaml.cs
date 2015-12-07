@@ -31,20 +31,9 @@ namespace GUIApplication
             InitializeComponent();
         }
 
-        private void Button_Search(object sender, RoutedEventArgs e)
-        {
-            Property property;
-            Seller seller;
-            if (txtPropertyAddress.Text != "")
-            {
-                property = iProperty.GetProperty(txtPropertyAddress.Text);
-                txtZipcode.Text = property.ZipCode;
-                txtMtkNr.Text = "Matrikelnummer her";
-                txtSellerName.Text = "Get seller name here";
-                txtSellerAddress.Text = "Get seller address here";
-                txtSellerPhone.Text = "Get seller phone here";
-                txtSellerMobile.Text = "Get seller mobile here";
-            }
-        }
+        //private void Button_Search(object sender, RoutedEventArgs e)
+        //{
+        //    if(txtPropertyAddress)
+        //}
     }
 }
