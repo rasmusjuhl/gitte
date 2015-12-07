@@ -119,7 +119,7 @@ namespace GUIApplication
         {
             if (buyerTab.IsSelected)
             {
-                MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Er du sikker?", "Slet køber", System.Windows.MessageBoxButton.YesNo);
+                MessageBoxResult messageBoxResult = MessageBox.Show("Er du sikker?", "Slet køber", MessageBoxButton.YesNo);
                 if (messageBoxResult == MessageBoxResult.Yes)
                 {
                     Buyer buyer = (Buyer)buyerData.SelectedItem;
@@ -129,7 +129,7 @@ namespace GUIApplication
             }
             else
             {
-                MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Er du sikker?", "Slet sælger", System.Windows.MessageBoxButton.YesNo);
+                MessageBoxResult messageBoxResult = MessageBox.Show("Er du sikker?", "Slet sælger", MessageBoxButton.YesNo);
                 if (messageBoxResult == MessageBoxResult.Yes)
                 {
                     Seller seller = (Seller)sellerData.SelectedItem;
