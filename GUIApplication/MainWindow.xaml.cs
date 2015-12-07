@@ -119,15 +119,23 @@ namespace GUIApplication
         {
             if (buyerTab.IsSelected)
             {
-                Buyer buyer = (Buyer)buyerData.SelectedItem;
-                iBuyer.DeleteBuyer(buyer);
-                buyerData.ItemsSource = iBuyer.GetAllBuyers();
+                MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Er du sikker?", "Slet køber", System.Windows.MessageBoxButton.YesNo);
+                if (messageBoxResult == MessageBoxResult.Yes)
+                {
+                    Buyer buyer = (Buyer)buyerData.SelectedItem;
+                    iBuyer.DeleteBuyer(buyer);
+                    buyerData.ItemsSource = iBuyer.GetAllBuyers();
+                }
             }
             else
             {
-                Seller seller = (Seller)sellerData.SelectedItem;
-                iSeller.DeleteSeller(seller);
-                sellerData.ItemsSource = iSeller.GetAllSellers();
+                MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Er du sikker?", "Slet sælger", System.Windows.MessageBoxButton.YesNo);
+                if (messageBoxResult == MessageBoxResult.Yes)
+                {
+                    Seller seller = (Seller)sellerData.SelectedItem;
+                    iSeller.DeleteSeller(seller);
+                    sellerData.ItemsSource = iSeller.GetAllSellers();
+                }
             }
         }
         private void UpdateBuyerDatagrid(object sender)
@@ -196,14 +204,14 @@ namespace GUIApplication
             Appointment ap = (Appointment)appointmentData.SelectedItem;
             string formatDate = "dd.MM-yy";
             string formatTime = "HH.mm";
-            string info = "ID: " + ap.Id + "\nDato: " + ap.Date.ToString(formatDate) + "\tVarighed: " 
+            string info = "ID: " + ap.Id + "\nDato: " + ap.Date.ToString(formatDate) + "\tVarighed: "
                    + ap.StarTime.ToString(formatTime) + " - " + ap.EndTime.ToString(formatTime) + "\nKategori: "
                    + ap.Category + "\nBeskrivelse: " + ap.Description + "\nStatus: " + ap.Status;
-            if(ap.Buyer != null)
+            if (ap.Buyer != null)
             {
                 info += "\nKunde(køber): " + ap.Buyer.Name;
             }
-            else if(ap.Seller != null)
+            else if (ap.Seller != null)
             {
                 info += "\nKunde(sælger): " + ap.Seller.Name;
             }
