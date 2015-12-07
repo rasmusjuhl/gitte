@@ -14,6 +14,8 @@ namespace WcfServiceLib
         [OperationContract]
         void InsertSeller(Seller seller);
         [OperationContract]
+        Seller GetSellerById(int id);
+        [OperationContract]
         Seller GetSellerByPhone(string phone);
         [OperationContract]
         Seller GetSellerByMobile(string mobile);

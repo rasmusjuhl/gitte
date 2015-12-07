@@ -878,6 +878,12 @@ namespace GUIApplication.SellerServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISellerService/InsertSeller", ReplyAction="http://tempuri.org/ISellerService/InsertSellerResponse")]
         System.Threading.Tasks.Task InsertSellerAsync(GUIApplication.SellerServiceReference.Seller seller);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISellerService/GetSellerById", ReplyAction="http://tempuri.org/ISellerService/GetSellerByIdResponse")]
+        GUIApplication.SellerServiceReference.Seller GetSellerById(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISellerService/GetSellerById", ReplyAction="http://tempuri.org/ISellerService/GetSellerByIdResponse")]
+        System.Threading.Tasks.Task<GUIApplication.SellerServiceReference.Seller> GetSellerByIdAsync(int id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISellerService/GetSellerByPhone", ReplyAction="http://tempuri.org/ISellerService/GetSellerByPhoneResponse")]
         GUIApplication.SellerServiceReference.Seller GetSellerByPhone(string phone);
         
@@ -954,6 +960,14 @@ namespace GUIApplication.SellerServiceReference {
         
         public System.Threading.Tasks.Task InsertSellerAsync(GUIApplication.SellerServiceReference.Seller seller) {
             return base.Channel.InsertSellerAsync(seller);
+        }
+        
+        public GUIApplication.SellerServiceReference.Seller GetSellerById(int id) {
+            return base.Channel.GetSellerById(id);
+        }
+        
+        public System.Threading.Tasks.Task<GUIApplication.SellerServiceReference.Seller> GetSellerByIdAsync(int id) {
+            return base.Channel.GetSellerByIdAsync(id);
         }
         
         public GUIApplication.SellerServiceReference.Seller GetSellerByPhone(string phone) {

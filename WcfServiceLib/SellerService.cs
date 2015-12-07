@@ -49,5 +49,9 @@ namespace WcfServiceLib
         {
             return sCtr.GetAllProperties(seller);
         }
+        public Seller GetSellerById(int id)
+        {
+            return sCtr.GetSellerById(id);
+        }
     }
 }

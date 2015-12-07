@@ -176,19 +176,13 @@ namespace GUIApplication
 
         private void btnSearchProperty_Click(object sender, RoutedEventArgs e)
         {
-            Window searchWin = new SearchProperty_Seller();
+            Window searchWin = new SearchProperty_Seller(this);
             searchWin.Owner = this;
             searchWin.Show();
         }
-
         //private void Button_SearchBuyer(object sender, RoutedEventArgs e)
         //{
         //    // open a search window for buyer
-        //}
-
-        //private void Button_SearchProperty(object sender, RoutedEventArgs e)
-        //{
-        //    // open a search window for property/seller
         //}
     }
 }

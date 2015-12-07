@@ -25,6 +25,16 @@ namespace DBLayer
             }
         }
 
+        public Seller GetSellerById(int id)
+        {
+            Seller seller;
+            using (var ctx = new SystemContext())
+            {
+                seller = ctx.Sellers.Where(x => x.Id == id).Single();
+            }
+            return seller;
+        }
+
         public Seller GetSellerByPhone(string phone)
         {
             Seller seller;

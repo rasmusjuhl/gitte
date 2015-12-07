@@ -13,6 +13,12 @@
   <wsdl:message name="ISellerService_InsertSeller_OutputMessage">
     <wsdl:part name="parameters" element="tns:InsertSellerResponse" />
   </wsdl:message>
+  <wsdl:message name="ISellerService_GetSellerById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSellerById" />
+  </wsdl:message>
+  <wsdl:message name="ISellerService_GetSellerById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSellerByIdResponse" />
+  </wsdl:message>
   <wsdl:message name="ISellerService_GetSellerByPhone_InputMessage">
     <wsdl:part name="parameters" element="tns:GetSellerByPhone" />
   </wsdl:message>
@@ -60,6 +66,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ISellerService/InsertSeller" message="tns:ISellerService_InsertSeller_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISellerService/InsertSellerResponse" message="tns:ISellerService_InsertSeller_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetSellerById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISellerService/GetSellerById" message="tns:ISellerService_GetSellerById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISellerService/GetSellerByIdResponse" message="tns:ISellerService_GetSellerById_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetSellerByPhone">
       <wsdl:input wsaw:Action="http://tempuri.org/ISellerService/GetSellerByPhone" message="tns:ISellerService_GetSellerByPhone_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISellerService/GetSellerByPhoneResponse" message="tns:ISellerService_GetSellerByPhone_OutputMessage" />
@@ -93,6 +103,15 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="InsertSeller">
       <soap:operation soapAction="http://tempuri.org/ISellerService/InsertSeller" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSellerById">
+      <soap:operation soapAction="http://tempuri.org/ISellerService/GetSellerById" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
