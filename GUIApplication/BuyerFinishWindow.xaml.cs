@@ -43,8 +43,8 @@ namespace GUIApplication
             {
                 buyer.BuyerApproved = true;
                 buyer.Bank = txtBank.Text;
-
-                // INDSÆT BELØB HER - SKAL OPRETTES I MODELLEN BUYER  Convert.ToDouble(txtApprovedAmount.Text);
+                buyer.ApprovedAmount = Convert.ToDouble(txtApprovedAmount.Text);
+                
             }
             if (checkOwner.IsChecked == true)
             {
