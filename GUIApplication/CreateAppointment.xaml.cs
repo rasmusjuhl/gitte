@@ -15,6 +15,10 @@ using GUIApplication.UserServiceReference;
 using User = GUIApplication.UserServiceReference.User;
 using GUIApplication.AppointmentServiceReference;
 using Appointment = GUIApplication.AppointmentServiceReference.Appointment;
+using GUIApplication.BuyerServiceReference;
+using Buyer = GUIApplication.AppointmentServiceReference.Buyer;
+using GUIApplication.SellerServiceReference;
+using GUIApplication.PropertyServiceReference;
 
 namespace GUIApplication
 {
@@ -25,6 +29,8 @@ namespace GUIApplication
     {
         static IUserService iUser = new UserServiceClient();
         static IAppointmentService iAppointment = new AppointmentServiceClient();
+        static IBuyerService iBuyer = new BuyerServiceClient();
+        static ISellerService iSeller = new SellerServiceClient();
 
         public CreateAppointment()
         {
@@ -35,14 +41,14 @@ namespace GUIApplication
         {
             Appointment appointment = new Appointment()
             {
-                //Buyer =
-                //Seller =
                 Category = cbCategory.Text,
                 Date = Convert.ToDateTime(dpStartDate.Text),
                 Description = txtBoxDescription.Text,
                 StarTime = tpStartTime.Value.Value,
                 EndTime = tpEndTime.Value.Value,
-                Status = "I gang"
+                Status = "I gang",
+                //Buyer
+                //Seller
             };
             iAppointment.InsertAppointment(appointment);
             this.Close();
@@ -177,6 +183,13 @@ namespace GUIApplication
         private void btnSearchProperty_Click(object sender, RoutedEventArgs e)
         {
             Window searchWin = new SearchProperty_Seller(this);
+            searchWin.Owner = this;
+            searchWin.Show();
+        }
+
+        private void btnSearchBuyer_Click(object sender, RoutedEventArgs e)
+        {
+            Window searchWin = new SearchBuyerWindow(this);
             searchWin.Owner = this;
             searchWin.Show();
         }

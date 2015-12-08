@@ -98,6 +98,9 @@
     <Compile Include="CreateSeller.xaml.cs">
       <DependentUpon>CreateSeller.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SearchBuyerWindow.xaml.cs">
+      <DependentUpon>SearchBuyerWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SearchProperty-Seller.xaml.cs">
       <DependentUpon>SearchProperty-Seller.xaml</DependentUpon>
     </Compile>
@@ -176,6 +179,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="SearchBuyerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SearchProperty-Seller.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
