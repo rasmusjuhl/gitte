@@ -49,6 +49,12 @@ namespace ModelLayer.Migrations
                     new Buyer { Name = "BuyerTest" + i, Address = "Address" + (i+5), ZipCode = "9000", Email = "Email" + (i+5) + "@testmail.dk", Phone = Convert.ToString(i + 3000), Mobile = Convert.ToString(i + 4000) }
                     );
             }
+            context.Sellers.AddOrUpdate(
+                new Seller { Name = "Broder Salsa", Address = "Sofiendalsvej 60", ZipCode = "9000", Mobile = "12345678", Phone = "78945612", Email = "hej@med.dig", Misc = "Random tekst her" }
+                );
+            //context.Properties.AddOrUpdate(
+            //    new Property { Address = "Sofiendalsvej 60", ZipCode = "9000", Floors = 1, Rooms = 5, Price = 1500000, ConstructionYear = 1975, HouseSize = 130, PropertySize = 930, Type = "Hus", SellerID = 5 }
+            //    );
         }
     }
 }
