@@ -22,7 +22,7 @@ namespace ControlLayer
             dbApp.InsertAppointment(appointment);
         }
 
-        public Appointment GetAppointment(DateTime date)
+        public List<Appointment> GetAppointment(DateTime date)
         {
             return dbApp.GetAppointment(date);
         }

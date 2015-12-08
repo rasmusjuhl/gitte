@@ -32,7 +32,7 @@ namespace DBLayer
             User user;
             using (var ctx = new SystemContext())
             {
-                user = ctx.Users.Where(x => x.Phone == phone).Single();
+                user = ctx.Users.Where(x => x.Phone == phone).SingleOrDefault();
             }
             return user;
         }

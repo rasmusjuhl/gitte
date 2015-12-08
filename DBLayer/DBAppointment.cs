@@ -24,14 +24,14 @@ namespace DBLayer
             }
         }
 
-        public Appointment GetAppointment(DateTime date)
+        public List<Appointment> GetAppointment(DateTime date)
         {
-            Appointment appointment;
+            List<Appointment> appointments;
             using (var ctx = new SystemContext())
             {
-                appointment = ctx.Appointments.Where(a => a.Date == date).Single();
+                appointments = ctx.Appointments.Where(a => a.Date == date).ToList();
             }
-            return appointment;
+            return appointments;
         }
 
         public List<Appointment> GetAllAppointments()

@@ -30,7 +30,7 @@ namespace DBLayer
             Seller seller;
             using (var ctx = new SystemContext())
             {
-                seller = ctx.Sellers.Where(x => x.Id == id).Single();
+                seller = ctx.Sellers.Where(x => x.Id == id).SingleOrDefault();
             }
             return seller;
         }
@@ -40,7 +40,7 @@ namespace DBLayer
             Seller seller;
             using (var ctx = new SystemContext())
             {
-                seller = ctx.Sellers.Where(x => x.Phone == phone).Single();
+                seller = ctx.Sellers.Where(x => x.Phone == phone).SingleOrDefault();
             }
             return seller;
         }
@@ -50,7 +50,7 @@ namespace DBLayer
             Seller seller;
             using (var ctx = new SystemContext())
             {
-                seller = ctx.Sellers.Where(x => x.Mobile == mobile).Single();
+                seller = ctx.Sellers.Where(x => x.Mobile == mobile).SingleOrDefault();
             }
             return seller;
         }

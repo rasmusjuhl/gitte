@@ -24,7 +24,7 @@ namespace WcfServiceLib
             aCtr.InsertAppointment(appointment);
         }
 
-        public Appointment GetAppointment(DateTime date)
+        public List<Appointment> GetAppointment(DateTime date)
         {
             return aCtr.GetAppointment(date);
         }
