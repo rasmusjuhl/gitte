@@ -87,7 +87,7 @@ namespace GUIApplication
 
         private void Button_Choose(object sender, RoutedEventArgs e)
         {
-            sourceWin.txtBuyerSubject.Text = txtPropertyAddress.Text;
+            sourceWin.txtBuyerSubject.Text = txtSellerPhone.Text;
             this.Close();
         }
     }

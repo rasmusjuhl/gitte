@@ -37,6 +37,18 @@
   <wsdl:message name="IAppointmentService_DeleteAppointment_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteAppointmentResponse" />
   </wsdl:message>
+  <wsdl:message name="IAppointmentService_AddBuyer_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddBuyer" />
+  </wsdl:message>
+  <wsdl:message name="IAppointmentService_AddBuyer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddBuyerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppointmentService_AddSeller_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSeller" />
+  </wsdl:message>
+  <wsdl:message name="IAppointmentService_AddSeller_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSellerResponse" />
+  </wsdl:message>
   <wsdl:portType name="IAppointmentService">
     <wsdl:operation name="InsertAppointment">
       <wsdl:input wsaw:Action="http://tempuri.org/IAppointmentService/InsertAppointment" message="tns:IAppointmentService_InsertAppointment_InputMessage" />
@@ -57,6 +69,14 @@
     <wsdl:operation name="DeleteAppointment">
       <wsdl:input wsaw:Action="http://tempuri.org/IAppointmentService/DeleteAppointment" message="tns:IAppointmentService_DeleteAppointment_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAppointmentService/DeleteAppointmentResponse" message="tns:IAppointmentService_DeleteAppointment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBuyer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppointmentService/AddBuyer" message="tns:IAppointmentService_AddBuyer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppointmentService/AddBuyerResponse" message="tns:IAppointmentService_AddBuyer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSeller">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppointmentService/AddSeller" message="tns:IAppointmentService_AddSeller_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppointmentService/AddSellerResponse" message="tns:IAppointmentService_AddSeller_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IAppointmentService" type="tns:IAppointmentService">
@@ -99,6 +119,24 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteAppointment">
       <soap:operation soapAction="http://tempuri.org/IAppointmentService/DeleteAppointment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBuyer">
+      <soap:operation soapAction="http://tempuri.org/IAppointmentService/AddBuyer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSeller">
+      <soap:operation soapAction="http://tempuri.org/IAppointmentService/AddSeller" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

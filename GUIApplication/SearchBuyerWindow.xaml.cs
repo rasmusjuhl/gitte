@@ -27,6 +27,8 @@ namespace GUIApplication
         static ILocationService iLocation = new LocationServiceClient();
 
         private CreateAppointment sourceWin;
+        private Buyer buyer;
+        private Location location;
 
         public SearchBuyerWindow(CreateAppointment source)
         {
@@ -36,8 +38,6 @@ namespace GUIApplication
 
         private void Button_Search(object sender, RoutedEventArgs e)
         {
-            Buyer buyer;
-            Location location;
             if (txtPhone.Text != "")
             {
                 buyer = iBuyer.GetBuyerByPhone(txtPhone.Text);

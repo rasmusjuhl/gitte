@@ -71,4 +71,30 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="AddBuyer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/ModelLayer" minOccurs="0" name="appointment" nillable="true" type="q8:Appointment" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/ModelLayer" minOccurs="0" name="buyer" nillable="true" type="q9:Buyer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddBuyerResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddSeller">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/ModelLayer" minOccurs="0" name="appointment" nillable="true" type="q10:Appointment" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/ModelLayer" minOccurs="0" name="seller" nillable="true" type="q11:Seller" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddSellerResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

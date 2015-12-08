@@ -1090,6 +1090,18 @@ namespace GUIApplication.AppointmentServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointmentService/DeleteAppointment", ReplyAction="http://tempuri.org/IAppointmentService/DeleteAppointmentResponse")]
         System.Threading.Tasks.Task DeleteAppointmentAsync(GUIApplication.AppointmentServiceReference.Appointment appointment);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointmentService/AddBuyer", ReplyAction="http://tempuri.org/IAppointmentService/AddBuyerResponse")]
+        void AddBuyer(GUIApplication.AppointmentServiceReference.Appointment appointment, GUIApplication.AppointmentServiceReference.Buyer buyer);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointmentService/AddBuyer", ReplyAction="http://tempuri.org/IAppointmentService/AddBuyerResponse")]
+        System.Threading.Tasks.Task AddBuyerAsync(GUIApplication.AppointmentServiceReference.Appointment appointment, GUIApplication.AppointmentServiceReference.Buyer buyer);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointmentService/AddSeller", ReplyAction="http://tempuri.org/IAppointmentService/AddSellerResponse")]
+        void AddSeller(GUIApplication.AppointmentServiceReference.Appointment appointment, GUIApplication.AppointmentServiceReference.Seller seller);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointmentService/AddSeller", ReplyAction="http://tempuri.org/IAppointmentService/AddSellerResponse")]
+        System.Threading.Tasks.Task AddSellerAsync(GUIApplication.AppointmentServiceReference.Appointment appointment, GUIApplication.AppointmentServiceReference.Seller seller);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1157,6 +1169,22 @@ namespace GUIApplication.AppointmentServiceReference {
         
         public System.Threading.Tasks.Task DeleteAppointmentAsync(GUIApplication.AppointmentServiceReference.Appointment appointment) {
             return base.Channel.DeleteAppointmentAsync(appointment);
+        }
+        
+        public void AddBuyer(GUIApplication.AppointmentServiceReference.Appointment appointment, GUIApplication.AppointmentServiceReference.Buyer buyer) {
+            base.Channel.AddBuyer(appointment, buyer);
+        }
+        
+        public System.Threading.Tasks.Task AddBuyerAsync(GUIApplication.AppointmentServiceReference.Appointment appointment, GUIApplication.AppointmentServiceReference.Buyer buyer) {
+            return base.Channel.AddBuyerAsync(appointment, buyer);
+        }
+        
+        public void AddSeller(GUIApplication.AppointmentServiceReference.Appointment appointment, GUIApplication.AppointmentServiceReference.Seller seller) {
+            base.Channel.AddSeller(appointment, seller);
+        }
+        
+        public System.Threading.Tasks.Task AddSellerAsync(GUIApplication.AppointmentServiceReference.Appointment appointment, GUIApplication.AppointmentServiceReference.Seller seller) {
+            return base.Channel.AddSellerAsync(appointment, seller);
         }
     }
 }

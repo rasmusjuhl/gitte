@@ -18,7 +18,7 @@ using Appointment = GUIApplication.AppointmentServiceReference.Appointment;
 using GUIApplication.BuyerServiceReference;
 using Buyer = GUIApplication.AppointmentServiceReference.Buyer;
 using GUIApplication.SellerServiceReference;
-using GUIApplication.PropertyServiceReference;
+using Seller = GUIApplication.AppointmentServiceReference.Seller;
 
 namespace GUIApplication
 {
@@ -31,7 +31,7 @@ namespace GUIApplication
         static IAppointmentService iAppointment = new AppointmentServiceClient();
         static IBuyerService iBuyer = new BuyerServiceClient();
         static ISellerService iSeller = new SellerServiceClient();
-
+   
         public CreateAppointment()
         {
             InitializeComponent();
@@ -47,7 +47,7 @@ namespace GUIApplication
                 StarTime = tpStartTime.Value.Value,
                 EndTime = tpEndTime.Value.Value,
                 Status = "I gang",
-                //Buyer
+                //Buyer 
                 //Seller
             };
             iAppointment.InsertAppointment(appointment);
