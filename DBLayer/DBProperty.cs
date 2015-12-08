@@ -29,7 +29,7 @@ namespace DBLayer
             Property property;
             using (var ctx = new SystemContext())
             {
-                property = ctx.Properties.Where(x => x.SellerID == sellerID).Single();
+                property = ctx.Properties.Where(x => x.SellerID == sellerID).SingleOrDefault();
             }
             return property;
         }
@@ -39,7 +39,7 @@ namespace DBLayer
             Property property;
             using (var ctx = new SystemContext())
             {
-                property = ctx.Properties.Where(x => x.Address.Equals(address)).Single();
+                property = ctx.Properties.Where(x => x.Address.Equals(address)).SingleOrDefault();
             }
             return property;
         }
@@ -77,7 +77,7 @@ namespace DBLayer
             
             using (var ctx = new SystemContext())
             {
-                Property p = ctx.Properties.Where(x => x.Id == property.Id).Single();
+                Property p = ctx.Properties.Where(x => x.Id == property.Id).SingleOrDefault();
                 p.Address = address;
                 p.ZipCode = zipCode;
                 p.Type = type;
