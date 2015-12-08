@@ -21,6 +21,12 @@ namespace ControlLayer
         {
             dbSel.InsertSeller(seller);
         }
+
+        public Seller GetSellerById(int id)
+        {
+            return dbSel.GetSellerById(id);
+        }
+
         public Seller GetSellerByPhone(string phone)
         {
             return dbSel.GetSellerByPhone(phone);
