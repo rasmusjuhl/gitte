@@ -5,7 +5,7 @@ using ModelLayer.DAL;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using ControlLayer;
 
 namespace ControlLayerTest
 {
@@ -13,86 +13,76 @@ namespace ControlLayerTest
 
     public class UserTest
     {
+        private UserController uCtr;
         [TestInitialize]
         public void Initialize()
         {
+            uCtr = new UserController();
         }
 
         [TestMethod]
-        public void CreateAndReadTest()
+        public void CreateTest()
         {
-            using (var context = new SystemContext())
-            {
-                //Create properties that are part of user.
-                Appointment appointment = new Appointment();
-                Appointment appointment2 = new Appointment();
-                List<Appointment> appointmentList = new List<Appointment>();
-                Location location = new Location();
+            //Create the user itself
+            User johnDoe = new User() { Name = "John Doe", Address = "Sofiendalsvej 60", Email = "john@doe.com", Misc = "Her skal stå noget", Mobile = "51203985", Phone = "51203985" };
 
-                //Create the user itself
-                User johnDoe = new User() { Name = "John Doe", Address = "Sofiendalsvej 60", Appointments = appointmentList, Email = "john@doe.com", Misc = "Her skal stå noget", Mobile = "51203985", Phone = "51203985" };
-                //Save it to the database
-                context.Users.Add(johnDoe);
-                context.SaveChanges();
-
-                //Compare users. Maybe use conditions other than name?
-                User johnDoeFromDB = context.Users.Where(x => x.Name == "John Doe").Single();
-                Assert.AreEqual<User>(johnDoe, johnDoeFromDB);
-                context.Users.Remove(johnDoe);
-                context.SaveChanges();
-            }
+            //Save it to the database and get amount of properties in db before and after save
+            int CountDB = uCtr.GetAllUsers().ToList().Count;
+            uCtr.InsertUser(johnDoe);
+            int CountDBAfter = uCtr.GetAllUsers().ToList().Count;
+            //Compare Properties. Maybe use conditions other than Adress?
+            Assert.AreEqual<int>(CountDBAfter, CountDB + 1);
+            uCtr.DeleteUser(johnDoe);
         }
+        [TestMethod]
+        public void ReadTest()
+        {
+            //No properties does need to be created before the property itself 
+            //Create the property itself 
+            User johnDoe = new User() { Name = "John Doe", Address = "Sofiendalsvej 60", ZipCode = "9000", Email = "john@doe.com", Misc = "Her skal stå noget", Mobile = "51203985", Phone = "51203985" };
+
+            //Save it to the database 
+            uCtr.InsertUser(johnDoe);
+
+            //Get property from database and assert not null
+            Assert.IsNotNull(uCtr.GetUserByPhone("51203985"));
+            uCtr.DeleteUser(johnDoe);
+        }
+
         [TestMethod]
         public void UpdateTest()
         {
-            using (var context = new SystemContext())
-            {
-                //Create properties that are part of user.
-                Appointment appointment = new Appointment();
-                Appointment appointment2 = new Appointment();
-                List<Appointment> appointmentList = new List<Appointment>();
-                Location location = new Location();
-                //Create the user itself
-                User johnDoe = new User() { Name = "John Doe", Address = "Sofiendalsvej 60", Appointments = appointmentList, Email = "john@doe.com", Misc = "Her skal stå noget", Mobile = "51203985", Phone = "51203985" };
-                //Save it to the database
-                context.Users.Add(johnDoe);
-                context.SaveChanges();
-                //Change the user:
-                johnDoe.Name = "Mads";
-                context.SaveChanges();
-                User dbUser = context.Users.Where(x => x.Name == "Mads").Single();
+            //Create the user itself
+            User johnDoe = new User() { Name = "John Doe", Address = "Sofiendalsvej 60", ZipCode = "9000", Email = "john@doe.com", Misc = "Her skal stå noget", Mobile = "51203985", Phone = "51203985" };
+            //Save it to the database
+            uCtr.InsertUser(johnDoe);
+            //Change the user:
+            List<Appointment> appointmentList = new List<Appointment>();
 
-                //Test the assertion
-                Assert.AreNotEqual("John Doe", dbUser.Name);
-                context.Users.Remove(johnDoe);
-                context.SaveChanges();
-            }
+            uCtr.UpdateUser(johnDoe, appointmentList, "John Doe", "Sofiendalsvej 60", "9000", "112", "51203985", "john@doe.com", "Her skal stå noget");
+
+            //Test the assertion
+
+            Assert.IsNotNull(uCtr.GetUserByPhone("112"));
+            uCtr.DeleteUser(johnDoe);
         }
         [TestMethod]
         public void DeleteTest()
         {
-            using (var context = new SystemContext())
-            {
-                //Create properties that are part of user.
-                Appointment appointment = new Appointment();
-                Appointment appointment2 = new Appointment();
-                List<Appointment> appointmentList = new List<Appointment>();
-                Location location = new Location();
-                //Create the user itself
-                User johnDoe = new User() { Name = "John Doe", Address = "Sofiendalsvej 60", Appointments = appointmentList, Email = "john@doe.com", Misc = "Her skal stå noget", Mobile = "51203985", Phone = "51203985" };
-                
-                //Save it to the database
-                context.Users.Add(johnDoe);
-                context.SaveChanges();
-                
-                //Delete it again
-                context.Users.Remove(johnDoe);
-                context.SaveChanges();
-                
-                //Try to retrieve the deleted user again, and assert it is null.
-                User dbUser = context.Users.Where(x => x.Name == "John Doe").SingleOrDefault();
-                Assert.AreEqual(null, dbUser);
-            }
+            //Create properties that are part of user.
+            //Create the user itself
+            User johnDoe = new User() { Name = "John Doe", Address = "Sofiendalsvej 60", ZipCode = "9000", Email = "john@doe.com", Misc = "Her skal stå noget", Mobile = "51203985", Phone = "51203985" };
+
+            //Save it to the database
+            uCtr.InsertUser(johnDoe);
+
+
+            //Delete it again
+            uCtr.DeleteUser(johnDoe);
+
+            //Try to retrieve the deleted user again, and assert it is null.
+            User u = uCtr.GetUserByPhone(johnDoe.Phone);
+            Assert.IsNull(u);
         }
     }
 }
