@@ -30,6 +30,7 @@ namespace ControlLayerTest
             int CountDB = uCtr.GetAllUsers().ToList().Count;
             uCtr.InsertUser(johnDoe);
             int CountDBAfter = uCtr.GetAllUsers().ToList().Count;
+
             //Compare Properties. Maybe use conditions other than Adress?
             Assert.AreEqual<int>(CountDBAfter, CountDB + 1);
             uCtr.DeleteUser(johnDoe);
@@ -62,7 +63,6 @@ namespace ControlLayerTest
             uCtr.UpdateUser(johnDoe, appointmentList, "John Doe", "Sofiendalsvej 60", "9000", "112", "51203985", "john@doe.com", "Her skal stå noget");
 
             //Test the assertion
-
             Assert.IsNotNull(uCtr.GetUserByPhone("112"));
             uCtr.DeleteUser(johnDoe);
         }
