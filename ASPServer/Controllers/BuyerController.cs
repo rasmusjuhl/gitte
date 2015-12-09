@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using ASPServer.BuyerServiceReference;
+using ASPServer.ServiceReference;
 
 namespace ASPServer.Controllers
 {
     public class BuyerController : Controller
     {
-        static IBuyerService iBuyer = new BuyerServiceClient();
+        static IService iService = new ServiceClient();
         // GET: Buyer
         public ActionResult Index()
         {
-            List<Buyer> buyers = iBuyer.GetAllBuyers();
+            List<Buyer> buyers = iService.GetAllBuyers();
 
             return View(buyers);
         }
@@ -21,7 +21,7 @@ namespace ASPServer.Controllers
         // GET: Buyer/Details/5
         public ActionResult Details(int id)
         {
-            Buyer buyer = iBuyer.GetBuyerById(id);
+            Buyer buyer = iService.GetBuyerById(id);
             return View(buyer);
         }
 

@@ -171,7 +171,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\BuyerServiceReference\Reference.cs">
+    <Compile Include="Service References\ServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -201,18 +201,27 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Service References\BuyerServiceReference\ASPServer.BuyerServiceReference.Buyer.datasource">
+    <Content Include="Service References\ServiceReference\ASPServer.ServiceReference.Appointment.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\BuyerServiceReference\ASPServer.BuyerServiceReference.Location.datasource">
+    <Content Include="Service References\ServiceReference\ASPServer.ServiceReference.Buyer.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\BuyerServiceReference\ASPServer.BuyerServiceReference.Property.datasource">
+    <Content Include="Service References\ServiceReference\ASPServer.ServiceReference.Location.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Service References\BuyerServiceReference\configuration91.svcinfo" />
-    <None Include="Service References\BuyerServiceReference\configuration.svcinfo" />
-    <None Include="Service References\BuyerServiceReference\Reference.svcmap">
+    <Content Include="Service References\ServiceReference\ASPServer.ServiceReference.Property.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference\ASPServer.ServiceReference.Seller.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference\ASPServer.ServiceReference.User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\ServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\ServiceReference\configuration.svcinfo" />
+    <None Include="Service References\ServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -251,18 +260,18 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <None Include="Service References\BuyerServiceReference\ModelLayer.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\BuyerServiceReference\service.wsdl" />
-    <None Include="Service References\BuyerServiceReference\service.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\BuyerServiceReference\service1.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Views\Buyer\Index.cshtml" />
     <Content Include="Views\Buyer\Details.cshtml" />
+    <None Include="Service References\ServiceReference\ModelLayer.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference\service.wsdl" />
+    <None Include="Service References\ServiceReference\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -278,7 +287,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\BuyerServiceReference\" />
+    <WCFMetadataStorage Include="Service References\ServiceReference\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

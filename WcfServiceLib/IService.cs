@@ -112,5 +112,8 @@ namespace WcfServiceLib
 
         [OperationContract]
         void DeleteUser(User user);
+
+        [OperationContract]
+        Buyer GetBuyerById(int id);
     }
 }
