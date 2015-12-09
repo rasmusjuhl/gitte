@@ -14,7 +14,7 @@ namespace WcfServiceLib
     {
         //Appointment contracts
         [OperationContract]
-        void InsertAppointment(Appointment appointment);
+        void InsertAppointment(Appointment appointment, Buyer buyer, Seller seller);
         [OperationContract]
         List<Appointment> GetAppointment(DateTime date);
         [OperationContract]
