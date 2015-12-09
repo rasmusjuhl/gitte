@@ -29,7 +29,7 @@ namespace DBLayer
             Location loc;
             using (var ctx = new SystemContext())
             {
-                loc = ctx.Locations.Where(x => x.ZipCode == zipCode).Single();
+                loc = ctx.Locations.Where(x => x.ZipCode == zipCode).SingleOrDefault();
                 return loc;
             }
             

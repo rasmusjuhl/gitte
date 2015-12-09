@@ -31,7 +31,7 @@ namespace DBLayer
             Buyer buyer;
             using (var ctx = new SystemContext())
             {
-                buyer = ctx.Buyers.Where(x => x.Phone == phone).Single();
+                buyer = ctx.Buyers.Where(x => x.Phone == phone).SingleOrDefault();
             }
             return buyer;
         }
@@ -41,7 +41,7 @@ namespace DBLayer
             Buyer buyer;
             using (var ctx = new SystemContext())
             {
-                buyer = ctx.Buyers.Where(x => x.Mobile == mobile).Single();
+                buyer = ctx.Buyers.Where(x => x.Mobile == mobile).SingleOrDefault();
             }
             return buyer;
         }
@@ -61,7 +61,7 @@ namespace DBLayer
             List<Location> locations;
             using (var ctx = new SystemContext())
             {
-                Buyer b = ctx.Buyers.Where(x => x.Phone == phone).Single();
+                Buyer b = ctx.Buyers.Where(x => x.Phone == phone).SingleOrDefault();
                 locations = b.Locations.ToList();
             }
             return locations;
@@ -72,7 +72,7 @@ namespace DBLayer
             List<Location> locations;
             using (var ctx = new SystemContext())
             {
-                Buyer b = ctx.Buyers.Where(x => x.Mobile == mobile).Single();
+                Buyer b = ctx.Buyers.Where(x => x.Mobile == mobile).SingleOrDefault();
                 locations = b.Locations.ToList();
             }
             return locations;
@@ -83,7 +83,7 @@ namespace DBLayer
             List<Property> properties;
             using (var ctx = new SystemContext())
             {
-                Buyer b = ctx.Buyers.Where(x => x.Phone == phone).Single();
+                Buyer b = ctx.Buyers.Where(x => x.Phone == phone).SingleOrDefault();
                 properties = b.Properties.ToList();
             }
             return properties;
@@ -94,7 +94,7 @@ namespace DBLayer
             List<Property> properties;
             using (var ctx = new SystemContext())
             {
-                Buyer b = ctx.Buyers.Where(x => x.Mobile == mobile).Single();
+                Buyer b = ctx.Buyers.Where(x => x.Mobile == mobile).SingleOrDefault();
                 properties = b.Properties.ToList();
             }
             return properties;

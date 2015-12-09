@@ -21,6 +21,12 @@ namespace ControlLayer
         {
             dbSel.InsertSeller(seller);
         }
+
+        public Seller GetSellerById(int id)
+        {
+            return dbSel.GetSellerById(id);
+        }
+
         public Seller GetSellerByPhone(string phone)
         {
             return dbSel.GetSellerByPhone(phone);
@@ -35,6 +41,10 @@ namespace ControlLayer
         {
             return dbSel.GetAllSellers();
         }
+        public void AddPropertyToSeller(Seller seller, Property property)
+        {
+            seller.Properties.Add(property);
+        }
 
         public void UpdateSeller(Seller seller, List<Property> properties, string name, string address, string zipCode, string phone, string mobil, string email, string misc)
         {
@@ -44,6 +54,10 @@ namespace ControlLayer
         public void DeleteSeller(Seller seller)
         {
             dbSel.DeleteSeller(seller);
+        }
+        public List<Property> GetAllProperties(Seller seller)
+        {
+            return dbSel.GetAllProperties(seller);
         }
     }
 }

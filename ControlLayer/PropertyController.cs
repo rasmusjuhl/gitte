@@ -22,14 +22,23 @@ namespace ControlLayer
             dbProp.InsertProperty(property);
         }
 
+        public Property GetProperty(string address)
+        {
+            return dbProp.GetProperty(address);
+        }
+
         public List<Property> GetPropertyByAddress(string address)
         {
-            return dbProp.GetPropertiesByAdress(address);
+            return dbProp.GetPropertiesByAddress(address);
         }
 
         public List<Property> GetAllProperties()
         {
             return dbProp.GetAllProperties();
+        }
+        public Property GetPropertyBySellerID(int sellerID)
+        {
+            return dbProp.GetPropertyBySellerID(sellerID);
         }
 
         public void UpdateProperty(Property property, string address, string zipCode, string type, int rooms, int floors, double price,

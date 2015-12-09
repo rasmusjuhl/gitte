@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ModelLayer;
 using ModelLayer.DAL;
+using System.Data.Entity;
 
 namespace DBLayer
 {
@@ -31,7 +32,7 @@ namespace DBLayer
             User user;
             using (var ctx = new SystemContext())
             {
-                user = ctx.Users.Where(x => x.Phone == phone).Single();
+                user = ctx.Users.Where(x => x.Phone == phone).SingleOrDefault();
             }
             return user;
         }
@@ -41,7 +42,9 @@ namespace DBLayer
             List<User> users;
             using (var ctx = new SystemContext())
             {
-                users = ctx.Users.ToList();
+                users = ctx.Users.Include(x => x.Appointments)
+                                 .Include(x => x.Appointments.Select(y => y.Buyer))
+                                 .Include(x => x.Appointments.Select(y => y.Seller)).ToList();
             }
             return users;
         }
