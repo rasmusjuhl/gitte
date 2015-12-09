@@ -62,5 +62,11 @@ namespace WcfServiceLib
         {
             bCtr.DeleteBuyer(buyer);
         }
+
+
+        public Buyer GetBuyerById(int id)
+        {
+            return bCtr.GetBuyerById(id);
+        }
     }
 }

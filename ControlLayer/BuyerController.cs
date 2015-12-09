@@ -69,5 +69,11 @@ namespace ControlLayer
         {
             dbBuy.DeleteBuyer(buyer);
         }
+
+        public Buyer GetBuyerById(int id)
+        {
+            Buyer buyer = dbBuy.GetBuyerById(id);
+            return buyer;
+        }
     }
 }

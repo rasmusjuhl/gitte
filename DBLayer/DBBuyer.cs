@@ -146,5 +146,15 @@ namespace DBLayer
                 ctx.SaveChanges();
             }
         }
+
+        public Buyer GetBuyerById(int id)
+        {
+            Buyer buyer;
+            using (var ctx = new SystemContext())
+            {
+                buyer = ctx.Buyers.Find(id);
+            }
+            return buyer;
+        }
     }
 }

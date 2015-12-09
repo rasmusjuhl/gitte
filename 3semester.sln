@@ -10,6 +10,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUIApplication", "GUIApplic
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPServer", "ASPServer\ASPServer.csproj", "{BF13DDC1-EC4F-4840-AF13-D13D62A35480}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A76662B6-31D0-412E-A217-93B0ECDA8B4E} = {A76662B6-31D0-412E-A217-93B0ECDA8B4E}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelLayer", "ModelLayer\ModelLayer.csproj", "{2023EF3D-287C-4624-A165-61FAC0613EDE}"
 EndProject
