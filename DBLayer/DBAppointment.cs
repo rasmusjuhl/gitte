@@ -15,11 +15,21 @@ namespace DBLayer
 
         }
 
-        public void InsertAppointment(Appointment appointment)
+        public void InsertAppointment(Appointment appointment, Buyer buyer, Seller seller)
         {
             using (var ctx = new SystemContext())
             {
                 ctx.Appointments.Add(appointment);
+                if (buyer != null)
+                {
+                    ctx.Buyers.Attach(buyer);
+                    appointment.Buyer = buyer;
+                }
+                if (seller != null)
+                {
+                    ctx.Sellers.Attach(seller);
+                    appointment.Seller = seller;
+                }
                 ctx.SaveChanges();
             }
         }

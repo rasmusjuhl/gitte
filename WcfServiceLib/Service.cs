@@ -19,9 +19,9 @@ namespace WcfServiceLib
         static UserController uCtr = new UserController();
 
         //Appointment
-        public void InsertAppointment(Appointment appointment)
+        public void InsertAppointment(Appointment appointment, Buyer buyer, Seller seller)
         {
-            aCtr.InsertAppointment(appointment);
+            aCtr.InsertAppointment(appointment, buyer, seller);
         }
 
         public List<Appointment> GetAppointment(DateTime date)

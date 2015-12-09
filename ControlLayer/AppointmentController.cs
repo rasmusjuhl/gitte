@@ -17,9 +17,9 @@ namespace ControlLayer
         
         }
 
-        public void InsertAppointment(Appointment appointment)
+        public void InsertAppointment(Appointment appointment, Buyer buyer, Seller seller)
         {
-            dbApp.InsertAppointment(appointment);
+            dbApp.InsertAppointment(appointment, buyer, seller);
         }
 
         public List<Appointment> GetAppointment(DateTime date)
