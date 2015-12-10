@@ -1,4 +1,13 @@
-﻿using System;
+﻿/* 
+ * Project name:    Planlægningsværktøj til ejendomsmæglere
+ * Group members:   Kasper Løkke, Rasmus Juhl, Silas Christensen og Søren Kaae
+ * Class:           DMAB0914
+ * 
+ * "DBLayer" har ansvaret for at tilgå databasen med de informationer, som brugeren af systemet ønsker at sende med. DBLaget har ansvaret
+ * for, igennem systemcontext at oprette en forbindelse til databasen i forbindelse med Entity Framework og foretage de ønskede ændringer.
+ * Selve databasen bliver oprettet af Entity Framework i samarbejde med de modelklasser vi har i "ModelLayer".
+*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

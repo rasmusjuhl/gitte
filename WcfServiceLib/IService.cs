@@ -21,7 +21,7 @@ namespace WcfServiceLib
         List<Appointment> GetAllAppointments();
         [OperationContract]
         void UpdateAppointment(Appointment appointment, DateTime date, DateTime StartTime, DateTime EndTime,
-            string category, string descricption, string status, Seller seller, Buyer buyer);
+                               string category, string descricption, string status, Seller seller, Buyer buyer);
         [OperationContract]
         void DeleteAppointment(Appointment appointment);
 
@@ -43,7 +43,12 @@ namespace WcfServiceLib
         [OperationContract]
         List<Property> GetAllPropertiesByMobile(string mobile);
         [OperationContract]
-        void UpdateBuyer(Buyer buyer, List<Property> properties, string name, string address, string zipCode, string phone, string mobil, string email, string misc, string estateType, double minPrice, double maxPrice, double lotSizeMin, double lotSizeMax, double probertySizeMin, double probertySizeMax, double desiredRoomsMin, double desiredRoomsMax, List<Location> desiredLocations, string otherPref, Boolean contactAllowedByBoligOne, Boolean contactAllowedByReal, Boolean allowedEmailSpam, Boolean inRKI, Boolean buyerApproved, string bank, Boolean ownesHouse, Boolean livesForRent);
+        void UpdateBuyer(Buyer buyer, List<Property> properties, string name, string address, string zipCode,
+                         string phone, string mobil, string email, string misc, string estateType, double minPrice,
+                         double maxPrice, double lotSizeMin, double lotSizeMax, double probertySizeMin, double probertySizeMax,
+                         double desiredRoomsMin, double desiredRoomsMax, List<Location> desiredLocations, string otherPref, 
+                         Boolean contactAllowedByBoligOne, Boolean contactAllowedByReal, Boolean allowedEmailSpam, Boolean inRKI,
+                         Boolean buyerApproved, string bank, Boolean ownesHouse, Boolean livesForRent);
         [OperationContract]
         void DeleteBuyer(Buyer buyer);
 
@@ -71,7 +76,8 @@ namespace WcfServiceLib
         [OperationContract]
         List<Property> GetAllProperties();
         [OperationContract]
-        void UpdateProperty(Property property, string address, string zipCode, string type, int rooms, int floors, double price, double propertySize, double houseSize, int constructionYear);
+        void UpdateProperty(Property property, string address, string zipCode, string type, int rooms,
+                            int floors, double price, double propertySize, double houseSize, int constructionYear);
         [OperationContract]
         void DeleteProperty(Property property);
         [OperationContract]
@@ -89,7 +95,8 @@ namespace WcfServiceLib
         [OperationContract]
         List<Seller> GetAllSellers();
         [OperationContract]
-        void UpdateSeller(Seller seller, List<Property> properties, string name, string address, string zipCode, string phone, string mobil, string email, string misc);
+        void UpdateSeller(Seller seller, List<Property> properties, string name, string address, 
+                          string zipCode, string phone, string mobil, string email, string misc);
         [OperationContract]
         void DeleteSeller(Seller seller);
         [OperationContract]
@@ -108,7 +115,8 @@ namespace WcfServiceLib
         List<User> GetAllUsers();
 
         [OperationContract]
-        void UpdateUser(User user, List<Appointment> appointments, string name, string address, string zipCode, string phone, string mobil, string email, string misc);
+        void UpdateUser(User user, List<Appointment> appointments, string name, string address, 
+                        string zipCode, string phone, string mobil, string email, string misc);
 
         [OperationContract]
         void DeleteUser(User user);
