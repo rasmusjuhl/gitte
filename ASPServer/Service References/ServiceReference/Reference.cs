@@ -1241,6 +1241,12 @@ namespace ASPServer.ServiceReference {
                     bool ownesHouse, 
                     bool livesForRent);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/UpdateBuyerSingle", ReplyAction="http://tempuri.org/IService/UpdateBuyerSingleResponse")]
+        void UpdateBuyerSingle(ASPServer.ServiceReference.Buyer buyer);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/UpdateBuyerSingle", ReplyAction="http://tempuri.org/IService/UpdateBuyerSingleResponse")]
+        System.Threading.Tasks.Task UpdateBuyerSingleAsync(ASPServer.ServiceReference.Buyer buyer);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/DeleteBuyer", ReplyAction="http://tempuri.org/IService/DeleteBuyerResponse")]
         void DeleteBuyer(ASPServer.ServiceReference.Buyer buyer);
         
@@ -1609,6 +1615,14 @@ namespace ASPServer.ServiceReference {
                     bool ownesHouse, 
                     bool livesForRent) {
             return base.Channel.UpdateBuyerAsync(buyer, properties, name, address, zipCode, phone, mobil, email, misc, estateType, minPrice, maxPrice, lotSizeMin, lotSizeMax, probertySizeMin, probertySizeMax, desiredRoomsMin, desiredRoomsMax, desiredLocations, otherPref, contactAllowedByBoligOne, contactAllowedByReal, allowedEmailSpam, inRKI, buyerApproved, bank, ownesHouse, livesForRent);
+        }
+        
+        public void UpdateBuyerSingle(ASPServer.ServiceReference.Buyer buyer) {
+            base.Channel.UpdateBuyerSingle(buyer);
+        }
+        
+        public System.Threading.Tasks.Task UpdateBuyerSingleAsync(ASPServer.ServiceReference.Buyer buyer) {
+            return base.Channel.UpdateBuyerSingleAsync(buyer);
         }
         
         public void DeleteBuyer(ASPServer.ServiceReference.Buyer buyer) {

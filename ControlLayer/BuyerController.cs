@@ -75,5 +75,10 @@ namespace ControlLayer
             Buyer buyer = dbBuy.GetBuyerById(id);
             return buyer;
         }
+
+        public void UpdateBuyer(Buyer buyer)
+        {
+            dbBuy.UpdateBuyer(buyer);
+        }
     }
 }

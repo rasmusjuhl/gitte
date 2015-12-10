@@ -7,31 +7,25 @@
 <h2>Detaljer for @Model.Name</h2>
 
 <table>
-
     <tr>
         <th>Navn</th>
-        <th>Adresse</th>
-        <th>Telefon</th>
-        <th>Mobil</th>
-        <th>Email</th>
+        <td align="right">@Html.DisplayFor(x => Model.Name)</td>
     </tr>
-
     <tr>
-        <td>
-            @Html.DisplayFor(x => Model.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(x => Model.Address)
-        </td>
-        <td>
-            @Html.DisplayFor(x => Model.Phone)
-        </td>
-        <td>
-            @Html.DisplayFor(x => Model.Mobile)
-        </td>
-        <td>
-            @Html.DisplayFor(x => Model.Email)
-        </td>
+        <th>Adresse</th>
+        <td align="right">@Html.DisplayFor(x => Model.Address)</td>
+    </tr>
+    <tr>
+        <th>Telefon</th>
+        <td align="right">@Html.DisplayFor(x => Model.Phone)</td>
+    </tr>
+    <tr>
+        <th>Mobil</th>
+        <td align="right">@Html.DisplayFor(x => Model.Mobile)</td>
+    </tr>
+    <tr>
+        <th>Email</th>
+        <td align="right">@Html.DisplayFor(x => Model.Email)</td>
     </tr>
 
 </table>

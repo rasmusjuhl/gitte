@@ -137,6 +137,22 @@ namespace DBLayer
                 ctx.SaveChanges();
             }
         }
+        
+        public void UpdateBuyer(Buyer buyer)
+        {
+            //Fire up a new DB context
+            using (var ctx = new SystemContext())
+            {
+                //Match buyer from input with buyer to update from database
+                Buyer dbBuyer = ctx.Buyers.Find(buyer.Id);
+                //Set the values of the dbBuyer to the values of the buyer from input
+                ctx.Entry(dbBuyer).CurrentValues.SetValues(buyer);
+                //Save the changes back to the database.
+                ctx.SaveChanges();
+
+            }
+        }
+
         public void DeleteBuyer(Buyer buyer)
         {
             using (var ctx = new SystemContext())

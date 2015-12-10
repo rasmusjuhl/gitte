@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Web;
 using System.Web.Mvc;
 using ASPServer.ServiceReference;
@@ -50,23 +51,17 @@ namespace ASPServer.Controllers
         // GET: Buyer/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            Buyer buyer = iService.GetBuyerById(id);
+            return View(buyer);
         }
 
         // POST: Buyer/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(Buyer buyer)
         {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            Buyer dbBuyer = iService.GetBuyerById(buyer.Id);
+            iService.UpdateBuyerSingle(buyer);
+            return View(buyer);
         }
 
         // GET: Buyer/Delete/5

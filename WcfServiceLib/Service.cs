@@ -91,6 +91,11 @@ namespace WcfServiceLib
             bCtr.UpdateBuyer(buyer, properties, name, address, zipCode, phone, mobil, email, misc, estateType, minPrice, maxPrice, lotSizeMin, lotSizeMax, probertySizeMin, probertySizeMax, desiredRoomsMin, desiredRoomsMax, desiredLocations, otherPref, contactAllowedByBoligOne, contactAllowedByReal, allowedEmailSpam, inRKI, buyerApproved, bank, ownesHouse, livesForRent);
         }
 
+        public void UpdateBuyerSingle(Buyer buyer)
+        {
+            bCtr.UpdateBuyer(buyer);
+        }
+
         public void DeleteBuyer(Buyer buyer)
         {
             bCtr.DeleteBuyer(buyer);

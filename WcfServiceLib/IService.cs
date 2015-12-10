@@ -45,6 +45,8 @@ namespace WcfServiceLib
         [OperationContract]
         void UpdateBuyer(Buyer buyer, List<Property> properties, string name, string address, string zipCode, string phone, string mobil, string email, string misc, string estateType, double minPrice, double maxPrice, double lotSizeMin, double lotSizeMax, double probertySizeMin, double probertySizeMax, double desiredRoomsMin, double desiredRoomsMax, List<Location> desiredLocations, string otherPref, Boolean contactAllowedByBoligOne, Boolean contactAllowedByReal, Boolean allowedEmailSpam, Boolean inRKI, Boolean buyerApproved, string bank, Boolean ownesHouse, Boolean livesForRent);
         [OperationContract]
+        void UpdateBuyerSingle(Buyer buyer);
+        [OperationContract]
         void DeleteBuyer(Buyer buyer);
 
         //Location contracts

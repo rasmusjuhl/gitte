@@ -272,6 +272,7 @@
     <None Include="Service References\ServiceReference\service1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Views\Buyer\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
