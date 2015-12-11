@@ -72,6 +72,7 @@ namespace ASPServer.Controllers
             //Assign only relevant values since rest are null
             dbBuyer.Name = buyer.Name;
             dbBuyer.Address = buyer.Address;
+            dbBuyer.ZipCode = buyer.ZipCode;
             dbBuyer.Phone = buyer.Phone;
             dbBuyer.Mobile = buyer.Mobile;
             dbBuyer.Email = buyer.Email;
