@@ -10,7 +10,6 @@ namespace DBLayer
 {
     public class DBSeller
     {
-        private DBLocation dbLoc = new DBLocation();
         public DBSeller()
         {
 
@@ -79,6 +78,16 @@ namespace DBLayer
                 s.Misc = misc;
 
                 ctx.Entry(s).State = System.Data.Entity.EntityState.Modified;
+                ctx.SaveChanges();
+            }
+        }
+
+        public void UpdateSeller(Seller seller)
+        {
+            using (var ctx = new SystemContext())
+            {
+                Seller dbSeller = ctx.Sellers.Find(seller.Id);
+                ctx.Entry(dbSeller).CurrentValues.SetValues(seller);
                 ctx.SaveChanges();
             }
         }

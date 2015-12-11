@@ -93,6 +93,8 @@ namespace WcfServiceLib
         [OperationContract]
         void UpdateSeller(Seller seller, List<Property> properties, string name, string address, string zipCode, string phone, string mobil, string email, string misc);
         [OperationContract]
+        void UpdateSellerSingle(Seller seller);
+        [OperationContract]
         void DeleteSeller(Seller seller);
         [OperationContract]
         void AddPropertyToSeller(Seller seller, Property property);

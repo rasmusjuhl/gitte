@@ -51,6 +51,11 @@ namespace ControlLayer
             dbSel.UpdateSeller(seller, properties, name, address, zipCode, phone, mobil, email, misc);
         }
 
+        public void UpdateSeller(Seller seller)
+        {
+            dbSel.UpdateSeller(seller);
+        }
+
         public void DeleteSeller(Seller seller)
         {
             dbSel.DeleteSeller(seller);

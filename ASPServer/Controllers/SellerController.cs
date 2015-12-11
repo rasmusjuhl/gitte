@@ -52,9 +52,9 @@ namespace ASPServer.Controllers
             dbSeller.Phone = seller.Phone;
             dbSeller.Mobile = seller.Mobile;
             dbSeller.Email = seller.Email;
-            //Update buyer via service
+            //Update seller via service
             
-            //iService.UpdateSellerSingle(dbSeller); //Lav metode
+            iService.UpdateSellerSingle(dbSeller);
             
             return View(seller);
         }

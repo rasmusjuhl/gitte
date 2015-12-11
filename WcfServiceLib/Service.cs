@@ -196,6 +196,10 @@ namespace WcfServiceLib
         {
             sCtr.UpdateSeller(seller, properties, name, address, zipCode, phone, mobil, email, misc);
         }
+        public void UpdateSellerSingle(Seller seller)
+        {
+            sCtr.UpdateSeller(seller);
+        }
 
         public void DeleteSeller(Seller seller)
         {
