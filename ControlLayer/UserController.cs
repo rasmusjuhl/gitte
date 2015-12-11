@@ -36,6 +36,11 @@ namespace ControlLayer
             return dbUser.GetUserByPhone(phone);
         }
 
+        public User GetUserById(int id)
+        {
+            return dbUser.GetUserById(id);
+        }
+
         public List<User> GetAllUsers()
         {
             return dbUser.GetAllUsers();

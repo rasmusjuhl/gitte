@@ -46,6 +46,16 @@ namespace DBLayer
             return user;
         }
 
+        public User GetUserById(int id)
+        {
+            User user;
+            using (var ctx = new SystemContext())
+            {
+                user = ctx.Users.Where(x => x.Id == id).SingleOrDefault();
+            }
+            return user;
+        }
+
         public List<User> GetAllUsers()
         {
             List<User> users;

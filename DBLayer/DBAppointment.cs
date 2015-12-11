@@ -62,7 +62,7 @@ namespace DBLayer
         }
 
         public void UpdateAppointment(Appointment appointment, DateTime date, DateTime StartTime, DateTime EndTime,
-            string category, string descricption, string status, Seller seller, Buyer buyer)
+            string category, string descricption, string status)
         {
             appointment.Date = date;
             appointment.StarTime = StartTime;
@@ -70,8 +70,6 @@ namespace DBLayer
             appointment.Category = category;
             appointment.Description = descricption;
             appointment.Status = status;
-            appointment.Seller = seller;
-            appointment.Buyer = buyer;
 
             using (var ctx = new SystemContext())
             {

@@ -12,7 +12,7 @@ namespace WcfServiceLib
     [ServiceContract]
     public interface IService
     {
-        //Appointment contracts
+        #region Appointment contracts
         [OperationContract]
         void InsertAppointment(Appointment appointment, Buyer buyer, Seller seller);
         [OperationContract]
@@ -21,11 +21,12 @@ namespace WcfServiceLib
         List<Appointment> GetAllAppointments();
         [OperationContract]
         void UpdateAppointment(Appointment appointment, DateTime date, DateTime StartTime, DateTime EndTime,
-                               string category, string descricption, string status, Seller seller, Buyer buyer);
+                               string category, string descricption, string status);
         [OperationContract]
         void DeleteAppointment(Appointment appointment);
+        #endregion
 
-        //Buyer contracts
+        #region Buyer contracts
         [OperationContract]
         void InsertBuyer(Buyer buyer);
         [OperationContract]
@@ -51,8 +52,9 @@ namespace WcfServiceLib
                          Boolean buyerApproved, string bank, Boolean ownesHouse, Boolean livesForRent);
         [OperationContract]
         void DeleteBuyer(Buyer buyer);
+        #endregion
 
-        //Location contracts
+        #region Location contracts
         [OperationContract]
         void InsertLocation(Location location);
         [OperationContract]
@@ -65,8 +67,9 @@ namespace WcfServiceLib
         void UpdateLocation(Location loc, string zipCode, string city);
         [OperationContract]
         void DeleteLocation(Location loc);
+        #endregion
 
-        //Property contracts
+        #region Property contracts
         [OperationContract]
         void InsertProperty(Property property);
         [OperationContract]
@@ -82,8 +85,9 @@ namespace WcfServiceLib
         void DeleteProperty(Property property);
         [OperationContract]
         Property GetPropertyBySellerID(int sellerID);
+        #endregion
 
-        //Seller contracts
+        #region Seller contracts
         [OperationContract]
         void InsertSeller(Seller seller);
         [OperationContract]
@@ -103,13 +107,17 @@ namespace WcfServiceLib
         void AddPropertyToSeller(Seller seller, Property property);
         [OperationContract]
         List<Property> GetAllPropertiesFromSeller(Seller seller);
+        #endregion
 
-        //User contracts
+        #region User contracts
         [OperationContract]
         void InsertUser(User user);
 
         [OperationContract]
         User GetUserUserByPhone(string phone);
+
+        [OperationContract]
+        User GetUserById(int id);
 
         [OperationContract]
         List<User> GetAllUsers();
@@ -120,5 +128,6 @@ namespace WcfServiceLib
 
         [OperationContract]
         void DeleteUser(User user);
+        #endregion
     }
 }
