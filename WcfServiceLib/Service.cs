@@ -18,7 +18,7 @@ namespace WcfServiceLib
         static SellerController sCtr = new SellerController();
         static UserController uCtr = new UserController();
 
-        //Appointment
+        #region Appointment
         public void InsertAppointment(Appointment appointment, Buyer buyer, Seller seller)
         {
             aCtr.InsertAppointment(appointment, buyer, seller);
@@ -43,9 +43,9 @@ namespace WcfServiceLib
         {
             aCtr.DeleteAppointment(appointment);
         }
+        #endregion
 
-
-        //Buyer
+        #region Buyer
         public void InsertBuyer(Buyer buyer)
         {
             bCtr.InsertBuyer(buyer);
@@ -95,9 +95,9 @@ namespace WcfServiceLib
         {
             bCtr.DeleteBuyer(buyer);
         }
+        #endregion
 
-
-        //Location
+        #region Location
         public void InsertLocation(Location location)
         {
             lCtr.InsertLocation(location);
@@ -127,9 +127,9 @@ namespace WcfServiceLib
         {
             lCtr.DeleteLocation(loc);
         }
+        #endregion
 
-
-        //Property
+        #region Property
         public void InsertProperty(Property property)
         {
             pCtr.InsertProperty(property);
@@ -165,8 +165,9 @@ namespace WcfServiceLib
         {
             return pCtr.GetPropertyBySellerID(sellerID);
         }
+        #endregion
 
-        //Seller
+        #region Seller
         public void InsertSeller(Seller seller)
         {
             sCtr.InsertSeller(seller);
@@ -208,9 +209,9 @@ namespace WcfServiceLib
         {
             return sCtr.GetSellerById(id);
         }
+        #endregion
 
-
-        //User
+        #region User
         public void InsertUser(User user)
         {
             uCtr.InsertUser(user);
@@ -219,6 +220,11 @@ namespace WcfServiceLib
         public User GetUserUserByPhone(string phone)
         {
             return uCtr.GetUserByPhone(phone);
+        }
+
+        public User GetUserById(int id)
+        {
+            return uCtr.GetUserById(id);
         }
 
         public List<User> GetAllUsers()
@@ -235,5 +241,6 @@ namespace WcfServiceLib
         {
             uCtr.DeleteUser(user);
         }
+        #endregion
     }
 }
