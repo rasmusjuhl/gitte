@@ -149,7 +149,6 @@ namespace DBLayer
                 ctx.Entry(dbBuyer).CurrentValues.SetValues(buyer);
                 //Save the changes back to the database.
                 ctx.SaveChanges();
-
             }
         }
 

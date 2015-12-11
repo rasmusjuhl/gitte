@@ -14,15 +14,20 @@ namespace ASPServer.Controllers
         // GET: Buyer
         public ActionResult Index()
         {
+            //Get all buyers from database
             List<Buyer> buyers = iService.GetAllBuyers();
 
+            //Make buyers available to view
             return View(buyers);
         }
 
         // GET: Buyer/Details/5
         public ActionResult Details(int id)
         {
+            //Get single buyer from database
             Buyer buyer = iService.GetBuyerById(id);
+
+            //Make single buyer available to view
             return View(buyer);
         }
 
@@ -51,7 +56,10 @@ namespace ASPServer.Controllers
         // GET: Buyer/Edit/5
         public ActionResult Edit(int id)
         {
+            //NOTE: This is for HTTP GET
+            //Get buyer by id from database
             Buyer buyer = iService.GetBuyerById(id);
+            //Return that buyer to the view
             return View(buyer);
         }
 
@@ -59,8 +67,17 @@ namespace ASPServer.Controllers
         [HttpPost]
         public ActionResult Edit(Buyer buyer)
         {
+            //NOTE: This is for HTTP post
+            //Get the correct buyer from db
             Buyer dbBuyer = iService.GetBuyerById(buyer.Id);
-            iService.UpdateBuyerSingle(buyer);
+            //Assign only relevant values since rest are null
+            dbBuyer.Name = buyer.Name;
+            dbBuyer.Address = buyer.Address;
+            dbBuyer.Phone = buyer.Phone;
+            dbBuyer.Mobile = buyer.Mobile;
+            dbBuyer.Email = buyer.Email;
+            //Update buyer via service
+            iService.UpdateBuyerSingle(dbBuyer);
             return View(buyer);
         }
 

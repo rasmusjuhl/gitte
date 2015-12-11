@@ -13,12 +13,29 @@
         <hr />
         @Html.HiddenFor(x => x.Id)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Name, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Name)
-            </div>
-        </div>
+        <table>
+            <tr>
+                <th>Navn</th>
+                <td align="right">@Html.EditorFor(model => model.Name)</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td align="right">@Html.EditorFor(model => model.Address)</td>
+            </tr>
+            <tr>
+                <th>Telefon</th>
+                <td align="right">@Html.EditorFor(model => model.Phone)</td>
+            </tr>
+            <tr>
+                <th>Mobil</th>
+                <td align="right">@Html.EditorFor(model => model.Mobile)</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td align="right">@Html.EditorFor(model => model.Email)</td>
+            </tr>
+
+        </table>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-2">
