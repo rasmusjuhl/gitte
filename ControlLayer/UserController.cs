@@ -1,4 +1,12 @@
-﻿using System;
+﻿/* 
+ * Project name:    Planlægningsværktøj til ejendomsmæglere
+ * Group members:   Kasper Løkke, Rasmus Juhl, Silas Christensen og Søren Kaae
+ * Class:           DMAB0914
+ * 
+ * "ControlLayer" er det lag i programmet, som er bindeledet mellem 
+ * DatabaseAccessLaget(kommunikation til database) og WCFServiceLaget(kommunikation ud) 
+*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
