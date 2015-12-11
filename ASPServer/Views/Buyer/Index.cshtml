@@ -12,6 +12,7 @@
         <th></th>
         <th>Navn</th>
         <th>Adresse</th>
+        <th>Postnr.</th>
         <th>Telefon</th>
     </tr>
     @foreach (var buyer in Model)
@@ -26,6 +27,9 @@
             </td>
             <td>
                 @Html.DisplayFor(x => buyer.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(x => buyer.ZipCode)
             </td>
             <td>
                 @Html.DisplayFor(x => buyer.Phone)
