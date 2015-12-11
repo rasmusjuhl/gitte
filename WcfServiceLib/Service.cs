@@ -34,9 +34,9 @@ namespace WcfServiceLib
             return aCtr.GetAllAppointments();
         }
 
-        public void UpdateAppointment(Appointment appointment, DateTime date, DateTime StartTime, DateTime EndTime, string category, string descricption, string status, ModelLayer.Seller seller, ModelLayer.Buyer buyer)
+        public void UpdateAppointment(Appointment appointment, DateTime date, DateTime StartTime, DateTime EndTime, string category, string descricption, string status)
         {
-            aCtr.UpdateAppointment(appointment, date, StartTime, EndTime, category, descricption, status, seller, buyer);
+            aCtr.UpdateAppointment(appointment, date, StartTime, EndTime, category, descricption, status);
         }
 
         public void DeleteAppointment(ModelLayer.Appointment appointment)

@@ -41,9 +41,9 @@ namespace ControlLayer
         }
 
         public void UpdateAppointment(Appointment appointment, DateTime date, DateTime StartTime, DateTime EndTime, 
-            string category, string descricption, string status, Seller seller, Buyer buyer)
+            string category, string descricption, string status)
         {
-            dbApp.UpdateAppointment(appointment, date, StartTime, EndTime, category, descricption, status, seller, buyer);
+            dbApp.UpdateAppointment(appointment, date, StartTime, EndTime, category, descricption, status);
         }
 
         public void DeleteAppointment(Appointment appointment)

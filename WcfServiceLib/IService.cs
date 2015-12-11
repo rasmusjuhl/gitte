@@ -21,7 +21,7 @@ namespace WcfServiceLib
         List<Appointment> GetAllAppointments();
         [OperationContract]
         void UpdateAppointment(Appointment appointment, DateTime date, DateTime StartTime, DateTime EndTime,
-                               string category, string descricption, string status, Seller seller, Buyer buyer);
+                               string category, string descricption, string status);
         [OperationContract]
         void DeleteAppointment(Appointment appointment);
         #endregion
