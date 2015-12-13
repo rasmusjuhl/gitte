@@ -20,10 +20,10 @@
             <td>
                 @Html.ActionLink("Rediger", "Edit", new { appointment.Id })
                 @Html.ActionLink("Detaljer", "Details", new { appointment.Id })
-                @Html.ActionLink("Slet", "Delete", new { appointment.Id })
             </td>
             <td>
-                @Html.DisplayFor(x => appointment.Date.Date)
+                @*//Not using a HTML helper here since it doesn't work for method calls*@
+                @appointment.Date.ToShortDateString()
             </td>
             <td>
                 @Html.DisplayFor(x => appointment.StarTime.TimeOfDay)
