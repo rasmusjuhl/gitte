@@ -18,10 +18,10 @@ namespace WcfServiceLib
         static SellerController sCtr = new SellerController();
         static UserController uCtr = new UserController();
 
-        //Appointment
-        public void InsertAppointment(Appointment appointment)
+        #region Appointment
+        public void InsertAppointment(Appointment appointment, Buyer buyer, Seller seller)
         {
-            aCtr.InsertAppointment(appointment);
+            aCtr.InsertAppointment(appointment, buyer, seller);
         }
 
         public List<Appointment> GetAppointment(DateTime date)
@@ -34,18 +34,18 @@ namespace WcfServiceLib
             return aCtr.GetAllAppointments();
         }
 
-        public void UpdateAppointment(Appointment appointment, DateTime date, DateTime StartTime, DateTime EndTime, string category, string descricption, string status, ModelLayer.Seller seller, ModelLayer.Buyer buyer)
+        public void UpdateAppointment(Appointment appointment, DateTime date, DateTime StartTime, DateTime EndTime, string category, string descricption, string status)
         {
-            aCtr.UpdateAppointment(appointment, date, StartTime, EndTime, category, descricption, status, seller, buyer);
+            aCtr.UpdateAppointment(appointment, date, StartTime, EndTime, category, descricption, status);
         }
 
         public void DeleteAppointment(ModelLayer.Appointment appointment)
         {
             aCtr.DeleteAppointment(appointment);
         }
+        #endregion
 
-
-        //Buyer
+        #region Buyer
         public void InsertBuyer(Buyer buyer)
         {
             bCtr.InsertBuyer(buyer);
@@ -88,7 +88,11 @@ namespace WcfServiceLib
 
         public void UpdateBuyer(Buyer buyer, List<Property> properties, string name, string address, string zipCode, string phone, string mobil, string email, string misc, string estateType, double minPrice, double maxPrice, double lotSizeMin, double lotSizeMax, double probertySizeMin, double probertySizeMax, double desiredRoomsMin, double desiredRoomsMax, List<ModelLayer.Location> desiredLocations, string otherPref, bool contactAllowedByBoligOne, bool contactAllowedByReal, bool allowedEmailSpam, bool inRKI, bool buyerApproved, string bank, bool ownesHouse, bool livesForRent)
         {
-            bCtr.UpdateBuyer(buyer, properties, name, address, zipCode, phone, mobil, email, misc, estateType, minPrice, maxPrice, lotSizeMin, lotSizeMax, probertySizeMin, probertySizeMax, desiredRoomsMin, desiredRoomsMax, desiredLocations, otherPref, contactAllowedByBoligOne, contactAllowedByReal, allowedEmailSpam, inRKI, buyerApproved, bank, ownesHouse, livesForRent);
+            bCtr.UpdateBuyer(buyer, properties, name, address, zipCode, phone, mobil, email,
+                             misc, estateType, minPrice, maxPrice, lotSizeMin, lotSizeMax, 
+                             probertySizeMin, probertySizeMax, desiredRoomsMin, desiredRoomsMax, 
+                             desiredLocations, otherPref, contactAllowedByBoligOne, contactAllowedByReal, 
+                             allowedEmailSpam, inRKI, buyerApproved, bank, ownesHouse, livesForRent);
         }
 
         public void UpdateBuyerSingle(Buyer buyer)
@@ -100,9 +104,13 @@ namespace WcfServiceLib
         {
             bCtr.DeleteBuyer(buyer);
         }
+        public Buyer GetBuyerById(int id)
+        {
+            return bCtr.GetBuyerById(id);
+        }
+        #endregion
 
-
-        //Location
+        #region Location
         public void InsertLocation(Location location)
         {
             lCtr.InsertLocation(location);
@@ -132,9 +140,9 @@ namespace WcfServiceLib
         {
             lCtr.DeleteLocation(loc);
         }
+        #endregion
 
-
-        //Property
+        #region Property
         public void InsertProperty(Property property)
         {
             pCtr.InsertProperty(property);
@@ -170,8 +178,9 @@ namespace WcfServiceLib
         {
             return pCtr.GetPropertyBySellerID(sellerID);
         }
+        #endregion
 
-        //Seller
+        #region Seller
         public void InsertSeller(Seller seller)
         {
             sCtr.InsertSeller(seller);
@@ -217,9 +226,9 @@ namespace WcfServiceLib
         {
             return sCtr.GetSellerById(id);
         }
+        #endregion
 
-
-        //User
+        #region User
         public void InsertUser(User user)
         {
             uCtr.InsertUser(user);
@@ -228,6 +237,11 @@ namespace WcfServiceLib
         public User GetUserUserByPhone(string phone)
         {
             return uCtr.GetUserByPhone(phone);
+        }
+
+        public User GetUserById(int id)
+        {
+            return uCtr.GetUserById(id);
         }
 
         public List<User> GetAllUsers()
@@ -244,10 +258,6 @@ namespace WcfServiceLib
         {
             uCtr.DeleteUser(user);
         }
-
-        public Buyer GetBuyerById(int id)
-        {
-            return bCtr.GetBuyerById(id);
-        }
+        #endregion
     }
 }

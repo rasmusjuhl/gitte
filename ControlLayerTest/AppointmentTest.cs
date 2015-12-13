@@ -1,4 +1,11 @@
-﻿using System;
+﻿/* 
+ * Project name:    Planlægningsværktøj til ejendomsmæglere
+ * Group members:   Kasper Løkke, Rasmus Juhl, Silas Christensen og Søren Kaae
+ * Class:           DMAB0914
+ * 
+ * I den pågældende klasse findes der Unit Tests af ControlLayerets AppointmentController.
+*/
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ModelLayer;
 using ModelLayer.DAL;
@@ -32,7 +39,7 @@ namespace ControlLayerTest
 
             //Save it to the database
             int CountDB = aCtr.GetAllAppointments().ToList().Count;
-            aCtr.InsertAppointment(testAppointment);
+            aCtr.InsertAppointment(testAppointment, null, null);
             int CountDBAfter = aCtr.GetAllAppointments().ToList().Count;
 
             //Compare Properties. Maybe use conditions other than Adress?
@@ -52,7 +59,7 @@ namespace ControlLayerTest
             Appointment testAppointment = new Appointment() { Date = date, StarTime = meetingStart, EndTime = meetingEnd, Category = "Sælgermøde", Description = "Test for at finde en appointment", Status = "Status", UserID = 1 };
 
             //Save it to the database
-            aCtr.InsertAppointment(testAppointment);
+            aCtr.InsertAppointment(testAppointment, null, null);
 
             //Get property from database and assert not null
             Assert.IsNotNull(aCtr.GetAppointment(date));
@@ -71,7 +78,7 @@ namespace ControlLayerTest
             Appointment testAppointment = new Appointment() { Date = date, StarTime = meetingStart, EndTime = meetingEnd, Category = "Sælgermøde", Description = "Test for at finde en appointment", Status = "Status", UserID = 1 };
 
             //Save it to the database
-            aCtr.InsertAppointment(testAppointment);
+            aCtr.InsertAppointment(testAppointment, null, null);
 
             //Change the Appointment:
 
@@ -94,7 +101,7 @@ namespace ControlLayerTest
             Appointment testAppointment = new Appointment() { Date = date, StarTime = meetingStart, EndTime = meetingEnd, Category = "Sælgermøde", Description = "Test for at finde en appointment", Status = "Status", UserID = 1 };
 
             //Save it to the database
-            aCtr.InsertAppointment(testAppointment);
+            aCtr.InsertAppointment(testAppointment, null, null);
 
             //Delete it again
             aCtr.DeleteAppointment(testAppointment);

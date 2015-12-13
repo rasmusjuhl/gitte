@@ -1,4 +1,13 @@
-﻿using System;
+﻿/* 
+ * Project name:    Planlægningsværktøj til ejendomsmæglere
+ * Group members:   Kasper Løkke, Rasmus Juhl, Silas Christensen og Søren Kaae
+ * Class:           DMAB0914
+ * 
+ * "DBLayer" har ansvaret for at tilgå databasen med de informationer, som brugeren af systemet ønsker at sende med. DBLaget har ansvaret
+ * for, igennem systemcontext at oprette en forbindelse til databasen i forbindelse med Entity Framework og foretage de ønskede ændringer.
+ * Selve databasen bliver oprettet af Entity Framework i samarbejde med de modelklasser vi har i "ModelLayer".
+*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,11 +24,21 @@ namespace DBLayer
 
         }
 
-        public void InsertAppointment(Appointment appointment)
+        public void InsertAppointment(Appointment appointment, Buyer buyer, Seller seller)
         {
             using (var ctx = new SystemContext())
             {
                 ctx.Appointments.Add(appointment);
+                if (buyer != null)
+                {
+                    ctx.Buyers.Attach(buyer);
+                    appointment.Buyer = buyer;
+                }
+                if (seller != null)
+                {
+                    ctx.Sellers.Attach(seller);
+                    appointment.Seller = seller;
+                }
                 ctx.SaveChanges();
             }
         }
@@ -43,7 +62,7 @@ namespace DBLayer
         }
 
         public void UpdateAppointment(Appointment appointment, DateTime date, DateTime StartTime, DateTime EndTime,
-            string category, string descricption, string status, Seller seller, Buyer buyer)
+            string category, string descricption, string status)
         {
             appointment.Date = date;
             appointment.StarTime = StartTime;
@@ -51,8 +70,6 @@ namespace DBLayer
             appointment.Category = category;
             appointment.Description = descricption;
             appointment.Status = status;
-            appointment.Seller = seller;
-            appointment.Buyer = buyer;
 
             using (var ctx = new SystemContext())
             {

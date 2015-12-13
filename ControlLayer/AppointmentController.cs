@@ -1,4 +1,12 @@
-﻿using System;
+﻿/* 
+ * Project name:    Planlægningsværktøj til ejendomsmæglere
+ * Group members:   Kasper Løkke, Rasmus Juhl, Silas Christensen og Søren Kaae
+ * Class:           DMAB0914
+ * 
+ * "ControlLayer" er det lag i programmet, som er bindeledet mellem 
+ * DatabaseAccessLaget(kommunikation til database) og WCFServiceLaget(kommunikation ud) 
+*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,9 +25,9 @@ namespace ControlLayer
         
         }
 
-        public void InsertAppointment(Appointment appointment)
+        public void InsertAppointment(Appointment appointment, Buyer buyer, Seller seller)
         {
-            dbApp.InsertAppointment(appointment);
+            dbApp.InsertAppointment(appointment, buyer, seller);
         }
 
         public List<Appointment> GetAppointment(DateTime date)
@@ -33,9 +41,9 @@ namespace ControlLayer
         }
 
         public void UpdateAppointment(Appointment appointment, DateTime date, DateTime StartTime, DateTime EndTime, 
-            string category, string descricption, string status, Seller seller, Buyer buyer)
+            string category, string descricption, string status)
         {
-            dbApp.UpdateAppointment(appointment, date, StartTime, EndTime, category, descricption, status, seller, buyer);
+            dbApp.UpdateAppointment(appointment, date, StartTime, EndTime, category, descricption, status);
         }
 
         public void DeleteAppointment(Appointment appointment)

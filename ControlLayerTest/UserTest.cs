@@ -1,4 +1,11 @@
-﻿using System;
+﻿/* 
+ * Project name:    Planlægningsværktøj til ejendomsmæglere
+ * Group members:   Kasper Løkke, Rasmus Juhl, Silas Christensen og Søren Kaae
+ * Class:           DMAB0914
+ * 
+ * I den pågældende klasse findes der Unit Tests af ControlLayerets UserController.
+*/
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ModelLayer;
 using ModelLayer.DAL;
