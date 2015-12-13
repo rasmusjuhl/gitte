@@ -38,7 +38,7 @@ namespace DBLayer
         {
             using (var ctx = new SystemContext())
             {
-                return ctx.Appointments.ToList();
+                return ctx.Appointments.Include("Buyer").Include("Seller").ToList();
             }
         }
 
