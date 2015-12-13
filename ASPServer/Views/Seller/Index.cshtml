@@ -1,0 +1,40 @@
+﻿@model List<ASPServer.ServiceReference.Seller>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Sælgere</h2>
+<table>
+    <tr>
+        <th></th>
+        <th>Navn</th>
+        <th>Adresse</th>
+        <th>postnr.</th>
+        <th>Telefon</th>
+    </tr>
+    @foreach (var seller in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink("Rediger", "Edit", new { seller.Id })
+                @Html.ActionLink("Detaljer", "Details", new { seller.Id })
+            </td>
+            <td>
+                @Html.DisplayFor(x => seller.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(x => seller.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(x => seller.ZipCode)
+            </td>
+            <td>
+                @Html.DisplayFor(x => seller.Phone)
+            </td>
+        </tr>
+    }
+</table>
+

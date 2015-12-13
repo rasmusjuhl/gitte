@@ -1,0 +1,55 @@
+﻿@model ASPServer.ServiceReference.Seller
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Rediger information for @Model.Name</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        <h4>Sælger</h4>
+        <hr />
+        @Html.HiddenFor(x => x.Id)
+
+        <table>
+            <tr>
+                <th>Navn</th>
+                <td align="right">@Html.EditorFor(model => model.Name)</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td align="right">@Html.EditorFor(model => model.Address)</td>
+            </tr>
+            <tr>
+                <th>Postnr.</th>
+                <td align="right">@Html.EditorFor(model => model.ZipCode)</td>
+            </tr>
+            <tr>
+                <th>Telefon</th>
+                <td align="right">@Html.EditorFor(model => model.Phone)</td>
+            </tr>
+            <tr>
+                <th>Mobil</th>
+                <td align="right">@Html.EditorFor(model => model.Mobile)</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td align="right">@Html.EditorFor(model => model.Email)</td>
+            </tr>
+
+        </table>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-2">
+                <input type="submit" value="Gem" class="btn btn-default" />
+            </div>
+        </div>
+
+    </div>
+             
+}
+<div>
+    @Html.ActionLink("Tilbage til listen", "index");
+</div>
+

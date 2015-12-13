@@ -91,6 +91,11 @@ namespace WcfServiceLib
             bCtr.UpdateBuyer(buyer, properties, name, address, zipCode, phone, mobil, email, misc, estateType, minPrice, maxPrice, lotSizeMin, lotSizeMax, probertySizeMin, probertySizeMax, desiredRoomsMin, desiredRoomsMax, desiredLocations, otherPref, contactAllowedByBoligOne, contactAllowedByReal, allowedEmailSpam, inRKI, buyerApproved, bank, ownesHouse, livesForRent);
         }
 
+        public void UpdateBuyerSingle(Buyer buyer)
+        {
+            bCtr.UpdateBuyer(buyer);
+        }
+
         public void DeleteBuyer(Buyer buyer)
         {
             bCtr.DeleteBuyer(buyer);
@@ -191,6 +196,10 @@ namespace WcfServiceLib
         {
             sCtr.UpdateSeller(seller, properties, name, address, zipCode, phone, mobil, email, misc);
         }
+        public void UpdateSellerSingle(Seller seller)
+        {
+            sCtr.UpdateSeller(seller);
+        }
 
         public void DeleteSeller(Seller seller)
         {
@@ -234,6 +243,11 @@ namespace WcfServiceLib
         public void DeleteUser(User user)
         {
             uCtr.DeleteUser(user);
+        }
+
+        public Buyer GetBuyerById(int id)
+        {
+            return bCtr.GetBuyerById(id);
         }
     }
 }

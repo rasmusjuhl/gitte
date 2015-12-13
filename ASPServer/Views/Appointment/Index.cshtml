@@ -1,0 +1,40 @@
+﻿@model List<ASPServer.ServiceReference.Appointment>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Aftaler</h2>
+
+<table>
+    <tr>
+        <th></th>
+        <th>Dato</th>
+        <th>Start tidspunkt</th>
+        <th>Køber</th>
+        <th>Sælger</th>
+    </tr>
+    @foreach (var appointment in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink("Rediger", "Edit", new { appointment.Id })
+                @Html.ActionLink("Detaljer", "Details", new { appointment.Id })
+            </td>
+            <td>
+                @*//Not using a HTML helper here since it doesn't work for method calls*@
+                @appointment.Date.ToShortDateString()
+            </td>
+            <td>
+                @Html.DisplayFor(x => appointment.StarTime.TimeOfDay)
+            </td>
+            <td>
+                @Html.DisplayFor(x => appointment.Buyer.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(x => appointment.Seller.Name)
+            </td>
+
+        </tr>
+    }
+</table>
